@@ -1,0 +1,82 @@
+/* index.css (Bosh sahifa) uchun maxsus stillar */
+.filter-nav {
+    background-color: var(--primary-light);
+    padding: 4px;
+    border-radius: 8px;
+}
+
+html.dark-mode .filter-nav {
+    background-color: #2a2a2a;
+}
+
+.filter-nav .btn {
+    font-weight: 500;
+    color: var(--text-light);
+    border: none;
+    padding: 8px 16px;
+    background-color: transparent;
+}
+
+.filter-nav .btn.active {
+    background-color: var(--card-background);
+    color: var(--text-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+}
+
+html.dark-mode .filter-nav .btn.active {
+    background-color: #3a3a3a;
+}
+
+.info-card {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+}
+
+.info-card .card-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #fff;
+}
+
+.activity-log .activity-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.activity-log .activity-item:last-child {
+    border-bottom: none;
+}
+
+.activity-log .activity-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 18px;
+    margin-right: 15px;
+}
+
+.activity-log .activity-time {
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+.nav-link {
+    padding: 10px !important;
+}

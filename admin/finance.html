@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Moliya - Boshqaruv Paneli</title>
+  <meta content="Klinika moliyasini boshqarish: hisob-fakturalar, to'lovlar, obuna." name="description">
+  <meta content="medmap, admin, dashboard, clinic, finance, invoice, payments" name="keywords">
+
+  <!-- Favicons -->
+  <link href="https://placehold.co/32x32/4154f1/ffffff?text=M" rel="icon">
+  <link href="https://placehold.co/180x180/4154f1/ffffff?text=M" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- 1. Umumiy stillar (saytning hamma sahifasi uchun) -->
+  <link rel="stylesheet" href="style.css">
+  <!-- 2. Shu sahifaga xos bo'lgan maxsus stillar -->
+  <link rel="stylesheet" href="finance.css">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+    <a href="index.html" class="logo d-flex align-items-center">
+      <!-- Kengaytirilgan holat uchun logo -->
+      <img src="../images/MedMapp_Logo_shaffof.png" alt="MedMap Logo" class="logo-full">
+      <!-- Qisqartirilgan holat uchun logo -->
+      <img src="../images/favicon.png" alt="MedMap Icon" class="logo-icon">
+    </a>
+    <div class="sidebar-nav nav flex-column mt-4 flex-grow-1">
+      <a class="nav-link" href="index.html"><i class="bi bi-grid-1x2-fill"></i><span>Boshqaruv Paneli</span></a>
+      <a class="nav-link" href="new_applications.html"><i class="bi bi-telephone-inbound"></i><span>Yangi Murojaatlar</span></a>
+      <a class="nav-link" href="complete_applications.html"><i class="bi bi-check2-circle"></i><span>Bajarilgan Murojaatlar</span></a>
+      <a class="nav-link" href="clinics.html"><i class="bi bi-building"></i><span>Klinikalar Bazasi</span></a>
+      <a class="nav-link active" href="finance.html"><i class="bi bi-cash-coin"></i><span>Moliya</span></a>
+    </div>
+    <div class="logout">
+        <a class="nav-link" href="#"><i class="bi bi-box-arrow-left"></i><span>Chiqish</span></a>
+    </div>
+  </aside><!-- End Sidebar-->
+
+  <div class="main-content">
+    <!-- ======= Header ======= -->
+    <header class="header d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center">
+            <i class="bi bi-list toggle-sidebar-btn me-3 fs-4"></i>
+        </div>
+      <nav class="header-nav d-flex align-items-center">
+          <a class="nav-link nav-icon" id="dark-mode-toggle" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tungi/Kunduzgi rejim">
+              <i class="bi bi-moon-stars"></i>
+          </a>
+          <div class="nav-item dropdown">
+            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown" aria-expanded="false" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Til">
+                <i class="bi bi-translate"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item active" href="#">O'zbekcha (UZ)</a></li>
+                <li><a class="dropdown-item" href="#">Русский (RU)</a></li>
+            </ul>
+          </div>
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Bildirishnomalar"><i class="bi bi-bell"></i></a>
+          <div class="vr h-50 d-none d-sm-block mx-2"></div>
+          <div class="nav-item dropdown">
+            <a class="nav-link nav-profile d-flex align-items-center ps-sm-2" href="#" data-bs-toggle="dropdown">
+              <img src="https://placehold.co/40x40/012970/ffffff?text=O" alt="Profile" class="rounded-circle">
+              <div class="d-none d-md-flex flex-column align-items-start ms-2">
+                  <span class="fw-bold">Operator #1</span>
+                  <span class="text-muted small">callcenter@medmap.uz</span>
+              </div>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+              <li> <a class="dropdown-item d-flex align-items-center" href="#"> <i class="bi bi-person"></i> <span>Profil</span> </a> </li>
+              <li> <hr class="dropdown-divider"> </li>
+              <li> <a class="dropdown-item d-flex align-items-center" href="#"> <i class="bi bi-box-arrow-right"></i> <span>Chiqish</span> </a> </li>
+            </ul>
+          </div>
+      </nav>
+    </header><!-- End Header -->
+
+    <main class="page-content">
+      <section class="section finance">
+        
+        <div class="pagetitle mb-4">
+            <h1>Moliyaviy Boshqaruv</h1>
+            <p class="text-muted mb-0">Klinika daromadlari, xarajatlari va obunalarni boshqaring.</p>
+        </div>
+        
+        <div class="row">
+          <div class="col-lg-3 col-md-6 mb-4"><div class="info-card total-revenue"><i class="bi bi-wallet2 card-icon"></i><h6 class="mb-2">Jami Daromad</h6><h3 class="fw-bold mb-0">125,5 M UZS</h3></div></div>
+          <div class="col-lg-3 col-md-6 mb-4"><div class="info-card monthly-revenue"><i class="bi bi-calendar-check card-icon"></i><h6 class="mb-2">Joriy Oy Tushumi</h6><h3 class="fw-bold mb-0">15,2 M UZS</h3></div></div>
+          <div class="col-lg-3 col-md-6 mb-4"><div class="info-card unpaid-invoices"><i class="bi bi-exclamation-triangle card-icon"></i><h6 class="mb-2">To'lanmagan</h6><h3 class="fw-bold mb-0">2,5 M UZS</h3></div></div>
+          <div class="col-lg-3 col-md-6 mb-4"><div class="info-card subscription"><i class="bi bi-patch-check-fill card-icon"></i><h6 class="mb-2">Faol Obuna</h6><h3 class="fw-bold mb-0">PREMIUM</h3></div></div>
+        </div>
+          
+        <div class="card main-card">
+            <div class="card-header border-0 pt-4">
+                <ul class="nav nav-pills card-header-pills">
+                    <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#invoices">Hisob-fakturalar</a></li>
+                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#subscription">Obuna</a></li>
+                </ul>
+            </div>
+            <div class="card-body p-4">
+                <div class="tab-content">
+                    <!-- Hisob-fakturalar -->
+                    <div class="tab-pane fade show active" id="invoices">
+                        <div class="d-flex justify-content-end mb-3"><button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addInvoiceModal"><i class="bi bi-plus-circle me-2"></i>Yangi hisob-faktura</button></div>
+                        <div class="table-responsive"><table class="table table-hover"><thead><tr><th>ID</th><th>Bemor</th><th>Sana</th><th>Summa</th><th class="text-center">Holati</th><th class="text-end">Amallar</th></tr></thead><tbody><tr data-id="#INV-0012" data-patient="Ali Valiyev" data-date="30.07.2025" data-status="To'langan" data-items='[{"service":"Konsultatsiya","price":150000},{"service":"EKG","price":50000}]'><td><a href="#">#INV-0012</a></td><td>Ali Valiyev</td><td>30.07.2025</td><td>200,000 UZS</td><td class="text-center"><span class="badge status-paid">To'langan</span></td><td class="text-end"><button class="btn btn-light btn-sm view-invoice-btn"><i class="bi bi-eye"></i></button></td></tr><tr data-id="#INV-0011" data-patient="Sarvinoz Karimova" data-date="29.07.2025" data-status="Kutilmoqda" data-items='[{"service":"Konsultatsiya","price":150000}]'><td><a href="#">#INV-0011</a></td><td>Sarvinoz Karimova</td><td>29.07.2025</td><td>150,000 UZS</td><td class="text-center"><span class="badge status-pending">Kutilmoqda</span></td><td class="text-end"><button class="btn btn-light btn-sm view-invoice-btn"><i class="bi bi-eye"></i></button></td></tr><tr data-id="#INV-0010" data-patient="Karim Anvarov" data-date="15.06.2025" data-status="Muddati o'tgan" data-items='[{"service":"To\'liq tibbiy ko\'rik","price":500000}]'><td><a href="#">#INV-0010</a></td><td>Karim Anvarov</td><td>15.06.2025</td><td>500,000 UZS</td><td class="text-center"><span class="badge status-overdue">Muddati o'tgan</span></td><td class="text-end"><button class="btn btn-light btn-sm view-invoice-btn"><i class="bi bi-eye"></i></button></td></tr></tbody></table></div>
+                    </div>
+                    <!-- Obuna -->
+                    <div class="tab-pane fade" id="subscription">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>Joriy Obuna</h5>
+                                <div class="card bg-light border-0 p-3">
+                                    <h4 class="text-primary">PREMIUM Rejasi</h4>
+                                    <p class="mb-1"><strong>Keyingi to'lov:</strong> 01.09.2025</p>
+                                    <p class="mb-0"><strong>Summa:</strong> 1,000,000 UZS / oy</p>
+                                    <button class="btn btn-primary mt-3">Rejani o'zgartirish</button>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>To'lovlar Tarixi</h5>
+                                <ul class="list-group">
+                                    <li class="list-group-item d-flex justify-content-between"><div><strong>Avgust 2025</strong><div class="small text-muted">#PAY-12345</div></div><span class="text-success">1,000,000 UZS</span></li>
+                                    <li class="list-group-item d-flex justify-content-between"><div><strong>Iyul 2025</strong><div class="small text-muted">#PAY-12344</div></div><span class="text-success">1,000,000 UZS</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      </section>
+    </main>
+  </div>
+  <div class="mobile-overlay"></div>
+  
+  <!-- Modals -->
+  <div class="modal fade" id="addInvoiceModal" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Yangi Hisob-faktura Yaratish</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><form><div class="row"><div class="col-md-6 mb-3"><label class="form-label">Bemor</label><select class="form-select"><option selected>Tanlang...</option><option>Ali Valiyev</option><option>Sarvinoz Karimova</option></select></div><div class="col-md-6 mb-3"><label class="form-label">Sana</label><input type="date" class="form-control"></div></div><hr><h6 class="mb-3">Xizmatlar</h6><div id="invoice-items"></div><button type="button" class="btn btn-sm btn-outline-primary" id="add-item-btn"><i class="bi bi-plus-circle me-1"></i>Xizmat qo'shish</button><hr><div class="d-flex justify-content-end"><h5 class="mb-0">Jami: <span id="total-amount">0</span> UZS</h5></div></form></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bekor</button><button type="button" class="btn btn-primary">Saqlash</button></div></div></div></div>
+  <div class="modal fade" id="viewInvoiceModal" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="viewInvoiceTitle">Hisob-faktura</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body" id="viewInvoiceBody"></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Yopish</button><button type="button" class="btn btn-primary"><i class="bi bi-printer me-2"></i>Chop etish</button></div></div></div></div>
+
+</div>
+
+  <!-- Vendor JS Files -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Asosiy JS Fayli -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      "use strict";
+
+      const body = document.body;
+      const htmlEl = document.documentElement;
+      const toggleSidebarBtn = document.querySelector('.toggle-sidebar-btn');
+      const mobileOverlay = document.querySelector('.mobile-overlay');
+      const darkModeToggle = document.querySelector('#dark-mode-toggle');
+
+      // --- Sidebar Toggle Logic ---
+      if (toggleSidebarBtn) {
+        toggleSidebarBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (window.innerWidth < 1200) {
+            body.classList.toggle('sidebar-toggled');
+          } else {
+            body.classList.toggle('sidebar-collapsed');
+          }
+        });
+      }
+      
+      if (mobileOverlay) {
+          mobileOverlay.addEventListener('click', () => {
+              body.classList.remove('sidebar-toggled');
+          });
+      }
+      
+      // --- Dark Mode Logic ---
+      if(darkModeToggle) {
+          if (localStorage.getItem('theme') === 'dark') {
+              htmlEl.classList.add('dark-mode');
+              darkModeToggle.querySelector('i').classList.replace('bi-moon-stars', 'bi-sun');
+          }
+
+          darkModeToggle.addEventListener('click', (e) => {
+              e.preventDefault();
+              htmlEl.classList.toggle('dark-mode');
+              const isDark = htmlEl.classList.contains('dark-mode');
+              if (isDark) {
+                  localStorage.setItem('theme', 'dark');
+                  darkModeToggle.querySelector('i').classList.replace('bi-moon-stars', 'bi-sun');
+              } else {
+                  localStorage.setItem('theme', 'light');
+                  darkModeToggle.querySelector('i').classList.replace('bi-sun', 'bi-moon-stars');
+              }
+          });
+      }
+      
+      // --- Invoice Modal Logic ---
+      const addInvoiceModal = new bootstrap.Modal(document.getElementById('addInvoiceModal'));
+      const viewInvoiceModal = new bootstrap.Modal(document.getElementById('viewInvoiceModal'));
+      const invoiceItemsContainer = document.getElementById('invoice-items');
+      const addItemBtn = document.getElementById('add-item-btn');
+      const totalAmountEl = document.getElementById('total-amount');
+
+      const calculateTotal = () => {
+          let total = 0;
+          invoiceItemsContainer.querySelectorAll('.invoice-item').forEach(item => {
+              const price = parseFloat(item.querySelector('.item-price').value) || 0;
+              const qty = parseInt(item.querySelector('.item-qty').value) || 0;
+              total += price * qty;
+          });
+          totalAmountEl.textContent = total.toLocaleString('uz-UZ');
+      };
+
+      const addInvoiceItem = () => {
+          const itemHtml = `
+              <div class="row g-2 mb-2 invoice-item align-items-center">
+                  <div class="col-6"><input type="text" class="form-control form-control-sm item-service" placeholder="Xizmat nomi"></div>
+                  <div class="col-2"><input type="number" class="form-control form-control-sm item-qty" placeholder="Soni" value="1"></div>
+                  <div class="col-3"><input type="number" class="form-control form-control-sm item-price" placeholder="Narxi"></div>
+                  <div class="col-1 text-end"><button type="button" class="btn btn-sm btn-outline-danger remove-item-btn"><i class="bi bi-trash"></i></button></div>
+              </div>
+          `;
+          invoiceItemsContainer.insertAdjacentHTML('beforeend', itemHtml);
+      };
+
+      addItemBtn.addEventListener('click', addInvoiceItem);
+
+      invoiceItemsContainer.addEventListener('click', (e) => {
+          if (e.target.closest('.remove-item-btn')) {
+              e.target.closest('.invoice-item').remove();
+              calculateTotal();
+          }
+      });
+      
+      invoiceItemsContainer.addEventListener('input', (e) => {
+          if (e.target.classList.contains('item-qty') || e.target.classList.contains('item-price')) {
+              calculateTotal();
+          }
+      });
+
+      document.querySelectorAll('.view-invoice-btn').forEach(button => {
+          button.addEventListener('click', (e) => {
+              const row = e.currentTarget.closest('tr');
+              const data = row.dataset;
+              const items = JSON.parse(data.items);
+              let itemsHtml = '';
+              let total = 0;
+
+              items.forEach(item => {
+                  itemsHtml += `<tr><td>${item.service}</td><td class="text-end">${item.price.toLocaleString('uz-UZ')} UZS</td></tr>`;
+                  total += item.price;
+              });
+
+              document.getElementById('viewInvoiceTitle').textContent = `Hisob-faktura ${data.id}`;
+              document.getElementById('viewInvoiceBody').innerHTML = `
+                  <p><strong>Bemor:</strong> ${data.patient}</p>
+                  <p><strong>Sana:</strong> ${data.date}</p>
+                  <p><strong>Holati:</strong> <span class="badge status-${data.status.toLowerCase().replace(' ', '-')}">${data.status}</span></p>
+                  <hr>
+                  <table class="table">
+                      <thead><tr><th>Xizmat</th><th class="text-end">Narxi</th></tr></thead>
+                      <tbody>${itemsHtml}</tbody>
+                      <tfoot><tr><th class="text-end">Jami:</th><th class="text-end">${total.toLocaleString('uz-UZ')} UZS</th></tr></tfoot>
+                  </table>
+              `;
+              viewInvoiceModal.show();
+          });
+      });
+
+    });
+  </script>
+
+</body>
+</html>

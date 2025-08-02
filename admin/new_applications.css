@@ -1,0 +1,76 @@
+/* new_applications.css uchun maxsus stillar */
+
+.page-content {
+    height: calc(100vh - 70px);
+}
+
+.request-container {
+    display: flex;
+    height: 100%;
+    gap: 30px;
+}
+
+.request-list-wrapper {
+    width: 350px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.request-details-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.request-list .list-group-item {
+    cursor: pointer;
+    border-radius: 8px !important;
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+}
+
+.request-list .list-group-item.active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+}
+
+.request-list .list-group-item.active .text-muted {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 15px;
+    border-left: 2px solid var(--border-color);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-icon {
+    position: absolute;
+    left: -28px;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    border: 3px solid var(--card-background);
+}
+
+@media (max-width: 991.98px) {
+    .request-container {
+        flex-direction: column;
+    }
+    .request-list-wrapper {
+        width: 100%;
+    }
+}

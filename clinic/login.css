@@ -1,0 +1,137 @@
+/* Kirish sahifasi uchun maxsus stillar. Boshqa sahifalardan farq qiladi. */
+:root {
+    --primary-color: #4154f1;
+    --secondary-color: #012970;
+    --text-color: #344054;
+    --text-light: #667085;
+    --border-color: #eaecf0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f2f5;
+}
+
+.auth-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.auth-card {
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    background-color: #fff;
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.auth-left {
+    flex-basis: 50%;
+    background: linear-gradient(rgba(1, 41, 112, 0.8), rgba(65, 84, 241, 0.8)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.auth-left .logo span {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.auth-left h2 {
+    font-weight: 600;
+    font-size: 2.5rem;
+    margin-top: 2rem;
+}
+
+.auth-left p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.auth-right {
+    flex-basis: 50%;
+    padding: 3rem;
+}
+
+.auth-right .nav-tabs {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.auth-right .nav-tabs .nav-link {
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: var(--text-light);
+    font-weight: 600;
+    padding: 1rem;
+}
+
+.auth-right .nav-tabs .nav-link.active {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.form-control {
+    padding: 0.9rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(65, 84, 241, 0.1);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    padding: 0.9rem 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.social-login-divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--text-light);
+    font-size: 13px;
+}
+
+.social-login-divider::before,
+.social-login-divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.social-login-divider:not(:empty)::before {
+    margin-right: .5em;
+}
+
+.social-login-divider:not(:empty)::after {
+    margin-left: .5em;
+}
+
+@media (max-width: 991.98px) {
+    .auth-left {
+        display: none;
+    }
+    .auth-right {
+        flex-basis: 100%;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .auth-right {
+        padding: 2rem;
+    }
+}

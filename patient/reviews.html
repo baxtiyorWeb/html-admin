@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Izohlar va Baholar - MedMapp.uz</title>
+  <meta content="Klinikalar va shifokorlar haqida bemorlarning fikrlari va baholari" name="description">
+  <meta content="medmap, patient, reviews, feedback, rating" name="keywords">
+
+  <!-- Favicons -->
+  <link href="https://placehold.co/32x32/4154f1/ffffff?text=M" rel="icon">
+  <link href="https://placehold.co/180x180/4154f1/ffffff?text=M" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- 1. Umumiy stillar (saytning hamma sahifasi uchun) -->
+  <link rel="stylesheet" href="style.css">
+  <!-- 2. Shu sahifaga xos bo'lgan maxsus stillar -->
+  <link rel="stylesheet" href="reviews.css">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+    <a href="#" class="logo d-flex align-items-center text-decoration-none">
+        <img src="../images/MedMapp_Logo_shaffof.png" height="66" alt="Logo">
+    </a>
+    <ul class="sidebar-nav nav flex-column mt-4">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html"><i class="bi bi-grid-1x2-fill"></i><span data-lang-key="dashboard">Boshqaruv paneli</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="patient_profile.html"><i class="bi bi-person-fill"></i><span data-lang-key="my_profile">Mening profilim</span></a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="patient_queue.html"><i class="bi bi-calendar-check-fill"></i><span data-lang-key="my_appointments">Mening yozuvlarim</span></a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="analysis.html"><i class="bi bi-file-earmark-medical-fill"></i><span data-lang-key="lab_results">Tahlil natijalari</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="patient_consultation.html"><i class="bi bi-chat-dots-fill"></i><span data-lang-key="consultations">Konsultatsiyalar</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="payments.html"><i class="bi bi-credit-card-fill"></i><span data-lang-key="payments">To'lovlar</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="reviews.html"><i class="bi bi-star-fill"></i><span data-lang-key="my_reviews">Izohlarim</span></a>
+        </li>
+      </ul>
+  </aside><!-- End Sidebar-->
+
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+  <main class="main-content">
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="header-left d-flex align-items-center">
+            <button class="btn px-1 me-2" id="sidebarToggleBtn" type="button"><i class="bi bi-list fs-3"></i></button>
+            <div class="pagetitle d-none d-md-block">
+                <h1 data-lang-key="reviews_title">Izohlar va Baholar</h1>
+            </div>
+        </div>
+        <div class="header-right d-flex align-items-center">
+             <!-- Language Dropdown -->
+            <div class="dropdown lang-dropdown me-2">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-translate fs-5"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item d-flex align-items-center" href="#" data-lang="uz"><i class="bi bi-flag-fill me-2"></i> O'zbekcha</a></li>
+                <li><a class="dropdown-item d-flex align-items-center" href="#" data-lang="ru"><i class="bi bi-flag-fill me-2"></i> Русский</a></li>
+                <li><a class="dropdown-item d-flex align-items-center" href="#" data-lang="en"><i class="bi bi-flag-fill me-2"></i> English</a></li>
+              </ul>
+            </div>
+
+            <button class="btn nav-link me-2" id="darkModeToggle"><i class="bi bi-moon-stars-fill fs-5"></i></button>
+            <a href="#" class="nav-link me-3"><i class="bi bi-bell fs-5"></i></a>
+            <!-- Profile Dropdown -->
+            <div class="dropdown profile-dropdown">
+                <a href="#" class="d-flex align-items-center text-decoration-none" data-bs-toggle="dropdown">
+                    <img src="https://placehold.co/40x40/EFEFEF/333333?text=A" alt="Profile" class="rounded-circle" id="profileImage">
+                    <div class="ms-2 d-none d-md-block">
+                        <div class="fw-bold" id="profileName">Ali Valiyev</div>
+                        <small class="text-muted" data-lang-key="patient">Bemor</small>
+                    </div>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item d-flex align-items-center" href="#" data-lang-key="settings"><i class="bi bi-gear-fill me-2 text-secondary"></i>Sozlamalar</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item d-flex align-items-center text-danger" href="#" data-lang-key="logout"><i class="bi bi-box-arrow-right me-2"></i>Chiqish</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-body">
+        <div class="pagetitle mb-4">
+            <h1 data-lang-key="reviews_title">Izohlar va Baholar</h1>
+            <p class="text-muted mb-0" data-lang-key="reviews_subtitle">Bemorlarning klinika va shifokorlar haqidagi fikrlari.</p>
+        </div>
+
+        <div class="row">
+            <!-- Rating Summary -->
+            <div class="col-lg-4">
+                <div class="info-card rating-summary text-center">
+                    <div class="card-body">
+                        <h6 class="text-muted">AKFA MEDLINE KLINIKASI</h6>
+                        <div class="overall-rating">4.8</div>
+                        <div class="star-rating fs-5 mb-2">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                        </div>
+                        <p class="text-muted" data-lang-key="based_on_reviews">152 ta izoh asosida</p>
+                        <hr>
+                        <div class="rating-breakdown text-start">
+                            <div class="d-flex align-items-center mb-1">
+                                <div class="me-2">5 <i class="bi bi-star-fill"></i></div>
+                                <div class="progress flex-grow-1"><div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div></div>
+                            </div>
+                            <div class="d-flex align-items-center mb-1">
+                                <div class="me-2">4 <i class="bi bi-star-fill"></i></div>
+                                <div class="progress flex-grow-1"><div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div></div>
+                            </div>
+                            <div class="d-flex align-items-center mb-1">
+                                <div class="me-2">3 <i class="bi bi-star-fill"></i></div>
+                                <div class="progress flex-grow-1"><div class="progress-bar" role="progressbar" style="width: 3%" aria-valuenow="3" aria-valuemin="0" aria-valuemax="100"></div></div>
+                            </div>
+                            <div class="d-flex align-items-center mb-1">
+                                <div class="me-2">2 <i class="bi bi-star-fill"></i></div>
+                                <div class="progress flex-grow-1"><div class="progress-bar" role="progressbar" style="width: 1%" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100"></div></div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="me-2">1 <i class="bi bi-star-fill"></i></div>
+                                <div class="progress flex-grow-1"><div class="progress-bar" role="progressbar" style="width: 1%" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reviews List -->
+            <div class="col-lg-8">
+                <div class="info-card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 data-lang-key="all_reviews">Barcha izohlar (152)</h5>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reviewModal"><i class="bi bi-pencil-square me-2"></i><span data-lang-key="leave_review">Izoh qoldirish</span></button>
+                    </div>
+                    <div class="card-body p-0">
+                        <!-- Review 1 (with video) -->
+                        <div class="review-card p-4">
+                            <div class="d-flex mb-2">
+                                <img src="https://placehold.co/48x48/EFEFEF/333333?text=S" class="rounded-circle avatar me-3" alt="Avatar">
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-0">Sarvinoz Karimova</h6>
+                                    <div class="star-rating small"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                                </div>
+                                <small class="text-muted" data-lang-key="days_ago">2 kun oldin</small>
+                            </div>
+                            <p data-lang-key="review_1_text">Juda ajoyib klinika, shifokorlar juda professional. Ayniqsa, Dr. Karim Anvarovga alohida rahmat. Davolanish jarayoni yuqori saviyada tashkil etilgan.</p>
+                            <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400" alt="Video review thumbnail" class="video-review">
+                        </div>
+                        <!-- Review 2 -->
+                        <div class="review-card p-4">
+                            <div class="d-flex mb-2">
+                                <img src="https://placehold.co/48x48/EFEFEF/333333?text=A" class="rounded-circle avatar me-3" alt="Avatar">
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-0">Ali Valiyev</h6>
+                                    <div class="star-rating small"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></div>
+                                </div>
+                                <small class="text-muted" data-lang-key="week_ago">1 hafta oldin</small>
+                            </div>
+                            <p data-lang-key="review_2_text">Xizmat ko'rsatish sifati yaxshi, lekin ro'yxatdan o'tish joyida biroz kutib qoldim. Umuman olganda, tavsiya qilaman.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</div>
+
+<!-- Add Review Modal -->
+<div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="reviewModalLabel" data-lang-key="modal_review_title">Fikr bildirish</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label class="form-label" data-lang-key="your_rating">Bahoyingiz</label>
+            <div class="modal-rating-stars text-secondary">
+                <i class="bi bi-star" data-value="1"></i><i class="bi bi-star" data-value="2"></i><i class="bi bi-star" data-value="3"></i><i class="bi bi-star" data-value="4"></i><i class="bi bi-star" data-value="5"></i>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="reviewText" class="form-label" data-lang-key="your_comment">Izohingiz</label>
+            <textarea class="form-control" id="reviewText" rows="4" data-lang-key-placeholder="review_placeholder" placeholder="Klinika va shifokorlar haqidagi fikrlaringiz..."></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="videoFile" class="form-label" data-lang-key="video_feedback">Video-mulohaza (ixtiyoriy)</label>
+            <input class="form-control" type="file" id="videoFile" accept="video/*">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light border" data-bs-dismiss="modal" data-lang-key="close">Yopish</button>
+        <button type="button" class="btn btn-primary" data-lang-key="submit">Yuborish</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Vendor JS Files -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          // --- Translations ---
+          const translations = {
+              'uz': {
+                  dashboard: "Boshqaruv paneli", my_profile: "Mening profilim", my_appointments: "Mening yozuvlarim", lab_results: "Tahlil natijalari", consultations: "Konsultatsiyalar", extra_services: "Qo'shimcha xizmatlar", my_reviews: "Izohlarim", payments: "To'lovlar",
+                  reviews_title: "Izohlar va Baholar", patient: "Bemor", settings: "Sozlamalar", logout: "Chiqish",
+                  reviews_subtitle: "Bemorlarning klinika va shifokorlar haqidagi fikrlari.",
+                  based_on_reviews: "152 ta izoh asosida", all_reviews: "Barcha izohlar (152)", leave_review: "Izoh qoldirish",
+                  days_ago: "2 kun oldin", week_ago: "1 hafta oldin",
+                  review_1_text: "Juda ajoyib klinika, shifokorlar juda professional. Ayniqsa, Dr. Karim Anvarovga alohida rahmat. Davolanish jarayoni yuqori saviyada tashkil etilgan.",
+                  review_2_text: "Xizmat ko'rsatish sifati yaxshi, lekin ro'yxatdan o'tish joyida biroz kutib qoldim. Umuman olganda, tavsiya qilaman.",
+                  modal_review_title: "Fikr bildirish", your_rating: "Bahoyingiz", your_comment: "Izohingiz",
+                  review_placeholder: "Klinika va shifokorlar haqidagi fikrlaringiz...", video_feedback: "Video-mulohaza (ixtiyoriy)",
+                  close: "Yopish", submit: "Yuborish"
+              },
+              'ru': {
+                  dashboard: "Панель управления", my_profile: "Мой профиль", my_appointments: "Мои записи", lab_results: "Результаты анализов", consultations: "Консультации", extra_services: "Доп. услуги", my_reviews: "Мои отзывы", payments: "Платежи",
+                  reviews_title: "Отзывы и Оценки", patient: "Пациент", settings: "Настройки", logout: "Выйти",
+                  reviews_subtitle: "Мнения пациентов о клиниках и врачах.",
+                  based_on_reviews: "На основе 152 отзывов", all_reviews: "Все отзывы (152)", leave_review: "Оставить отзыв",
+                  days_ago: "2 дня назад", week_ago: "1 неделю назад",
+                  review_1_text: "Отличная клиника, врачи очень профессиональные. Отдельное спасибо доктору Кариму Анварову. Процесс лечения организован на высшем уровне.",
+                  review_2_text: "Качество обслуживания хорошее, но пришлось немного подождать в регистратуре. В целом, рекомендую.",
+                  modal_review_title: "Оставить отзыв", your_rating: "Ваша оценка", your_comment: "Ваш комментарий",
+                  review_placeholder: "Ваши мысли о клинике и врачах...", video_feedback: "Видео-отзыв (необязательно)",
+                  close: "Закрыть", submit: "Отправить"
+              },
+              'en': {
+                  dashboard: "Dashboard", my_profile: "My Profile", my_appointments: "My Appointments", lab_results: "Lab Results", consultations: "Consultations", extra_services: "Extra Services", my_reviews: "My Reviews", payments: "Payments",
+                  reviews_title: "Reviews and Ratings", patient: "Patient", settings: "Settings", logout: "Logout",
+                  reviews_subtitle: "Patients' feedback about clinics and doctors.",
+                  based_on_reviews: "Based on 152 reviews", all_reviews: "All reviews (152)", leave_review: "Leave a review",
+                  days_ago: "2 days ago", week_ago: "1 week ago",
+                  review_1_text: "Excellent clinic, the doctors are very professional. Special thanks to Dr. Karim Anvarov. The treatment process was organized at the highest level.",
+                  review_2_text: "The quality of service is good, but I had to wait a bit at the registration. Overall, I recommend it.",
+                  modal_review_title: "Leave a review", your_rating: "Your rating", your_comment: "Your comment",
+                  review_placeholder: "Your thoughts on the clinic and doctors...", video_feedback: "Video feedback (optional)",
+                  close: "Close", submit: "Submit"
+              }
+          };
+
+          const setLanguage = (lang) => {
+              document.documentElement.lang = lang;
+              localStorage.setItem('language', lang);
+              document.querySelectorAll('[data-lang-key]').forEach(element => {
+                  const key = element.getAttribute('data-lang-key');
+                  const icon = element.querySelector('i');
+                  if (translations[lang] && translations[lang][key]) {
+                      const translationText = translations[lang][key];
+                      if (icon) {
+                          element.innerHTML = icon.outerHTML + " " + translationText;
+                      } else {
+                          element.innerHTML = translationText;
+                      }
+                  }
+              });
+               document.querySelectorAll('[data-lang-key-placeholder]').forEach(element => {
+                  const key = element.getAttribute('data-lang-key-placeholder');
+                  if (translations[lang] && translations[lang][key]) {
+                      element.placeholder = translations[lang][key];
+                  }
+              });
+          };
+
+          // --- UI Elements ---
+          const sidebarToggleBtn = document.getElementById('sidebarToggleBtn');
+          const sidebarBackdrop = document.getElementById('sidebarBackdrop');
+          const darkModeToggle = document.getElementById('darkModeToggle');
+          const langLinks = document.querySelectorAll('.lang-dropdown .dropdown-item');
+          const ratingStars = document.querySelectorAll('.modal-rating-stars .bi');
+
+          // --- Sidebar Logic ---
+          const toggleSidebar = () => {
+              const isDesktop = window.innerWidth >= 992;
+              if (isDesktop) {
+                  document.body.classList.toggle('sidebar-collapsed');
+              } else {
+                  document.body.classList.toggle('sidebar-open');
+              }
+          };
+
+          if (sidebarToggleBtn) {
+              sidebarToggleBtn.addEventListener('click', toggleSidebar);
+          }
+          if (sidebarBackdrop) {
+              sidebarBackdrop.addEventListener('click', toggleSidebar);
+          }
+          
+          // --- Dark Mode & Language Logic ---
+          if (darkModeToggle) {
+              darkModeToggle.addEventListener('click', () => {
+                  document.body.classList.toggle('dark-mode');
+                  const icon = darkModeToggle.querySelector('i');
+                  icon.classList.toggle('bi-moon-stars-fill');
+                  icon.classList.toggle('bi-sun-fill');
+              });
+          }
+          langLinks.forEach(link => {
+              link.addEventListener('click', (e) => {
+                  e.preventDefault();
+                  const selectedLang = e.currentTarget.getAttribute('data-lang');
+                  setLanguage(selectedLang);
+              });
+          });
+
+          // --- Modal Star Rating Logic ---
+          ratingStars.forEach(star => {
+              star.addEventListener('mouseover', (e) => {
+                  const rating = e.target.dataset.value;
+                  ratingStars.forEach(s => {
+                      s.classList.remove('bi-star-fill');
+                      s.classList.add('bi-star');
+                      s.style.color = '';
+                      if (s.dataset.value <= rating) {
+                          s.classList.add('bi-star-fill');
+                          s.classList.remove('bi-star');
+                          s.style.color = 'var(--star-color)';
+                      }
+                  });
+              });
+              star.addEventListener('click', (e) => {
+                  const rating = e.target.dataset.value;
+                  // Here you can save the rating value
+                  console.log(`Rated: ${rating} stars`);
+              });
+          });
+          
+          // --- Initial Load ---
+          const savedLang = localStorage.getItem('language') || 'uz';
+          setLanguage(savedLang);
+          
+          document.getElementById('profileName').textContent = "Ali Valiyev";
+          document.getElementById('profileImage').src = `https://placehold.co/40x40/EFEFEF/333333?text=A`;
+          
+          if (window.innerWidth < 992) {
+              document.body.classList.add('sidebar-collapsed');
+          }
+      });
+  </script>
+</body>
+</html>

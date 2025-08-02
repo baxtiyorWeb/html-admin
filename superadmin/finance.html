@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Moliya - Super Admin Paneli</title>
+  <meta content="MedMapp.uz platformasi moliyaviy operatsiyalarini boshqarish" name="description">
+  <meta content="medmap, superadmin, finance, transactions, payments" name="keywords">
+
+  <!-- Favicons -->
+  <link href="https://placehold.co/32x32/012970/ffffff?text=S" rel="icon">
+  <link href="https://placehold.co/180x180/012970/ffffff?text=S" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- 1. Umumiy stillar (saytning hamma sahifasi uchun) -->
+  <link rel="stylesheet" href="style.css">
+  <!-- 2. Shu sahifaga xos bo'lgan maxsus stillar -->
+  <link rel="stylesheet" href="finance.css">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+    <a href="index.html" class="logo d-flex align-items-center">
+      <img src="https://placehold.co/40x40/ffffff/012970?text=S" alt="SuperAdmin Icon" class="logo-icon">
+      <span class="logo-text">Super Admin</span>
+    </a>
+    <ul class="sidebar-nav nav flex-column mt-4">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html"><i class="bi bi-speedometer2"></i><span>Boshqaruv Paneli</span></a>
+        </li>
+        <li class="nav-heading">Boshqaruv</li>
+        <li class="nav-item">
+          <a class="nav-link" href="users.html"><i class="bi bi-people-fill"></i><span>Foydalanuvchilar</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="platform.html"><i class="bi bi-layout-text-window-reverse"></i><span>Platforma Kontenti</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="finance.html"><i class="bi bi-cash-coin"></i><span>Moliya</span></a>
+        </li>
+        <li class="nav-heading">Tizim</li>
+        <li class="nav-item">
+          <a class="nav-link" href="analytics.html"><i class="bi bi-bar-chart-line-fill"></i><span>Analitika</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="settings.html"><i class="bi bi-sliders"></i><span>Tizim Sozlamalari</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="logs.html"><i class="bi bi-journal-text"></i><span>Loglar</span></a>
+        </li>
+      </ul>
+    <div class="logout">
+        <a class="nav-link" href="login.html"><i class="bi bi-box-arrow-left"></i><span>Chiqish</span></a>
+    </div>
+  </aside><!-- End Sidebar-->
+
+  <div class="main-content">
+    <!-- ======= Header ======= -->
+    <header class="header d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center">
+            <i class="bi bi-list toggle-sidebar-btn me-3 fs-4"></i>
+        </div>
+      <nav class="header-nav d-flex align-items-center">
+          <a class="nav-link nav-icon" id="dark-mode-toggle" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tungi/Kunduzgi rejim">
+              <i class="bi bi-moon-stars"></i>
+          </a>
+          <div class="nav-item dropdown">
+            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown" aria-expanded="false" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Til">
+                <i class="bi bi-translate"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item active" href="#">O'zbekcha (UZ)</a></li>
+                <li><a class="dropdown-item" href="#">Русский (RU)</a></li>
+            </ul>
+          </div>
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Bildirishnomalar"><i class="bi bi-bell"></i></a>
+          <div class="vr h-50 d-none d-sm-block mx-2"></div>
+          <div class="nav-item dropdown">
+            <a class="nav-link nav-profile d-flex align-items-center ps-sm-2" href="#" data-bs-toggle="dropdown">
+              <img src="https://placehold.co/40x40/012970/ffffff?text=SA" alt="Profile" class="rounded-circle">
+              <div class="d-none d-md-flex flex-column align-items-start ms-2">
+                  <span class="fw-bold">Super Admin</span>
+                  <span class="text-muted small">superuser@MedMapp.uz</span>
+              </div>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+              <li> <a class="dropdown-item d-flex align-items-center" href="#"> <i class="bi bi-person"></i> <span>Profil</span> </a> </li>
+              <li> <hr class="dropdown-divider"> </li>
+              <li> <a class="dropdown-item d-flex align-items-center" href="#"> <i class="bi bi-box-arrow-right"></i> <span>Chiqish</span> </a> </li>
+            </ul>
+          </div>
+      </nav>
+    </header><!-- End Header -->
+
+    <main class="page-content">
+      <section class="section finance">
+        
+        <div class="pagetitle mb-4">
+            <h1>Moliya va Tranzaksiyalar</h1>
+            <p class="text-muted mb-0">Platformaning moliyaviy oqimlarini kuzatish va boshqarish.</p>
+        </div>
+          
+        <div class="row">
+          <!-- Info Cards -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="info-card">
+              <h6 class="text-muted mb-2">Jami Daromad</h6>
+              <h3 class="fw-bold mb-0">$250,000</h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="info-card">
+              <h6 class="text-muted mb-2">Joriy Oy Daromadi</h6>
+              <h3 class="fw-bold mb-0">$25,464</h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="info-card">
+              <h6 class="text-muted mb-2">Kutilayotgan To'lovlar</h6>
+              <h3 class="fw-bold mb-0">$1,250</h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="info-card">
+              <h6 class="text-muted mb-2">Faol Obunalar</h6>
+              <h3 class="fw-bold mb-0">248</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="card main-card">
+            <div class="card-header">
+                <div class="w-100 w-sm-auto flex-grow-1" style="max-width: 350px;">
+                    <div class="input-group">
+                        <span class="input-group-text bg-transparent border-end-0"><i class="bi bi-search"></i></span>
+                        <input type="text" class="form-control border-start-0" placeholder="Klinika, ID bo'yicha qidirish...">
+                    </div>
+                </div>
+                <div class="d-flex gap-2 flex-wrap">
+                     <input type="date" class="form-control" style="max-width: 150px;">
+                     <div class="dropdown">
+                        <button class="btn btn-light border dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="bi bi-filter me-2"></i>Holati
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">To'langan</a></li>
+                          <li><a class="dropdown-item" href="#">Kutilmoqda</a></li>
+                          <li><a class="dropdown-item" href="#">Bekor qilingan</a></li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-outline-secondary"><i class="bi bi-download me-2"></i>Hisobot</button>
+                </div>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Tranzaksiya ID</th>
+                                <th>Klinika</th>
+                                <th>Sana</th>
+                                <th>Summa</th>
+                                <th class="text-center">Holati</th>
+                                <th class="text-end">Amallar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="#">#TRX-85472</a></td>
+                                <td><strong>Shifo Nur Med</strong></td>
+                                <td>28.07.2025</td>
+                                <td><strong class="text-success">+ $100.00</strong></td>
+                                <td class="text-center"><span class="badge status-paid">To'langan</span></td>
+                                <td class="text-end"><button class="btn btn-light btn-sm" data-bs-toggle="tooltip" title="Tafsilotlar"><i class="bi bi-eye"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">#TRX-85471</a></td>
+                                <td><strong>Akfa Medline</strong></td>
+                                <td>27.07.2025</td>
+                                <td><strong class="text-success">+ $150.00</strong></td>
+                                <td class="text-center"><span class="badge status-paid">To'langan</span></td>
+                                <td class="text-end"><button class="btn btn-light btn-sm" data-bs-toggle="tooltip" title="Tafsilotlar"><i class="bi bi-eye"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">#TRX-85470</a></td>
+                                <td><strong>Darmon Servis</strong></td>
+                                <td>26.07.2025</td>
+                                <td><strong class="text-warning">$100.00</strong></td>
+                                <td class="text-center"><span class="badge status-pending">Kutilmoqda</span></td>
+                                <td class="text-end"><button class="btn btn-light btn-sm" data-bs-toggle="tooltip" title="Tafsilotlar"><i class="bi bi-eye"></i></button></td>
+                            </tr>
+                             <tr>
+                                <td><a href="#">#TRX-85469</a></td>
+                                <td><strong>Salomatlik Markazi</strong></td>
+                                <td>25.07.2025</td>
+                                <td><strong class="text-danger">- $50.00</strong></td>
+                                <td class="text-center"><span class="badge status-cancelled">Bekor qilingan</span></td>
+                                <td class="text-end"><button class="btn btn-light btn-sm" data-bs-toggle="tooltip" title="Tafsilotlar"><i class="bi bi-eye"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                 <!-- Pagination -->
+                <nav class="d-flex justify-content-between align-items-center p-3">
+                   <span class="text-muted small">Natijalar: 1-4 dan 1,289 ta</span>
+                   <ul class="pagination mb-0">
+                        <li class="page-item disabled"><a class="page-link" href="#">Oldingisi</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Keyingisi</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <div class="mobile-overlay"></div>
+
+</div>
+
+  <!-- Vendor JS Files -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Asosiy JS Fayli -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      "use strict";
+
+      const body = document.body;
+      const htmlEl = document.documentElement;
+      const toggleSidebarBtn = document.querySelector('.toggle-sidebar-btn');
+      const mobileOverlay = document.querySelector('.mobile-overlay');
+      const darkModeToggle = document.querySelector('#dark-mode-toggle');
+
+      // --- Sidebar Toggle Logic ---
+      if (toggleSidebarBtn) {
+        toggleSidebarBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (window.innerWidth < 1200) {
+            body.classList.toggle('sidebar-toggled');
+          } else {
+            body.classList.toggle('sidebar-collapsed');
+          }
+        });
+      }
+      
+      if (mobileOverlay) {
+          mobileOverlay.addEventListener('click', () => {
+              body.classList.remove('sidebar-toggled');
+          });
+      }
+      
+      // --- Dark Mode Logic ---
+      if(darkModeToggle) {
+          if (localStorage.getItem('theme') === 'dark') {
+              htmlEl.classList.add('dark-mode');
+              darkModeToggle.querySelector('i').classList.replace('bi-moon-stars', 'bi-sun');
+          }
+
+          darkModeToggle.addEventListener('click', (e) => {
+              e.preventDefault();
+              htmlEl.classList.toggle('dark-mode');
+              const isDark = htmlEl.classList.contains('dark-mode');
+              if (isDark) {
+                  localStorage.setItem('theme', 'dark');
+                  darkModeToggle.querySelector('i').classList.replace('bi-moon-stars', 'bi-sun');
+              } else {
+                  localStorage.setItem('theme', 'light');
+                  darkModeToggle.querySelector('i').classList.replace('bi-sun', 'bi-moon-stars');
+              }
+          });
+      }
+
+      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+      });
+      
+    });
+  </script>
+
+</body>
+</html>

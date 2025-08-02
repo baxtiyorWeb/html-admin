@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Bajarilgan Murojaatlar - Operatsion Panel</title>
+  <meta content="Bajarilgan va rad etilgan murojaatlar arxivi" name="description">
+  <meta content="medmap, operator, call center, admin, archive, requests" name="keywords">
+
+  <!-- Favicons -->
+  <link href="https://placehold.co/32x32/012970/ffffff?text=O" rel="icon">
+  <link href="https://placehold.co/180x180/012970/ffffff?text=O" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Vendor CSS Files -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+  <!-- 1. Umumiy stillar (saytning hamma sahifasi uchun) -->
+  <link rel="stylesheet" href="style.css">
+  <!-- 2. Shu sahifaga xos bo'lgan maxsus stillar -->
+  <link rel="stylesheet" href="complete_applications.css">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+    <a href="index.html" class="logo d-flex align-items-center">
+      <!-- Kengaytirilgan holat uchun logo -->
+      <img src="../images/MedMapp_Logo_shaffof.png" alt="MedMap Logo" class="logo-full">
+      <!-- Qisqartirilgan holat uchun logo -->
+      <img src="../images/favicon.png" alt="MedMap Icon" class="logo-icon">
+    </a>
+    <div class="sidebar-nav nav flex-column mt-4 flex-grow-1">
+      <a class="nav-link" href="index.html"><i class="bi bi-grid-1x2-fill"></i><span>Boshqaruv Paneli</span></a>
+      <a class="nav-link" href="new_applications.html"><i class="bi bi-telephone-inbound"></i><span>Yangi Murojaatlar</span></a>
+      <a class="nav-link active" href="complete_applications.html"><i class="bi bi-check2-circle"></i><span>Bajarilgan Murojaatlar</span></a>
+      <a class="nav-link" href="clinics.html"><i class="bi bi-building"></i><span>Klinikalar Bazasi</span></a>
+      <a class="nav-link" href="finance.html"><i class="bi bi-cash-coin"></i><span>Moliya</span></a>
+    </div>
+    <div class="logout">
+        <a class="nav-link" href="#"><i class="bi bi-box-arrow-left"></i><span>Chiqish</span></a>
+    </div>
+  </aside><!-- End Sidebar-->
+
+  <div class="main-content">
+    <!-- ======= Header ======= -->
+    <header class="header d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center">
+            <i class="bi bi-list toggle-sidebar-btn me-3 fs-4"></i>
+        </div>
+      <nav class="header-nav d-flex align-items-center">
+          <a class="nav-link nav-icon" id="dark-mode-toggle" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tungi/Kunduzgi rejim">
+              <i class="bi bi-moon-stars"></i>
+          </a>
+          <div class="nav-item dropdown">
+            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown" aria-expanded="false" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Til">
+                <i class="bi bi-translate"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item active" href="#">O'zbekcha (UZ)</a></li>
+                <li><a class="dropdown-item" href="#">Русский (RU)</a></li>
+            </ul>
+          </div>
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Bildirishnomalar"><i class="bi bi-bell"></i></a>
+          <div class="vr h-50 d-none d-sm-block mx-2"></div>
+          <div class="nav-item dropdown">
+            <a class="nav-link nav-profile d-flex align-items-center ps-sm-2" href="#" data-bs-toggle="dropdown">
+              <img src="https://placehold.co/40x40/012970/ffffff?text=O" alt="Profile" class="rounded-circle">
+              <div class="d-none d-md-flex flex-column align-items-start ms-2">
+                  <span class="fw-bold">Operator #1</span>
+                  <span class="text-muted small">callcenter@medmap.uz</span>
+              </div>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+              <li> <a class="dropdown-item d-flex align-items-center" href="#"> <i class="bi bi-person"></i> <span>Profil</span> </a> </li>
+              <li> <hr class="dropdown-divider"> </li>
+              <li> <a class="dropdown-item d-flex align-items-center" href="#"> <i class="bi bi-box-arrow-right"></i> <span>Chiqish</span> </a> </li>
+            </ul>
+          </div>
+      </nav>
+    </header><!-- End Header -->
+
+    <main class="page-content">
+      <section class="section completed-requests">
+        
+        <div class="pagetitle mb-4">
+            <h1>Bajarilgan Murojaatlar</h1>
+            <p class="text-muted mb-0">Tugatilgan va rad etilgan murojaatlar arxivi.</p>
+        </div>
+          
+        <div class="card main-card">
+            <div class="card-header">
+                <div class="w-100 w-sm-auto flex-grow-1" style="max-width: 350px;">
+                    <div class="input-group">
+                        <span class="input-group-text bg-transparent border-end-0"><i class="bi bi-search"></i></span>
+                        <input type="text" class="form-control border-start-0" placeholder="Bemor, klinika bo'yicha qidirish...">
+                    </div>
+                </div>
+                <div class="d-flex gap-2 flex-wrap">
+                     <input type="text" class="form-control" id="date-range-picker" placeholder="Sana oralig'ini tanlang" style="width: 220px;">
+                     <div class="dropdown">
+                        <button class="btn btn-light border dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="bi bi-filter me-2"></i>Holati
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Tugatilgan</a></li>
+                          <li><a class="dropdown-item" href="#">Rad etilgan</a></li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-outline-secondary"><i class="bi bi-download me-2"></i>Eksport</button>
+                </div>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Bemor</th>
+                                <th>Telefon</th>
+                                <th>Yakuniy Xulosa</th>
+                                <th>Klinika</th>
+                                <th class="text-center">Holati</th>
+                                <th class="text-end">Amallar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Jamila Ahmedova</strong></td>
+                                <td>+998 91 234-56-78</td>
+                                <td class="text-truncate" style="max-width: 200px;">Bemorga uchrashuv belgilandi</td>
+                                <td>Darmon Servis</td>
+                                <td class="text-center"><span class="badge status-closed">Tugatilgan</span></td>
+                                <td class="text-end"><button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#viewRequestModal"><i class="bi bi-eye"></i></button></td>
+                            </tr>
+                             <tr>
+                                <td><strong>Botir Zokirov</strong></td>
+                                <td>+998 98 765-43-21</td>
+                                <td class="text-truncate" style="max-width: 200px;">Klinika javob bermadi</td>
+                                <td>Shifo Nur Med</td>
+                                <td class="text-center"><span class="badge status-rejected">Rad etilgan</span></td>
+                                <td class="text-end"><button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#viewRequestModal"><i class="bi bi-eye"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                 <!-- Pagination -->
+                <nav class="d-flex justify-content-between align-items-center p-3">
+                   <span class="text-muted small">Natijalar: 1-2 dan 458 ta</span>
+                   <ul class="pagination mb-0">
+                        <li class="page-item disabled"><a class="page-link" href="#">Oldingisi</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Keyingisi</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <div class="mobile-overlay"></div>
+
+  <!-- Murojaat Tafsilotlari Modal -->
+  <div class="modal fade" id="viewRequestModal" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Murojaat #1050 Tafsilotlari</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><p><strong>Bemor:</strong> Jamila Ahmedova</p><p><strong>Telefon:</strong> +998 91 234-56-78</p><p><strong>Shikoyati:</strong> Umumiy holsizlik, tez-tez charchash.</p><hr><p><strong>Yakuniy xulosa:</strong> Bemorga 31.07.2025 sanasiga, soat 15:00 ga "Darmon Servis" klinikasida Dr. Anvarovga uchrashuv belgilandi. Bemorga xabar berildi.</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Yopish</button></div></div></div></div>
+
+</div>
+
+  <!-- Vendor JS Files -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  
+  <!-- Asosiy JS Fayli -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      "use strict";
+
+      const body = document.body;
+      const htmlEl = document.documentElement;
+      const toggleSidebarBtn = document.querySelector('.toggle-sidebar-btn');
+      const mobileOverlay = document.querySelector('.mobile-overlay');
+      const darkModeToggle = document.querySelector('#dark-mode-toggle');
+
+      // --- Sidebar Toggle Logic ---
+      if (toggleSidebarBtn) {
+        toggleSidebarBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (window.innerWidth < 1200) {
+            body.classList.toggle('sidebar-toggled');
+          } else {
+            body.classList.toggle('sidebar-collapsed');
+          }
+        });
+      }
+      
+      if (mobileOverlay) {
+          mobileOverlay.addEventListener('click', () => {
+              body.classList.remove('sidebar-toggled');
+          });
+      }
+      
+      // --- Dark Mode Logic ---
+      if(darkModeToggle) {
+          if (localStorage.getItem('theme') === 'dark') {
+              htmlEl.classList.add('dark-mode');
+              darkModeToggle.querySelector('i').classList.replace('bi-moon-stars', 'bi-sun');
+          }
+
+          darkModeToggle.addEventListener('click', (e) => {
+              e.preventDefault();
+              htmlEl.classList.toggle('dark-mode');
+              const isDark = htmlEl.classList.contains('dark-mode');
+              if (isDark) {
+                  localStorage.setItem('theme', 'dark');
+                  darkModeToggle.querySelector('i').classList.replace('bi-moon-stars', 'bi-sun');
+              } else {
+                  localStorage.setItem('theme', 'light');
+                  darkModeToggle.querySelector('i').classList.replace('bi-sun', 'bi-moon-stars');
+              }
+          });
+      }
+
+      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+      });
+      
+      // Date Range Picker
+      flatpickr("#date-range-picker", {
+          mode: "range",
+          dateFormat: "d.m.Y",
+      });
+    });
+  </script>
+
+</body>
+</html>

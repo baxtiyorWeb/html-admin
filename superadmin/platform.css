@@ -1,0 +1,11 @@
+/* platform.css uchun maxsus stillar */
+.empty-state {
+    padding: 4rem;
+    text-align: center;
+}
+
+.empty-state i {
+    font-size: 3rem;
+    color: var(--text-light);
+    opacity: 0.5;
+}

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Operatsion Boshqaruv Paneli - MedMap.uz</title>
+  <meta content="Bemorlar murojaatlarini qabul qilish, klinikalarga yo'naltirish va jarayonni boshqarish" name="description">
+  <meta content="medmap, operator, call center, admin, dashboard, requests" name="keywords">
+
+  <!-- Favicons -->
+  <link href="https://placehold.co/32x32/012970/ffffff?text=O" rel="icon">
+  <link href="https://placehold.co/180x180/012970/ffffff?text=O" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- 1. Umumiy stillar (saytning hamma sahifasi uchun) -->
+  <link rel="stylesheet" href="style.css">
+  <!-- 2. Shu sahifaga xos bo'lgan maxsus stillar -->
+  <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+    <a href="index.html" class="logo d-flex align-items-center">
+      <!-- Kengaytirilgan holat uchun logo -->
+      <img src="../images/MedMapp_Logo_shaffof.png" alt="MedMap Logo" class="logo-full">
+      <!-- Qisqartirilgan holat uchun logo -->
+      <img src="../images/favicon.png" alt="MedMap Icon" class="logo-icon">
+    </a>
+    <div class="sidebar-nav nav flex-column mt-4 flex-grow-1">
+      <a class="nav-link active" href="index.html"><i class="bi bi-grid-1x2-fill"></i><span>Boshqaruv Paneli</span></a>
+      <a class="nav-link" href="new_applications.html"><i class="bi bi-telephone-inbound"></i><span>Yangi Murojaatlar</span></a>
+      <a class="nav-link" href="complete_applications.html"><i class="bi bi-check2-circle"></i><span>Bajarilgan Murojaatlar</span></a>
+      <a class="nav-link" href="clinics.html"><i class="bi bi-building"></i><span>Klinikalar Bazasi</span></a>
+      <a class="nav-link" href="finance.html"><i class="bi bi-cash-coin"></i><span>Moliya</span></a>
+    </div>
+    <div class="logout">
+        <a class="nav-link" href="#"><i class="bi bi-box-arrow-left"></i><span>Chiqish</span></a>
+    </div>
+  </aside><!-- End Sidebar-->
+
+  <div class="main-content">
+    <!-- ======= Header ======= -->
+    <header class="header d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center">
+            <i class="bi bi-list toggle-sidebar-btn me-3 fs-4"></i>
+        </div>
+      <nav class="header-nav d-flex align-items-center">
+          <a class="nav-link nav-icon" id="dark-mode-toggle" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tungi/Kunduzgi rejim">
+              <i class="bi bi-moon-stars"></i>
+          </a>
+          <div class="nav-item dropdown">
+            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown" aria-expanded="false" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Til">
+                <i class="bi bi-translate"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item active" href="#">O'zbekcha (UZ)</a></li>
+                <li><a class="dropdown-item" href="#">Русский (RU)</a></li>
+            </ul>
+          </div>
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Bildirishnomalar"><i class="bi bi-bell"></i></a>
+          <div class="vr h-50 d-none d-sm-block mx-2"></div>
+          <div class="nav-item dropdown">
+            <a class="nav-link nav-profile d-flex align-items-center ps-sm-2" href="#" data-bs-toggle="dropdown">
+              <img src="https://placehold.co/40x40/012970/ffffff?text=O" alt="Profile" class="rounded-circle">
+              <div class="d-none d-md-flex flex-column align-items-start ms-2">
+                  <span class="fw-bold">Operator #1</span>
+                  <span class="text-muted small">callcenter@medmap.uz</span>
+              </div>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+              <li> <a class="dropdown-item d-flex align-items-center" href="#"> <i class="bi bi-person"></i> <span>Profil</span> </a> </li>
+              <li> <hr class="dropdown-divider"> </li>
+              <li> <a class="dropdown-item d-flex align-items-center" href="#"> <i class="bi bi-box-arrow-right"></i> <span>Chiqish</span> </a> </li>
+            </ul>
+          </div>
+      </nav>
+    </header><!-- End Header -->
+
+    <main class="page-content">
+      <section class="section dashboard">
+        
+        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+            <div class="pagetitle">
+              <h1>Boshqaruv Paneli</h1>
+              <p class="text-muted mb-0">Bemorlarning murojaatlarini boshqarish markazi.</p>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+                <div class="filter-nav btn-group" role="group">
+                    <button type="button" class="btn active" data-period="today">Kun</button>
+                    <button type="button" class="btn" data-period="week">Hafta</button>
+                    <button type="button" class="btn" data-period="month">Oy</button>
+                    <button type="button" class="btn" data-period="year">Yil</button>
+                </div>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newRequestModal">
+                    <i class="bi bi-plus-circle"></i>
+                    <span class="d-none d-sm-inline ms-1">Yangi murojaat</span>
+                </button>
+            </div>
+        </div>
+        
+        <div class="row">
+          <!-- Info Cards -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="info-card d-flex align-items-center">
+              <div class="card-icon bg-primary"><i class="bi bi-telephone-inbound"></i></div>
+              <div class="ms-3">
+                <h6 class="text-muted mb-1">Murojaatlar</h6>
+                <h4 class="fw-bold mb-0" id="stat-total"></h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="info-card d-flex align-items-center">
+              <div class="card-icon bg-warning"><i class="bi bi-hourglass-split"></i></div>
+              <div class="ms-3">
+                <h6 class="text-muted mb-1">Jarayonda</h6>
+                <h4 class="fw-bold mb-0" id="stat-pending"></h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="info-card d-flex align-items-center">
+              <div class="card-icon bg-success"><i class="bi bi-check2-circle"></i></div>
+              <div class="ms-3">
+                <h6 class="text-muted mb-1">Tugatilgan</h6>
+                <h4 class="fw-bold mb-0" id="stat-completed"></h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="info-card d-flex align-items-center">
+              <div class="card-icon bg-danger"><i class="bi bi-x-circle"></i></div>
+              <div class="ms-3">
+                <h6 class="text-muted mb-1">Rad javob berildi</h6>
+                <h4 class="fw-bold mb-0" id="stat-rejected"></h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-7 mb-4">
+                 <div class="card main-card h-100">
+                    <div class="card-header"><h5 id="chart-title"></h5></div>
+                    <div class="card-body d-flex align-items-center"><div id="requestsChart" class="w-100" style="min-height: 250px;"></div></div>
+                </div>
+            </div>
+            <div class="col-lg-5 mb-4">
+                 <div class="card main-card h-100">
+                    <div class="card-header"><h5>Tezkor Vazifalar</h5></div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between align-items-center py-3">
+                                <div><span class="badge status-new me-2">Yangi</span><strong>Karim Anvarov</strong></div>
+                                <button class="btn btn-sm btn-primary">Qabul qilish</button>
+                            </li>
+                             <li class="list-group-item d-flex justify-content-between align-items-center py-3">
+                                <div><span class="badge status-replied me-2">Javob keldi</span><strong>Sarvinoz K.</strong></div>
+                                <button class="btn btn-sm btn-outline-secondary">Ko'rish</button>
+                            </li>
+                             <li class="list-group-item d-flex justify-content-between align-items-center py-3">
+                                <div><span class="badge status-sent me-2">Klinikada</span><strong>Ali Valiyev</strong></div>
+                                <button class="btn btn-sm btn-outline-secondary">Ko'rish</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <div class="mobile-overlay"></div>
+
+  <!-- Yangi Murojaat Modal -->
+  <div class="modal fade" id="newRequestModal" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Yangi Murojaatni Qayd Etish</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><form><div class="row"><div class="col-md-6 mb-3"><label class="form-label">Bemorning F.I.Sh.</label><input type="text" class="form-control" placeholder="Valiyev Ali Karimboy o'g'li"></div><div class="col-md-6 mb-3"><label class="form-label">Telefon Raqami</label><input type="tel" class="form-control" placeholder="+998 XX XXX-XX-XX"></div><div class="col-12 mb-3"><label class="form-label">Qisqacha Shikoyati</label><textarea class="form-control" rows="3" placeholder="Bemorning shikoyatini shu yerga yozing..."></textarea></div><div class="col-md-12 mb-3"><label class="form-label">Tavsiya etilgan mutaxassislik</label><select class="form-select"><option selected>Tanlang...</option><option>Kardiolog</option><option>Nevrolog</option><option>Dermatolog</option><option>Terapevt</option></select></div></div></form></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bekor qilish</button><button type="button" class="btn btn-primary">Klinikalarni topish va yuborish</button></div></div></div></div>
+
+</div>
+
+  <!-- Vendor JS Files -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  
+  <!-- Asosiy JS Fayli -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      "use strict";
+
+      const body = document.body;
+      const htmlEl = document.documentElement;
+      const toggleSidebarBtn = document.querySelector('.toggle-sidebar-btn');
+      const mobileOverlay = document.querySelector('.mobile-overlay');
+      const darkModeToggle = document.querySelector('#dark-mode-toggle');
+
+      // --- Sidebar Toggle Logic ---
+      if (toggleSidebarBtn) {
+        toggleSidebarBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (window.innerWidth < 1200) {
+            body.classList.toggle('sidebar-toggled');
+          } else {
+            body.classList.toggle('sidebar-collapsed');
+          }
+        });
+      }
+      
+      if (mobileOverlay) {
+          mobileOverlay.addEventListener('click', () => {
+              body.classList.remove('sidebar-toggled');
+          });
+      }
+      
+      // --- Dark Mode Logic ---
+      if(darkModeToggle) {
+          if (localStorage.getItem('theme') === 'dark') {
+              htmlEl.classList.add('dark-mode');
+              darkModeToggle.querySelector('i').classList.replace('bi-moon-stars', 'bi-sun');
+          }
+
+          darkModeToggle.addEventListener('click', (e) => {
+              e.preventDefault();
+              htmlEl.classList.toggle('dark-mode');
+              const isDark = htmlEl.classList.contains('dark-mode');
+              if (isDark) {
+                  localStorage.setItem('theme', 'dark');
+                  darkModeToggle.querySelector('i').classList.replace('bi-moon-stars', 'bi-sun');
+              } else {
+                  localStorage.setItem('theme', 'light');
+                  darkModeToggle.querySelector('i').classList.replace('bi-sun', 'bi-moon-stars');
+              }
+              updateDashboard(document.querySelector('.filter-nav .btn.active').dataset.period);
+          });
+      }
+
+      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+      });
+
+      // --- Dashboard Filter & Chart Logic ---
+      let requestsChart = null;
+      const chartEl = document.querySelector("#requestsChart");
+
+      const dashboardData = {
+          today: { total: 45, pending: 8, completed: 21, rejected: 3, chart: { series: [{ data: [5, 8, 10, 12, 3, 7] }], categories: ['8-10', '10-12', '12-14', '14-16', '16-18', '18-20'], title: "Bugungi Murojaatlar Dinamikasi (soat)" }},
+          week: { total: 312, pending: 25, completed: 250, rejected: 15, chart: { series: [{ data: [32, 45, 38, 50, 48, 55, 41] }], categories: ['Dush', 'Sesh', 'Chor', 'Pay', 'Jum', 'Shan', 'Yak'], title: "Haftalik Murojaatlar Dinamikasi" }},
+          month: { total: 1280, pending: 45, completed: 1150, rejected: 85, chart: { series: [{ data: [310, 340, 380, 250] }], categories: ['1-hafta', '2-hafta', '3-hafta', '4-hafta'], title: "Oylik Murojaatlar Dinamikasi" }},
+          year: { total: 15200, pending: 120, completed: 14500, rejected: 580, chart: { series: [{ data: [1200, 1300, 1100, 1500, 1600, 1400, 1300, 1550, 1450, 1650, 1700, 1800] }], categories: ['Yan', 'Fev', 'Mar', 'Apr', 'May', 'Iyn', 'Iyl', 'Avg', 'Sen', 'Okt', 'Noy', 'Dek'], title: "Yillik Murojaatlar Dinamikasi" }}
+      };
+
+      const updateDashboard = (period) => {
+          const data = dashboardData[period];
+          document.getElementById('stat-total').textContent = data.total;
+          document.getElementById('stat-pending').textContent = data.pending;
+          document.getElementById('stat-completed').textContent = data.completed;
+          document.getElementById('stat-rejected').textContent = data.rejected;
+          document.getElementById('chart-title').textContent = data.chart.title;
+
+          const isDark = htmlEl.classList.contains('dark-mode');
+          const options = {
+              chart: { type: 'bar', height: 250, toolbar: { show: false } },
+              series: data.chart.series,
+              xaxis: { categories: data.chart.categories, labels: { style: { colors: isDark ? '#a0a0a0' : '#667085' } } },
+              yaxis: { labels: { style: { colors: isDark ? '#a0a0a0' : '#667085' } } },
+              colors: ['#4154f1'],
+              plotOptions: { bar: { borderRadius: 4, horizontal: false, } },
+              dataLabels: { enabled: false },
+              grid: { borderColor: isDark ? '#333333' : '#eaecf0', strokeDashArray: 4 },
+              tooltip: { theme: isDark ? 'dark' : 'light' }
+          };
+          
+          if (requestsChart) {
+              requestsChart.updateOptions(options);
+          } else {
+              requestsChart = new ApexCharts(chartEl, options);
+              requestsChart.render();
+          }
+      };
+
+      document.querySelectorAll('.filter-nav .btn').forEach(button => {
+          button.addEventListener('click', function() {
+              document.querySelectorAll('.filter-nav .btn').forEach(btn => btn.classList.remove('active'));
+              this.classList.add('active');
+              updateDashboard(this.dataset.period);
+          });
+      });
+
+      // Initial Load
+      updateDashboard('today');
+      
+    });
+  </script>
+
+</body>
+</html>

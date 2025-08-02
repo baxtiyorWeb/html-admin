@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Mening Profilim (Ko'p funksiyali) - MedMapp.uz</title>
+  <meta content="Bemorlar uchun shaxsiy va tibbiy ma'lumotlarni boshqarish uchun optimallashtirilgan va kreativ kabinet." name="description">
+  <meta content="medmap, patient, profile, medical card, ui, ux, optimized, creative" name="keywords">
+
+  <!-- Favicons -->
+  <link href="https://placehold.co/32x32/4154f1/ffffff?text=M" rel="icon">
+  <link href="https://placehold.co/180x180/4154f1/ffffff?text=M" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- 1. Umumiy stillar (saytning hamma sahifasi uchun) -->
+  <link rel="stylesheet" href="style.css">
+  <!-- 2. Shu sahifaga xos bo'lgan maxsus stillar -->
+  <link rel="stylesheet" href="patient_profile.css">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+    <a href="#" class="logo d-flex align-items-center text-decoration-none">
+        <img src="../images/MedMapp_Logo_shaffof.png" height="66" alt="Logo">
+    </a>
+    <ul class="sidebar-nav nav flex-column mt-4">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html"><i class="bi bi-grid-1x2-fill"></i><span data-lang-key="dashboard">Boshqaruv paneli</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="patient_profile.html"><i class="bi bi-person-fill"></i><span data-lang-key="my_profile">Mening profilim</span></a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="patient_queue.html"><i class="bi bi-calendar-check-fill"></i><span data-lang-key="my_appointments">Mening yozuvlarim</span></a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="analysis.html"><i class="bi bi-file-earmark-medical-fill"></i><span data-lang-key="lab_results">Tahlil natijalari</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="patient_consultation.html"><i class="bi bi-chat-dots-fill"></i><span data-lang-key="consultations">Konsultatsiyalar</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="payments.html"><i class="bi bi-credit-card-fill"></i><span data-lang-key="payments">To'lovlar</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="reviews.html"><i class="bi bi-star-fill"></i><span data-lang-key="my_reviews">Izohlarim</span></a>
+        </li>
+      </ul>
+  </aside><!-- End Sidebar-->
+
+  <main class="main-content">
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="header-left d-flex align-items-center">
+            <button class="btn px-1 me-2 sidebar-toggle-btn" type="button"><i class="bi bi-list fs-3"></i></button>
+            <div class="pagetitle">
+                <h1 data-lang-key="my_profile_title">Mening Profilim</h1>
+            </div>
+        </div>
+        <div class="header-right d-flex align-items-center">
+             <!-- Language Dropdown -->
+            <div class="dropdown lang-dropdown me-2">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-translate fs-5"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item d-flex align-items-center" href="#" data-lang="uz"><i class="bi bi-flag-fill me-2"></i> O'zbekcha</a></li>
+                <li><a class="dropdown-item d-flex align-items-center" href="#" data-lang="ru"><i class="bi bi-flag-fill me-2"></i> Русский</a></li>
+                <li><a class="dropdown-item d-flex align-items-center" href="#" data-lang="en"><i class="bi bi-flag-fill me-2"></i> English</a></li>
+              </ul>
+            </div>
+
+            <button class="btn nav-link me-2" id="dark-mode-toggle"><i class="bi bi-moon-stars-fill fs-5"></i></button>
+            <a href="#" class="nav-link me-3"><i class="bi bi-bell fs-5"></i></a>
+            <!-- Profile Dropdown -->
+            <div class="dropdown profile-dropdown">
+                <a href="#" class="d-flex align-items-center text-decoration-none" data-bs-toggle="dropdown">
+                    <img src="https://placehold.co/40x40/EFEFEF/333333?text=A" alt="Profile" class="rounded-circle" id="profileImage">
+                    <div class="ms-2 d-none d-md-block">
+                        <div class="fw-bold" id="profileName">Ali Valiyev</div>
+                        <small class="text-muted" data-lang-key="patient">Bemor</small>
+                    </div>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#" data-lang-key="settings">Sozlamalar</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item text-danger" href="#" data-lang-key="logout">Chiqish</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-body">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+
+                <!-- Stepper -->
+                <div class="stepper-wrapper">
+                    <div class="stepper-item active" data-step="1">
+                        <div class="stepper-circle">1</div>
+                        <div class="stepper-title" data-lang-key="step_personal">Shaxsiy</div>
+                    </div>
+                    <div class="stepper-item" data-step="2">
+                        <div class="stepper-circle">2</div>
+                        <div class="stepper-title" data-lang-key="step_medical">Tibbiy</div>
+                    </div>
+                    <div class="stepper-item" data-step="3">
+                        <div class="stepper-circle">3</div>
+                        <div class="stepper-title" data-lang-key="step_documents">Hujjatlar</div>
+                    </div>
+                </div>
+
+                <!-- Profile Form -->
+                <div id="profileFormContainer">
+                    <div class="accordion" id="profileAccordion">
+                        <!-- 1. Shaxsiy ma'lumotlar -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                    <span class="step-icon">1</span> <span data-lang-key="personal_info">Shaxsiy ma'lumotlar</span>
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#profileAccordion">
+                                <div class="accordion-body">
+                                    <form class="row g-3 needs-validation" novalidate>
+                                        <div class="col-md-6"><label for="firstName" class="form-label" data-lang-key="first_name">Ism</label><input type="text" class="form-control" id="firstName" value="Ali" required></div>
+                                        <div class="col-md-6"><label for="lastName" class="form-label" data-lang-key="last_name">Familiya</label><input type="text" class="form-control" id="lastName" value="Valiyev" required></div>
+                                        <div class="col-md-6"><label for="dob" class="form-label" data-lang-key="dob">Tug'ilgan sana</label><input type="date" class="form-control" id="dob" value="1990-05-15" required></div>
+                                        <div class="col-md-6"><label class="form-label" data-lang-key="gender">Jins</label><div><div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="gender" id="male" value="Erkak" checked><label class="form-check-label" for="male" data-lang-key="male">Erkak</label></div><div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="gender" id="female" value="Ayol"><label class="form-check-label" for="female" data-lang-key="female">Ayol</label></div></div></div>
+                                        <div class="col-md-6"><label for="phone" class="form-label" data-lang-key="phone">Telefon raqam</label><input type="tel" class="form-control" id="phone" value="+998 90 123-45-67" required></div>
+                                        <div class="col-md-6"><label for="email" class="form-label" data-lang-key="email">Email</label><input type="email" class="form-control" id="email" value="ali.valiyev@example.com"></div>
+                                        <div class="col-12 text-end"><button type="button" class="btn btn-primary" data-step="1"><span data-lang-key="save_continue">Saqlash va Davom etish</span> <i class="bi bi-arrow-right-short"></i></button></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2. Tibbiy ma'lumotlar -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" disabled>
+                                    <span class="step-icon">2</span> <span data-lang-key="medical_info">Tibbiy va Hayotiy ma'lumotlar</span>
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#profileAccordion">
+                                <div class="accordion-body">
+                                    <form class="row g-3 needs-validation" novalidate>
+                                        <div class="col-md-6"><label for="bloodType" class="form-label" data-lang-key="blood_type">Qon guruhi va Rezus-faktor</label><select id="bloodType" class="form-select"><option data-lang-key="unknown">Noma'lum</option><option selected>I (+)</option><option>I (-)</option><option>II (+)</option><option>II (-)</option><option>III (+)</option><option>III (-)</option><option>IV (+)</option><option>IV (-)</option></select></div>
+                                        <div class="col-md-6"><label for="height" class="form-label" data-lang-key="height_weight">Bo'yi (sm) / Vazni (kg)</label><div class="input-group"><input type="number" id="height" class="form-control" placeholder="175"><input type="number" id="weight" class="form-control" placeholder="75"></div></div>
+                                        <div class="col-12"><label for="allergies" class="form-label" data-lang-key="allergies">Allergiyalar (dori, oziq-ovqat va b.)</label><textarea class="form-control" id="allergies" rows="2" data-lang-key-placeholder="allergies_placeholder" placeholder="Agar mavjud bo'lsa, nimalarga va qanday reaksiya berishini yozing. Masalan: Penitsillin - toshma"></textarea></div>
+                                        <div class="col-12"><label for="chronicDiseases" class="form-label" data-lang-key="chronic_diseases">Surunkali kasalliklar</label><textarea class="form-control" id="chronicDiseases" rows="2" data-lang-key-placeholder="chronic_placeholder" placeholder="Masalan: Qandli diabet 2-tur, Gipertoniya kasalligi"></textarea></div>
+                                        <div class="col-12"><label for="pastSurgeries" class="form-label" data-lang-key="past_surgeries">O'tkazilgan operatsiyalar va jarohatlar</label><textarea class="form-control" id="pastSurgeries" rows="2" data-lang-key-placeholder="surgeries_placeholder" placeholder="Yili, sababi va natijasini yozing. Masalan: 2015 y., Appendektomiya"></textarea></div>
+                                        <div class="col-12"><label for="familyHistory" class="form-label" data-lang-key="family_history">Nasliy moyillik</label><textarea class="form-control" id="familyHistory" rows="2" data-lang-key-placeholder="family_history_placeholder" placeholder="Ota-ona, aka-uka, opa-singillarda uchraydigan kasalliklar (yurak, qandli diabet, onkologiya v.b.)"></textarea></div>
+                                        <div class="col-12 text-end"><button type="button" class="btn btn-primary" data-step="2"><span data-lang-key="save_continue">Saqlash va Davom etish</span> <i class="bi bi-arrow-right-short"></i></button></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. Hujjatlar -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" disabled>
+                                    <span class="step-icon">3</span> <span data-lang-key="upload_documents">Hujjatlarni yuklash</span>
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#profileAccordion">
+                                <div class="accordion-body">
+                                    <form>
+                                        <input type="file" id="file-input" multiple hidden>
+                                        <div class="upload-area" id="upload-area">
+                                            <i class="bi bi-cloud-arrow-up upload-icon"></i>
+                                            <p class="upload-text" data-lang-key="drag_drop_files">Fayllarni bu yerga sudrab olib keling yoki <span data-lang-key="click_to_upload">yuklash uchun bosing</span></p>
+                                            <small class="text-muted" data-lang-key="allowed_formats">Ruxsat etilgan formatlar: PDF, DOCX, JPG, PNG</small>
+                                        </div>
+                                        <div id="file-list" class="mt-3"></div>
+                                        <div class="col-12 text-end mt-3"><button type="button" class="btn btn-success" data-step="3"><i class="bi bi-check-circle-fill me-2"></i><span data-lang-key="complete_profile">Profilni Yakunlash</span></button></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Display View -->
+                <div id="profileDisplayContainer" class="d-none">
+                    <div class="card profile-display-card">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5 class="card-title mb-0" data-lang-key="profile_info_title">Profil Ma'lumotlari</h5>
+                            <button class="btn btn-outline-primary" id="editProfileBtn"><i class="bi bi-pencil-square me-2"></i><span data-lang-key="edit">Tahrirlash</span></button>
+                        </div>
+                        <div class="card-body p-4">
+                            <h6 class="text-primary fw-bold mb-3" data-lang-key="personal_info_header">SHAXSIY MA'LUMOTLAR</h6>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex"><strong class="flex-shrink-0" data-lang-key="full_name">To'liq ism:</strong><span id="displayFullName"></span></li>
+                                <li class="list-group-item d-flex"><strong class="flex-shrink-0" data-lang-key="dob_display">Tug'ilgan sana:</strong><span id="displayDob"></span></li>
+                                <li class="list-group-item d-flex"><strong class="flex-shrink-0" data-lang-key="gender_display">Jins:</strong><span id="displayGender"></span></li>
+                                <li class="list-group-item d-flex"><strong class="flex-shrink-0" data-lang-key="phone_display">Telefon raqam:</strong><span id="displayPhone"></span></li>
+                                <li class="list-group-item d-flex"><strong class="flex-shrink-0" data-lang-key="email_display">Email:</strong><span id="displayEmail"></span></li>
+                            </ul>
+                            <hr class="my-4">
+                            <h6 class="text-primary fw-bold mb-3" data-lang-key="medical_info_header">TIBBIY MA'LUMOTLAR</h6>
+                             <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex"><strong class="flex-shrink-0" data-lang-key="blood_type_display">Qon guruhi:</strong><span id="displayBloodType"></span></li>
+                                <li class="list-group-item d-flex"><strong class="flex-shrink-0" data-lang-key="height_weight_display">Bo'y / Vazin:</strong><span id="displayHeightWeight"></span></li>
+                                <li class="list-group-item d-flex"><strong class="flex-shrink-0" data-lang-key="allergies_display">Allergiyalar:</strong><span id="displayAllergies"></span></li>
+                                <li class="list-group-item d-flex"><strong class="flex-shrink-0" data-lang-key="chronic_display">Surunkali kasalliklar:</strong><span id="displayChronicDiseases"></span></li>
+                                <li class="list-group-item d-flex"><strong class="flex-shrink-0" data-lang-key="surgeries_display">Operatsiya/Jarohatlar:</strong><span id="displayPastSurgeries"></span></li>
+                                <li class="list-group-item d-flex"><strong class="flex-shrink-0" data-lang-key="family_history_display">Nasliy moyillik:</strong><span id="displayFamilyHistory"></span></li>
+                            </ul>
+                             <hr class="my-4">
+                            <h6 class="text-primary fw-bold mb-3" data-lang-key="uploaded_docs_header">YUKLANGAN HUJJATLAR</h6>
+                            <div id="displayFileList"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</main>
+</div>
+
+<!-- Success Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body text-center p-4">
+        <i class="bi bi-check-circle-fill text-success" style="font-size: 4rem;"></i>
+        <h5 class="modal-title mt-3" id="successModalLabel" data-lang-key="success_title">Muvaffaqiyatli!</h5>
+        <p class="mt-2" data-lang-key="success_message">Profilingiz ma'lumotlari to'liq saqlandi.</p>
+        <button type="button" class="btn btn-primary mt-3" data-bs-dismiss="modal" data-lang-key="close">Yopish</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Vendor JS Files -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          // --- Translations ---
+          const translations = {
+              'uz': {
+                  dashboard: "Boshqaruv paneli", my_profile: "Mening profilim", my_appointments: "Mening yozuvlarim", lab_results: "Tahlil natijalari", consultations: "Konsultatsiyalar", payments: "To'lovlar",
+                  my_profile_title: "Mening Profilim", patient: "Bemor", settings: "Sozlamalar", logout: "Chiqish", step_personal: "Shaxsiy", step_medical: "Tibbiy", step_documents: "Hujjatlar",
+                  personal_info: "Shaxsiy ma'lumotlar", first_name: "Ism", last_name: "Familiya", dob: "Tug'ilgan sana", gender: "Jins", male: "Erkak", female: "Ayol", phone: "Telefon raqam", email: "Email",
+                  save_continue: "Saqlash va Davom etish", medical_info: "Tibbiy va Hayotiy ma'lumotlar", blood_type: "Qon guruhi va Rezus-faktor", unknown: "Noma'lum", height_weight: "Bo'yi (sm) / Vazni (kg)",
+                  allergies: "Allergiyalar (dori, oziq-ovqat va b.)", allergies_placeholder: "Agar mavjud bo'lsa, nimalarga va qanday reaksiya berishini yozing. Masalan: Penitsillin - toshma",
+                  chronic_diseases: "Surunkali kasalliklar", chronic_placeholder: "Masalan: Qandli diabet 2-tur, Gipertoniya kasalligi",
+                  past_surgeries: "O'tkazilgan operatsiyalar va jarohatlar", surgeries_placeholder: "Yili, sababi va natijasini yozing. Masalan: 2015 y., Appendektomiya",
+                  family_history: "Nasliy moyillik", family_history_placeholder: "Ota-ona, aka-uka, opa-singillarda uchraydigan kasalliklar (yurak, qandli diabet, onkologiya v.b.)",
+                  upload_documents: "Hujjatlarni yuklash", drag_drop_files: "Fayllarni bu yerga sudrab olib keling yoki ", click_to_upload: "yuklash uchun bosing", allowed_formats: "Ruxsat etilgan formatlar: PDF, DOCX, JPG, PNG",
+                  complete_profile: "Profilni Yakunlash", profile_info_title: "Profil Ma'lumotlari", edit: "Tahrirlash", personal_info_header: "SHAXSIY MA'LUMOTLAR", full_name: "To'liq ism:", dob_display: "Tug'ilgan sana:",
+                  gender_display: "Jins:", phone_display: "Telefon raqam:", email_display: "Email:", medical_info_header: "TIBBIY MA'LUMOTLAR", blood_type_display: "Qon guruhi:", height_weight_display: "Bo'y / Vazin:",
+                  allergies_display: "Allergiyalar:", chronic_display: "Surunkali kasalliklar:", surgeries_display: "Operatsiya/Jarohatlar:", family_history_display: "Nasliy moyillik:",
+                  uploaded_docs_header: "YUKLANGAN HUJJATLAR", success_title: "Muvaffaqiyatli!", success_message: "Profilingiz ma'lumotlari to'liq saqlandi.", close: "Yopish",
+                  not_filled: "Kiritilmagan", not_available: "Mavjud emas", no_docs_uploaded: "Hujjatlar yuklanmagan."
+              },
+              'ru': {
+                  dashboard: "Панель управления", my_profile: "Мой профиль", my_appointments: "Мои записи", lab_results: "Результаты анализов", consultations: "Консультации", payments: "Платежи",
+                  my_profile_title: "Мой Профиль", patient: "Пациент", settings: "Настройки", logout: "Выйти", step_personal: "Личные", step_medical: "Медицинские", step_documents: "Документы",
+                  personal_info: "Личные данные", first_name: "Имя", last_name: "Фамилия", dob: "Дата рождения", gender: "Пол", male: "Мужчина", female: "Женщина", phone: "Номер телефона", email: "Эл. почта",
+                  save_continue: "Сохранить и продолжить", medical_info: "Медицинская информация", blood_type: "Группа крови и резус-фактор", unknown: "Неизвестно", height_weight: "Рост (см) / Вес (кг)",
+                  allergies: "Аллергии (лекарства, еда и т.д.)", allergies_placeholder: "Если есть, укажите на что и какая реакция. Пример: Пенициллин - сыпь",
+                  chronic_diseases: "Хронические заболевания", chronic_placeholder: "Пример: Сахарный диабет 2 типа, Гипертония",
+                  past_surgeries: "Перенесенные операции и травмы", surgeries_placeholder: "Год, причина и результат. Пример: 2015 г., Аппендэктомия",
+                  family_history: "Наследственная предрасположенность", family_history_placeholder: "Заболевания у родителей, братьев, сестер (сердце, диабет, онкология и т.д.)",
+                  upload_documents: "Загрузка документов", drag_drop_files: "Перетащите файлы сюда или ", click_to_upload: "нажмите для загрузки", allowed_formats: "Допустимые форматы: PDF, DOCX, JPG, PNG",
+                  complete_profile: "Завершить профиль", profile_info_title: "Данные Профиля", edit: "Редактировать", personal_info_header: "ЛИЧНЫЕ ДАННЫЕ", full_name: "Полное имя:", dob_display: "Дата рождения:",
+                  gender_display: "Пол:", phone_display: "Номер телефона:", email_display: "Эл. почта:", medical_info_header: "МЕДИЦИНСКИЕ ДАННЫЕ", blood_type_display: "Группа крови:", height_weight_display: "Рост / Вес:",
+                  allergies_display: "Аллергии:", chronic_display: "Хронические заболевания:", surgeries_display: "Операции/Травмы:", family_history_display: "Наследственность:",
+                  uploaded_docs_header: "ЗАГРУЖЕННЫЕ ДОКУМЕНТЫ", success_title: "Успешно!", success_message: "Данные вашего профиля полностью сохранены.", close: "Закрыть",
+                  not_filled: "Не указано", not_available: "Нет данных", no_docs_uploaded: "Документы не загружены."
+              },
+              'en': {
+                  dashboard: "Dashboard", my_profile: "My Profile", my_appointments: "My Appointments", lab_results: "Lab Results", consultations: "Consultations", payments: "Payments",
+                  my_profile_title: "My Profile", patient: "Patient", settings: "Settings", logout: "Logout", step_personal: "Personal", step_medical: "Medical", step_documents: "Documents",
+                  personal_info: "Personal Information", first_name: "First Name", last_name: "Last Name", dob: "Date of Birth", gender: "Gender", male: "Male", female: "Female", phone: "Phone Number", email: "Email",
+                  save_continue: "Save and Continue", medical_info: "Medical & Lifestyle Information", blood_type: "Blood Type & Rh Factor", unknown: "Unknown", height_weight: "Height (cm) / Weight (kg)",
+                  allergies: "Allergies (meds, food, etc.)", allergies_placeholder: "If any, specify what and the reaction. E.g.: Penicillin - rash",
+                  chronic_diseases: "Chronic Diseases", chronic_placeholder: "E.g.: Diabetes Type 2, Hypertension",
+                  past_surgeries: "Past Surgeries and Injuries", surgeries_placeholder: "Year, reason, and outcome. E.g.: 2015, Appendectomy",
+                  family_history: "Family Medical History", family_history_placeholder: "Diseases in parents, siblings (heart, diabetes, oncology, etc.)",
+                  upload_documents: "Upload Documents", drag_drop_files: "Drag & drop files here or ", click_to_upload: "click to upload", allowed_formats: "Allowed formats: PDF, DOCX, JPG, PNG",
+                  complete_profile: "Complete Profile", profile_info_title: "Profile Information", edit: "Edit", personal_info_header: "PERSONAL INFORMATION", full_name: "Full Name:", dob_display: "Date of Birth:",
+                  gender_display: "Gender:", phone_display: "Phone Number:", email_display: "Email:", medical_info_header: "MEDICAL INFORMATION", blood_type_display: "Blood Type:", height_weight_display: "Height / Weight:",
+                  allergies_display: "Allergies:", chronic_display: "Chronic Diseases:", surgeries_display: "Surgeries/Injuries:", family_history_display: "Family History:",
+                  uploaded_docs_header: "UPLOADED DOCUMENTS", success_title: "Success!", success_message: "Your profile information has been saved.", close: "Close",
+                  not_filled: "Not provided", not_available: "Not available", no_docs_uploaded: "No documents uploaded."
+              }
+          };
+
+          const setLanguage = (lang) => {
+              document.documentElement.lang = lang;
+              localStorage.setItem('language', lang);
+              document.querySelectorAll('[data-lang-key]').forEach(element => {
+                  const key = element.getAttribute('data-lang-key');
+                  if (translations[lang] && translations[lang][key]) {
+                      element.textContent = translations[lang][key];
+                  }
+              });
+               document.querySelectorAll('[data-lang-key-placeholder]').forEach(element => {
+                  const key = element.getAttribute('data-lang-key-placeholder');
+                  if (translations[lang] && translations[lang][key]) {
+                      element.placeholder = translations[lang][key];
+                  }
+              });
+          };
+
+          // --- UI Elements ---
+          const sidebarToggleBtn = document.querySelector('.sidebar-toggle-btn');
+          const darkModeToggle = document.getElementById('dark-mode-toggle');
+          const langLinks = document.querySelectorAll('.lang-dropdown .dropdown-item');
+          const stepperItems = document.querySelectorAll('.stepper-item');
+          const saveButtons = document.querySelectorAll('.btn-primary, .btn-success');
+          const profileFormContainer = document.getElementById('profileFormContainer');
+          const profileDisplayContainer = document.getElementById('profileDisplayContainer');
+          const editProfileBtn = document.getElementById('editProfileBtn');
+          const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+          const stepMap = { 1: 'One', 2: 'Two', 3: 'Three' };
+
+          // --- Sidebar, Dark Mode, Language Logic ---
+          if (sidebarToggleBtn) {
+              sidebarToggleBtn.addEventListener('click', () => document.body.classList.toggle('sidebar-toggled'));
+          }
+          if (darkModeToggle) {
+              darkModeToggle.addEventListener('click', () => {
+                  document.body.classList.toggle('dark-mode');
+                  const icon = darkModeToggle.querySelector('i');
+                  icon.classList.toggle('bi-moon-stars-fill');
+                  icon.classList.toggle('bi-sun-fill');
+              });
+          }
+          langLinks.forEach(link => {
+              link.addEventListener('click', (e) => {
+                  e.preventDefault();
+                  const selectedLang = e.currentTarget.getAttribute('data-lang');
+                  setLanguage(selectedLang);
+              });
+          });
+
+          const getElementsForStep = (step) => {
+              const stepString = stepMap[step];
+              if (!stepString) return null;
+              const collapseElement = document.getElementById(`collapse${stepString}`);
+              return {
+                  headerButton: document.querySelector(`#heading${stepString} button`),
+                  collapseElement: collapseElement,
+                  bsCollapse: new bootstrap.Collapse(collapseElement, { toggle: false }),
+                  stepperItem: document.querySelector(`.stepper-item[data-step="${step}"]`),
+                  form: collapseElement.querySelector('form')
+              };
+          };
+
+          const updateStepper = (completedStep) => {
+              stepperItems.forEach(item => {
+                  const step = parseInt(item.dataset.step);
+                  item.classList.remove('active', 'completed');
+                  if (step < completedStep) {
+                      item.classList.add('completed');
+                  } else if (step === completedStep) {
+                      item.classList.add('active');
+                  }
+              });
+          };
+          
+          const updateProfileHeader = () => {
+              const firstName = document.getElementById('firstName').value;
+              const lastName = document.getElementById('lastName').value;
+              const fullName = `${firstName} ${lastName}`;
+              document.getElementById('profileName').textContent = fullName.trim() ? fullName : "Bemor";
+              const initial = (firstName?.[0] || 'B').toUpperCase();
+              document.getElementById('profileImage').src = `https://placehold.co/40x40/EFEFEF/333333?text=${initial}`;
+          };
+
+          saveButtons.forEach(button => {
+              button.addEventListener('click', () => {
+                  const currentStep = parseInt(button.dataset.step);
+                  const currentElements = getElementsForStep(currentStep);
+
+                  if (currentElements.form && !currentElements.form.checkValidity()) {
+                      currentElements.form.classList.add('was-validated');
+                      return;
+                  }
+
+                  if (currentStep === 1) {
+                      updateProfileHeader();
+                  }
+
+                  currentElements.headerButton.classList.add('completed');
+                  currentElements.headerButton.querySelector('.step-icon').innerHTML = '<i class="bi bi-check-lg"></i>';
+                  currentElements.bsCollapse.hide();
+                  
+                  const nextStep = currentStep + 1;
+                  updateStepper(nextStep);
+
+                  const nextElements = getElementsForStep(nextStep);
+                  if (nextElements) {
+                      nextElements.headerButton.disabled = false;
+                      nextElements.bsCollapse.show();
+                  } else {
+                      showProfileData();
+                      successModal.show();
+                  }
+              });
+          });
+          
+          const collectProfileData = () => {
+              const data = {};
+              data.firstName = document.getElementById('firstName').value;
+              data.lastName = document.getElementById('lastName').value;
+              data.dob = document.getElementById('dob').value;
+              data.gender = document.querySelector('input[name="gender"]:checked')?.value || 'N/A';
+              data.phone = document.getElementById('phone').value;
+              data.email = document.getElementById('email').value;
+              data.bloodType = document.getElementById('bloodType').value;
+              data.height = document.getElementById('height').value;
+              data.weight = document.getElementById('weight').value;
+              data.allergies = document.getElementById('allergies').value;
+              data.chronicDiseases = document.getElementById('chronicDiseases').value;
+              data.pastSurgeries = document.getElementById('pastSurgeries').value;
+              data.familyHistory = document.getElementById('familyHistory').value;
+              data.files = [];
+              document.querySelectorAll('#file-list .file-item-name').forEach(item => {
+                  data.files.push(item.textContent);
+              });
+              return data;
+          };
+          
+          const showProfileData = () => {
+              const data = collectProfileData();
+              const lang = localStorage.getItem('language') || 'uz';
+              const tr = translations[lang];
+
+              document.getElementById('displayFullName').textContent = `${data.firstName} ${data.lastName}`;
+              document.getElementById('displayDob').textContent = data.dob || tr.not_filled;
+              document.getElementById('displayGender').textContent = data.gender || tr.not_filled;
+              document.getElementById('displayPhone').textContent = data.phone || tr.not_filled;
+              document.getElementById('displayEmail').textContent = data.email || tr.not_filled;
+              
+              document.getElementById('displayBloodType').textContent = data.bloodType || tr.not_filled;
+              document.getElementById('displayHeightWeight').textContent = (data.height && data.weight) ? `${data.height} sm / ${data.weight} kg` : tr.not_filled;
+              document.getElementById('displayAllergies').textContent = data.allergies || tr.not_available;
+              document.getElementById('displayChronicDiseases').textContent = data.chronicDiseases || tr.not_available;
+              document.getElementById('displayPastSurgeries').textContent = data.pastSurgeries || tr.not_available;
+              document.getElementById('displayFamilyHistory').textContent = data.familyHistory || tr.not_available;
+
+              const fileListDisplay = document.getElementById('displayFileList');
+              fileListDisplay.innerHTML = '';
+              if (data.files.length > 0) {
+                  const list = document.createElement('ul');
+                  list.className = 'list-unstyled';
+                  data.files.forEach(fileName => {
+                      const listItem = document.createElement('li');
+                      listItem.innerHTML = `<i class="bi bi-file-earmark-text text-primary me-2"></i> ${fileName}`;
+                      list.appendChild(listItem);
+                  });
+                  fileListDisplay.appendChild(list);
+              } else {
+                  fileListDisplay.textContent = tr.no_docs_uploaded;
+              }
+
+              profileFormContainer.classList.add('d-none');
+              profileDisplayContainer.classList.remove('d-none');
+          };
+
+          editProfileBtn.addEventListener('click', () => {
+              profileDisplayContainer.classList.add('d-none');
+              profileFormContainer.classList.remove('d-none');
+          });
+
+          // --- File Upload Logic ---
+          const uploadArea = document.getElementById('upload-area');
+          const fileInput = document.getElementById('file-input');
+          const fileList = document.getElementById('file-list');
+          let uploadedFiles = [];
+
+          if (uploadArea) {
+              uploadArea.addEventListener('click', () => fileInput.click());
+              fileInput.addEventListener('change', () => handleFiles(fileInput.files));
+              
+              ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                  uploadArea.addEventListener(eventName, (e) => { e.preventDefault(); e.stopPropagation(); }, false);
+              });
+              ['dragenter', 'dragover'].forEach(eventName => {
+                  uploadArea.addEventListener(eventName, () => uploadArea.classList.add('dragover'), false);
+              });
+              ['dragleave', 'drop'].forEach(eventName => {
+                  uploadArea.addEventListener(eventName, () => uploadArea.classList.remove('dragover'), false);
+              });
+              uploadArea.addEventListener('drop', (e) => handleFiles(e.dataTransfer.files), false);
+          }
+
+          function handleFiles(files) {
+              for (const file of files) {
+                  uploadedFiles.push(file);
+              }
+              renderFileList();
+          }
+          
+          function renderFileList() {
+              fileList.innerHTML = '';
+              uploadedFiles.forEach((file, index) => {
+                   const fileItem = document.createElement('div');
+                  fileItem.className = 'file-item';
+                  fileItem.innerHTML = `
+                      <span><i class="bi bi-file-earmark-text me-2"></i><span class="file-item-name">${file.name}</span></span>
+                      <button type="button" class="btn-close btn-sm" data-index="${index}"></button>
+                  `;
+                  fileList.appendChild(fileItem);
+              });
+          }
+
+          fileList.addEventListener('click', (e) => {
+              if (e.target.classList.contains('btn-close')) {
+                  const index = parseInt(e.target.dataset.index);
+                  uploadedFiles.splice(index, 1);
+                  renderFileList();
+              }
+          });
+          
+          // --- Initial Load ---
+          const savedLang = localStorage.getItem('language') || 'uz';
+          setLanguage(savedLang);
+          updateProfileHeader();
+      });
+  </script>
+</body>
+</html>

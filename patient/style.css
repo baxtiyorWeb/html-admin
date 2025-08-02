@@ -1,0 +1,256 @@
+/* =======================================================
+* Loyihaning Asosiy Stillari v4
+* Barcha sahifalar uchun umumiy bo'lgan markaziy CSS fayli
+======================================================== */
+
+/*--------------------------------------------------------------
+# Asosiy o'zgaruvchilar (Variables)
+--------------------------------------------------------------*/
+:root {
+    --primary-color: #4154f1;
+    --primary-light: #eef2ff;
+    --primary-dark: #2a3dbd;
+    --secondary-color: #012970;
+    --background-color: #f6f9ff;
+    --card-background: #ffffff;
+    --text-color: #344054;
+    --text-light: #667085;
+    --border-color: #dee2e6;
+    --danger-color: #F04438;
+    --success-color: #12B76A;
+    --warning-color: #F79009;
+    --star-color: #F79009; /* Sharhlar uchun */
+    --sidebar-width: 260px;
+}
+
+/*--------------------------------------------------------------
+# Qorong'u Rejim (Dark Mode)
+--------------------------------------------------------------*/
+body.dark-mode {
+    --background-color: #121212;
+    --card-background: #1e1e1e;
+    --text-color: #e0e0e0;
+    --text-light: #a0a0a0;
+    --border-color: #333333;
+    --secondary-color: #e0e0e0;
+    --primary-light: #2c2c3d;
+}
+
+body.dark-mode .sidebar,
+body.dark-mode .main-header {
+    background-color: #1e1e1e;
+    border-color: var(--border-color);
+}
+
+body.dark-mode .card,
+body.dark-mode .info-card,
+body.dark-mode .modal-content {
+    background-color: var(--card-background);
+    border-color: var(--border-color);
+}
+
+body.dark-mode .dropdown-menu {
+    background-color: #2a2a2a;
+}
+
+body.dark-mode .dropdown-item {
+    color: var(--text-light);
+}
+
+body.dark-mode .dropdown-item:hover {
+    background-color: #3a3a3a;
+}
+
+body.dark-mode .form-control, 
+body.dark-mode .form-select {
+    background-color: #2a2a2a;
+    color: var(--text-color);
+    border-color: #444;
+}
+
+body.dark-mode .btn-close {
+    filter: invert(1);
+}
+
+/*--------------------------------------------------------------
+# Asosiy tana (Body) va layout
+--------------------------------------------------------------*/
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.wrapper {
+    display: flex;
+    position: relative;
+}
+
+/*--------------------------------------------------------------
+# Yon panel (Sidebar)
+--------------------------------------------------------------*/
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--card-background);
+    border-right: 1px solid var(--border-color);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 1021;
+    transition: transform 0.3s ease-in-out;
+}
+
+.sidebar .logo {
+    margin-bottom: 2rem;
+}
+
+.sidebar .logo span {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.sidebar-nav {
+    flex-grow: 1;
+}
+
+.sidebar-nav .nav-link {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-light);
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    transition: all 0.2s ease-in-out;
+}
+
+.sidebar-nav .nav-link i {
+    font-size: 1.2rem;
+    margin-right: 12px;
+}
+
+.sidebar-nav .nav-link:hover {
+    background: var(--primary-light);
+    color: var(--primary-color);
+}
+
+.sidebar-nav .nav-link.active {
+    background: var(--primary-color);
+    color: #fff;
+    font-weight: 600;
+}
+
+/*--------------------------------------------------------------
+# Asosiy kontent va Bosh qism (Header)
+--------------------------------------------------------------*/
+.main-content {
+    width: 100%;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.main-header {
+    background-color: var(--card-background);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1010;
+}
+
+.main-header .header-left .pagetitle h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.main-header .header-right .nav-link {
+    color: var(--text-light);
+}
+
+.main-header .header-right .nav-link:hover {
+    color: var(--primary-color);
+}
+
+.main-header .profile-dropdown img {
+    width: 40px;
+    height: 40px;
+}
+
+.main-header .profile-dropdown .fw-bold {
+    color: var(--text-color);
+}
+
+.lang-dropdown .dropdown-toggle::after {
+    display: none;
+}
+
+.page-body {
+    padding: 2rem;
+}
+
+/*--------------------------------------------------------------
+# Moslashuvchanlik (Responsive)
+--------------------------------------------------------------*/
+.sidebar-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1020;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+/* Mobil uchun: Yon panel yopiq */
+.sidebar {
+    transform: translateX(calc(-1 * var(--sidebar-width)));
+}
+
+.main-content {
+    margin-left: 0;
+}
+
+body.sidebar-open .sidebar {
+    transform: translateX(0);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+}
+
+body.sidebar-open .sidebar-backdrop {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Desktop uchun */
+@media (min-width: 992px) {
+    .sidebar {
+        transform: translateX(0);
+    }
+    .main-content {
+        margin-left: var(--sidebar-width);
+    }
+    body.sidebar-collapsed .sidebar {
+        transform: translateX(calc(-1 * var(--sidebar-width)));
+    }
+    body.sidebar-collapsed .main-content {
+        margin-left: 0;
+    }
+    .sidebar-backdrop {
+        display: none !important;
+    }
+    body.sidebar-open .sidebar {
+        box-shadow: none;
+    }
+}

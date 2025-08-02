@@ -1,0 +1,35 @@
+/* appointments.css uchun maxsus o'zgaruvchilar va stillar */
+:root {
+    --status-pending: #2E90FA;
+    --status-completed: #12B76A;
+    --status-cancelled: #F04438;
+}
+
+/* appointments.css uchun maxsus stillar */
+.table>:not(caption)>*>* {
+    padding: 1rem 1.5rem; /* Maxsus padding */
+}
+
+.table .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 12px;
+    object-fit: cover;
+}
+
+.status-icon {
+    font-size: 1.2rem;
+}
+
+.status-icon.completed {
+    color: var(--status-completed);
+}
+
+.status-icon.pending {
+    color: var(--status-pending);
+}
+
+.status-icon.cancelled {
+    color: var(--status-cancelled);
+}

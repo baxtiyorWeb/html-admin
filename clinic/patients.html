@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Bemorlar - Boshqaruv Paneli - MedMapp.uz</title>
+  <meta content="MedMapp.uz uchun bemorlarni boshqarish sahifasi" name="description">
+  <meta content="medmap, admin, dashboard, patients, ui, ux" name="keywords">
+
+  <!-- Favicons -->
+  <link href="https://placehold.co/32x32/4154f1/ffffff?text=M" rel="icon">
+  <link href="https://placehold.co/180x180/4154f1/ffffff?text=M" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- 1. Umumiy stillar (saytning hamma sahifasi uchun) -->
+  <link rel="stylesheet" href="style.css">
+  <!-- 2. Shu sahifaga xos bo'lgan maxsus stillar -->
+  <link rel="stylesheet" href="patients.css">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+  <!-- ======= Sidebar (Yangilangan) ======= -->
+  <aside id="sidebar" class="sidebar">
+    <a href="index.html" class="logo d-flex align-items-center">
+       <!-- Kengaytirilgan holat uchun logo -->
+      <img src="../images/MedMapp_Logo_shaffof.png" alt="MedMap Logo" class="logo-full">
+      <!-- Qisqartirilgan holat uchun logo -->
+      <img src="../images/favicon.png" alt="MedMap Icon" class="logo-icon">
+    </a>
+    <ul class="sidebar-nav nav flex-column mt-4">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html"><i class="bi bi-grid-1x2-fill"></i><span>Boshqaruv paneli</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="clinics.html"><i class="bi bi-building"></i><span>Klinikalar</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="doctors.html"><i class="bi bi-heart-pulse"></i><span>Shifokorlar</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="patients.html"><i class="bi bi-people"></i><span>Bemorlar</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="appointments.html"><i class="bi bi-calendar2-check"></i><span>Uchrashuvlar</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="settings.html"><i class="bi bi-gear"></i><span>Sozlamalar</span></a>
+      </li>
+    </ul>
+    <div class="logout">
+        <a class="nav-link" href="login.html"><i class="bi bi-box-arrow-left"></i><span>Chiqish</span></a>
+    </div>
+  </aside><!-- End Sidebar-->
+
+  <div class="main-content">
+    <!-- ======= Header (Yangilangan) ======= -->
+    <header class="header d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center">
+            <i class="bi bi-list toggle-sidebar-btn me-3 fs-4"></i>
+        </div>
+      <nav class="header-nav d-flex align-items-center">
+          <a class="nav-link nav-icon" id="dark-mode-toggle" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tungi/Kunduzgi rejim">
+              <i class="bi bi-moon-stars"></i>
+          </a>
+          
+          <div class="nav-item dropdown">
+            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown" aria-expanded="false" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Til">
+                <i class="bi bi-translate"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item active" href="#">O'zbekcha (UZ)</a></li>
+                <li><a class="dropdown-item" href="#">Русский (RU)</a></li>
+            </ul>
+          </div>
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Bildirishnomalar"><i class="bi bi-bell"></i></a>
+
+          <div class="vr h-50 d-none d-sm-block mx-2"></div>
+
+          <div class="nav-item dropdown">
+            <a class="nav-link nav-profile d-flex align-items-center ps-sm-2" href="#" data-bs-toggle="dropdown">
+              <img src="https://placehold.co/40x40/cccccc/333333?text=A" alt="Profile" class="rounded-circle">
+              <div class="d-none d-md-flex flex-column align-items-start ms-2">
+                  <span class="fw-bold">Admin</span>
+                  <span class="text-muted small">admin@MedMapp.uz</span>
+              </div>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+              <li> <a class="dropdown-item d-flex align-items-center" href="#"> <i class="bi bi-person"></i> <span>Profil</span> </a> </li>
+              <li> <hr class="dropdown-divider"> </li>
+              <li> <a class="dropdown-item d-flex align-items-center" href="#"> <i class="bi bi-box-arrow-right"></i> <span>Chiqish</span> </a> </li>
+            </ul>
+          </div>
+      </nav>
+    </header><!-- End Header -->
+
+    <main class="page-content">
+      <section class="section patients">
+        
+        <!-- Page Title and Actions -->
+        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+            <div class="pagetitle">
+              <h1>Bemorlar</h1>
+              <p class="text-muted mb-0">Platformadagi barcha bemorlar ro'yxati.</p>
+            </div>
+            <div>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addPatientModal">
+                    <i class="bi bi-plus-circle me-2"></i>Yangi bemor qo'shish
+                </button>
+            </div>
+        </div>
+          
+        <!-- Patients Table -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card main-card">
+                    <div class="card-header">
+                        <div class="w-100 w-sm-auto flex-grow-1" style="max-width: 350px;">
+                            <div class="input-group">
+                                <span class="input-group-text bg-transparent border-end-0"><i class="bi bi-search"></i></span>
+                                <input type="text" class="form-control border-start-0" placeholder="Bemor ismi, telefoni bo'yicha qidirish...">
+                            </div>
+                        </div>
+                        <div class="d-flex gap-2">
+                             <div class="dropdown">
+                                <button class="btn btn-light border dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  <i class="bi bi-filter me-2"></i>Holati
+                                </button>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="#">Faol</a></li>
+                                  <li><a class="dropdown-item" href="#">Nofaol</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Bemor</th>
+                                        <th>Telefon Raqami</th>
+                                        <th>Tug'ilgan Sana</th>
+                                        <th>Oxirgi Tashrif</th>
+                                        <th class="text-center">Holati</th>
+                                        <th class="text-end">Amallar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <img src="https://placehold.co/40x40/EFEFEF/333333?text=A" class="avatar" alt="Bemor rasmi">
+                                                <div>
+                                                    <div class="fw-bold">Ali Valiyev</div>
+                                                    <div class="small text-muted">ID: 501</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>+998 90 123-45-67</td>
+                                        <td>15.05.1990</td>
+                                        <td>28.07.2025</td>
+                                        <td class="text-center"><span class="badge badge-light-success">Faol</span></td>
+                                        <td class="text-end">
+                                            <button class="btn btn-light btn-sm" data-bs-toggle="tooltip" title="Profilni ko'rish"><i class="bi bi-eye"></i></button>
+                                            <button class="btn btn-light btn-sm" data-bs-toggle="tooltip" title="Tahrirlash"><i class="bi bi-pencil-square"></i></button>
+                                            <button class="btn btn-light btn-sm" data-bs-toggle="tooltip" title="O'chirish"><i class="bi bi-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <img src="https://placehold.co/40x40/EFEFEF/333333?text=S" class="avatar" alt="Bemor rasmi">
+                                                <div>
+                                                    <div class="fw-bold">Sarvinoz Karimova</div>
+                                                    <div class="small text-muted">ID: 502</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>+998 93 987-65-43</td>
+                                        <td>21.09.1995</td>
+                                        <td>29.07.2025</td>
+                                        <td class="text-center"><span class="badge badge-light-success">Faol</span></td>
+                                        <td class="text-end">
+                                            <button class="btn btn-light btn-sm" data-bs-toggle="tooltip" title="Profilni ko'rish"><i class="bi bi-eye"></i></button>
+                                            <button class="btn btn-light btn-sm" data-bs-toggle="tooltip" title="Tahrirlash"><i class="bi bi-pencil-square"></i></button>
+                                            <button class="btn btn-light btn-sm" data-bs-toggle="tooltip" title="O'chirish"><i class="bi bi-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                     <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <img src="https://placehold.co/40x40/EFEFEF/333333?text=K" class="avatar" alt="Bemor rasmi">
+                                                <div>
+                                                    <div class="fw-bold">Karim Anvarov</div>
+                                                    <div class="small text-muted">ID: 503</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>+998 99 555-11-22</td>
+                                        <td>01.01.1985</td>
+                                        <td>15.06.2025</td>
+                                        <td class="text-center"><span class="badge badge-light-secondary">Nofaol</span></td>
+                                        <td class="text-end">
+                                            <button class="btn btn-light btn-sm" data-bs-toggle="tooltip" title="Profilni ko'rish"><i class="bi bi-eye"></i></button>
+                                            <button class="btn btn-light btn-sm" data-bs-toggle="tooltip" title="Tahrirlash"><i class="bi bi-pencil-square"></i></button>
+                                            <button class="btn btn-light btn-sm" data-bs-toggle="tooltip" title="O'chirish"><i class="bi bi-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                         <!-- Pagination -->
+                        <nav aria-label="Jadval sahifalari" class="d-flex justify-content-between align-items-center mt-3 px-2">
+                           <span class="text-muted small">Natijalar: 1-3 dan 548 ta</span>
+                           <ul class="pagination mb-0">
+                                <li class="page-item disabled"><a class="page-link" href="#">Oldingisi</a></li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">Keyingisi</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <div class="mobile-overlay"></div>
+
+  <!-- Yangi Bemor Qo'shish Modal -->
+  <div class="modal fade" id="addPatientModal" tabindex="-1" aria-labelledby="addPatientModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addPatientModalLabel">Yangi Bemor Qo'shish</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="row">
+              <div class="col-md-12 mb-3">
+                <label for="patientName" class="form-label">Bemorning F.I.Sh.</label>
+                <input type="text" class="form-control" id="patientName" placeholder="Valiyev Ali Karimboy o'g'li">
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label for="patientPhone" class="form-label">Telefon Raqami</label>
+                <input type="tel" class="form-control" id="patientPhone" placeholder="+998 XX XXX-XX-XX">
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label for="patientBirthdate" class="form-label">Tug'ilgan sanasi</label>
+                <input type="date" class="form-control" id="patientBirthdate">
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Jinsi</label>
+                <div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="patientGender" id="genderMale" value="male" checked>
+                        <label class="form-check-label" for="genderMale">Erkak</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="patientGender" id="genderFemale" value="female">
+                        <label class="form-check-label" for="genderFemale">Ayol</label>
+                    </div>
+                </div>
+              </div>
+
+               <div class="col-md-6 mb-3">
+                <label for="patientStatus" class="form-label">Holati</label>
+                <select id="patientStatus" class="form-select">
+                  <option selected>Faol</option>
+                  <option>Nofaol</option>
+                </select>
+              </div>
+
+              <div class="col-md-12 mb-3">
+                <label for="patientPhoto" class="form-label">Bemor Rasmi</label>
+                <input class="form-control" type="file" id="patientPhoto">
+              </div>
+
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bekor qilish</button>
+          <button type="button" class="btn btn-primary">Saqlash</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Vendor JS Files -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Asosiy JS Fayli (Yangilangan) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      "use strict";
+
+      const body = document.body;
+      const htmlEl = document.documentElement;
+      const toggleSidebarBtn = document.querySelector('.toggle-sidebar-btn');
+      const mobileOverlay = document.querySelector('.mobile-overlay');
+      const darkModeToggle = document.querySelector('#dark-mode-toggle');
+
+      // --- Sidebar Toggle Logic ---
+      if (toggleSidebarBtn) {
+        toggleSidebarBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (window.innerWidth < 1200) {
+            body.classList.toggle('sidebar-toggled');
+          } else {
+            body.classList.toggle('sidebar-collapsed');
+          }
+        });
+      }
+      
+      // Mobil versiyada overlay bosilganda sidebarni yopish
+      if (mobileOverlay) {
+          mobileOverlay.addEventListener('click', () => {
+              body.classList.remove('sidebar-toggled');
+          });
+      }
+      
+      // --- Dark Mode Logic ---
+      if(darkModeToggle) {
+          // Sahifa yuklanganda dark mode holatini tekshirish
+          if (localStorage.getItem('theme') === 'dark') {
+              htmlEl.classList.add('dark-mode');
+              darkModeToggle.querySelector('i').classList.replace('bi-moon-stars', 'bi-sun');
+          }
+
+          darkModeToggle.addEventListener('click', (e) => {
+              e.preventDefault();
+              htmlEl.classList.toggle('dark-mode');
+              const isDark = htmlEl.classList.contains('dark-mode');
+              if (isDark) {
+                  localStorage.setItem('theme', 'dark');
+                  darkModeToggle.querySelector('i').classList.replace('bi-moon-stars', 'bi-sun');
+              } else {
+                  localStorage.setItem('theme', 'light');
+                  darkModeToggle.querySelector('i').classList.replace('bi-sun', 'bi-moon-stars');
+              }
+          });
+      }
+
+      // Bootstrap Tooltip-larni ishga tushurish
+      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+      });
+
+    });
+  </script>
+
+</body>
+</html>

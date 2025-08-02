@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Shifokor Kabineti - MedMap.uz</title>
+  <meta content="MedMap.uz platformasi shifokorlari uchun shaxsiy kabinet" name="description">
+  <meta content="medmap, doctor, cabinet, dashboard, patients, appointments" name="keywords">
+
+  <!-- Favicons -->
+  <link href="https://placehold.co/32x32/4154f1/ffffff?text=M" rel="icon">
+  <link href="https://placehold.co/180x180/4154f1/ffffff?text=M" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="index.css">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+    <a href="index.html" class="logo d-flex align-items-center">
+      <img src="../images/MedMapp_Logo_shaffof.png"  alt="MedMap Logo" class="logo-full">
+      <img src="../images/favicon.png" alt="MedMap Icon" class="logo-icon">
+    </a>
+    <div class="sidebar-nav nav flex-column mt-4 flex-grow-1">
+      <a class="nav-link active" href="#"><i class="bi bi-grid-1x2-fill"></i><span>Boshqaruv Paneli</span></a>
+      <a class="nav-link" href="plan.html"><i class="bi bi-calendar2-week"></i><span>Kun Tartibi</span></a>
+      <a class="nav-link" href="patients.html"><i class="bi bi-people"></i><span>Bemorlar</span></a>
+      <a class="nav-link" href="messages.html"><i class="bi bi-chat-dots"></i><span>Xabarlar</span></a>
+      <a class="nav-link" href="settings.html"><i class="bi bi-person-circle"></i><span>Profil Sozlamalari</span></a>
+    </div>
+    <div class="logout">
+        <a class="nav-link" href="login.html"><i class="bi bi-box-arrow-left"></i><span>Chiqish</span></a>
+    </div>
+  </aside><!-- End Sidebar-->
+
+  <div class="main-content">
+    <!-- ======= Header ======= -->
+    <header class="header d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center">
+            <i class="bi bi-list toggle-sidebar-btn me-3 fs-4"></i>
+        </div>
+      <nav class="header-nav d-flex align-items-center">
+          <a class="nav-link nav-icon" id="dark-mode-toggle" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tungi/Kunduzgi rejim">
+              <i class="bi bi-moon-stars"></i>
+          </a>
+          <div class="nav-item dropdown">
+            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown" aria-expanded="false" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Til">
+                <i class="bi bi-translate"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item active" href="#">O'zbekcha (UZ)</a></li>
+                <li><a class="dropdown-item" href="#">Русский (RU)</a></li>
+            </ul>
+          </div>
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Bildirishnomalar"><i class="bi bi-bell"></i></a>
+          <div class="vr h-50 d-none d-sm-block mx-2"></div>
+          <div class="nav-item dropdown">
+            <a class="nav-link nav-profile d-flex align-items-center ps-sm-2" href="#" data-bs-toggle="dropdown">
+              <img src="https://placehold.co/40x40/4154f1/ffffff?text=SN" alt="Profile" class="rounded-circle">
+              <div class="d-none d-md-flex flex-column align-items-start ms-2">
+                  <span class="fw-bold">Dr. Salima Nosirova</span>
+                  <span class="text-muted small">Kardiolog</span>
+              </div>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+              <li> <a class="dropdown-item d-flex align-items-center" href="#"> <i class="bi bi-person"></i> <span>Profil</span> </a> </li>
+              <li> <hr class="dropdown-divider"> </li>
+              <li> <a class="dropdown-item d-flex align-items-center" href="#"> <i class="bi bi-box-arrow-right"></i> <span>Chiqish</span> </a> </li>
+            </ul>
+          </div>
+      </nav>
+    </header><!-- End Header -->
+
+    <main class="page-content">
+      <section class="section dashboard">
+        
+        <div class="pagetitle mb-4">
+            <h1>Boshqaruv Paneli</h1>
+            <p class="text-muted mb-0">Assalomu alaykum, Dr. Salima Nosirova! Bugungi ish kuningiz haqida umumiy ma'lumot.</p>
+        </div>
+          
+        <div class="row">
+          <!-- Info Cards -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="info-card d-flex align-items-center">
+              <div class="card-icon bg-primary"><i class="bi bi-calendar2-check"></i></div>
+              <div class="ms-3">
+                <h6 class="text-muted mb-1">Bugungi uchrashuvlar</h6>
+                <h4 class="fw-bold mb-0">12 ta</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="info-card d-flex align-items-center">
+              <div class="card-icon bg-success"><i class="bi bi-person-plus"></i></div>
+              <div class="ms-3">
+                <h6 class="text-muted mb-1">Yangi bemorlar (hafta)</h6>
+                <h4 class="fw-bold mb-0">5 ta</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-12 mb-4">
+            <div class="info-card d-flex align-items-center">
+              <div class="card-icon bg-warning"><i class="bi bi-envelope-exclamation"></i></div>
+              <div class="ms-3">
+                <h6 class="text-muted mb-1">Kutilayotgan xabarlar</h6>
+                <h4 class="fw-bold mb-0">3 ta</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8 mb-4">
+                <div class="card main-card h-100">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Bugungi uchrashuvlar ro'yxati</h5>
+                        <a href="#" class="btn btn-link btn-sm">Barchasini ko'rish</a>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between align-items-center appointment-item py-3">
+                                <div class="d-flex align-items-center">
+                                    <img src="https://placehold.co/40x40/EFEFEF/333333?text=A" class="avatar me-3" alt="Bemor">
+                                    <div>
+                                        <div class="fw-bold">Ali Valiyev</div>
+                                        <div class="small text-muted">Konsultatsiya</div>
+                                    </div>
+                                </div>
+                                <div class="text-end">
+                                    <div class="fw-bold">10:30 - 11:30</div>
+                                    <span class="badge bg-success-light text-success">Tugatildi</span>
+                                </div>
+                            </li>
+                             <li class="list-group-item d-flex justify-content-between align-items-center appointment-item py-3">
+                                <div class="d-flex align-items-center">
+                                    <img src="https://placehold.co/40x40/EFEFEF/333333?text=J" class="avatar me-3" alt="Bemor">
+                                    <div>
+                                        <div class="fw-bold">Jamila Ahmedova</div>
+                                        <div class="small text-muted">EKG</div>
+                                    </div>
+                                </div>
+                                <div class="text-end">
+                                    <div class="fw-bold">11:30 - 12:00</div>
+                                    <span class="badge bg-primary-light text-primary">Jarayonda</span>
+                                </div>
+                            </li>
+                             <li class="list-group-item d-flex justify-content-between align-items-center appointment-item py-3">
+                                <div class="d-flex align-items-center">
+                                    <img src="https://placehold.co/40x40/EFEFEF/333333?text=S" class="avatar me-3" alt="Bemor">
+                                    <div>
+                                        <div class="fw-bold">Sarvinoz Karimova</div>
+                                        <div class="small text-muted">Takroriy ko'rik</div>
+                                    </div>
+                                </div>
+                                <div class="text-end">
+                                    <div class="fw-bold">14:00 - 14:30</div>
+                                    <span class="badge bg-warning-light text-warning">Kutilmoqda</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                 <div class="card main-card h-100">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">So'nggi xabarlar</h5>
+                        <a href="#" class="btn btn-link btn-sm">Barchasi</a>
+                    </div>
+                    <div class="card-body">
+                         <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex align-items-center py-3">
+                                <img src="https://placehold.co/40x40/EFEFEF/333333?text=A" class="avatar me-3" alt="Bemor">
+                                <div>
+                                    <div class="fw-bold">Ali Valiyev</div>
+                                    <div class="small text-muted text-truncate" style="max-width: 200px;">Assalomu alaykum, doktor. Analiz natijalari...</div>
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex align-items-center py-3">
+                                <img src="https://placehold.co/40x40/EFEFEF/333333?text=K" class="avatar me-3" alt="Bemor">
+                                <div>
+                                    <div class="fw-bold">Karim Anvarov</div>
+                                    <div class="small text-muted text-truncate" style="max-width: 200px;">Yaxshimisiz, keyingi uchrashuvimiz...</div>
+                                </div>
+                            </li>
+                         </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      </section>
+    </main>
+  </div>
+  <div class="mobile-overlay"></div>
+
+</div>
+
+  <!-- Vendor JS Files -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Asosiy JS Fayli -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      "use strict";
+
+      const body = document.body;
+      const htmlEl = document.documentElement;
+      const toggleSidebarBtn = document.querySelector('.toggle-sidebar-btn');
+      const mobileOverlay = document.querySelector('.mobile-overlay');
+      const darkModeToggle = document.querySelector('#dark-mode-toggle');
+
+      // --- Sidebar Toggle Logic ---
+      if (toggleSidebarBtn) {
+        toggleSidebarBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (window.innerWidth < 1200) {
+            body.classList.toggle('sidebar-toggled');
+          } else {
+            body.classList.toggle('sidebar-collapsed');
+          }
+        });
+      }
+      
+      if (mobileOverlay) {
+          mobileOverlay.addEventListener('click', () => {
+              body.classList.remove('sidebar-toggled');
+          });
+      }
+      
+      // --- Dark Mode Logic ---
+      if(darkModeToggle) {
+          if (localStorage.getItem('theme') === 'dark') {
+              htmlEl.classList.add('dark-mode');
+              darkModeToggle.querySelector('i').classList.replace('bi-moon-stars', 'bi-sun');
+          }
+
+          darkModeToggle.addEventListener('click', (e) => {
+              e.preventDefault();
+              htmlEl.classList.toggle('dark-mode');
+              const isDark = htmlEl.classList.contains('dark-mode');
+              if (isDark) {
+                  localStorage.setItem('theme', 'dark');
+                  darkModeToggle.querySelector('i').classList.replace('bi-moon-stars', 'bi-sun');
+              } else {
+                  localStorage.setItem('theme', 'light');
+                  darkModeToggle.querySelector('i').classList.replace('bi-sun', 'bi-moon-stars');
+              }
+          });
+      }
+
+      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+      });
+      
+    });
+  </script>
+
+</body>
+</html>

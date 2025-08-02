@@ -1,0 +1,23 @@
+/* users.css uchun maxsus stillar */
+.table .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 12px;
+    object-fit: cover;
+}
+
+.badge.role-admin {
+    background-color: var(--danger-light);
+    color: var(--danger-color);
+}
+
+.badge.role-doctor {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+}
+
+.badge.role-patient {
+    background-color: #ecfdf3;
+    color: #027a48;
+}

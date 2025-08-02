@@ -1,0 +1,232 @@
+/* patient_profile.css uchun maxsus stillar */
+.stepper-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+}
+
+.stepper-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.stepper-item::before {
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid var(--border-color);
+    width: 100%;
+    top: 14px;
+    left: -50%;
+    z-index: 2;
+}
+
+.stepper-item::after {
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid var(--success-color);
+    width: 0;
+    top: 14px;
+    left: -50%;
+    z-index: 3;
+    transition: width 0.3s ease-in-out;
+}
+
+.stepper-item .stepper-circle {
+    position: relative;
+    z-index: 5;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.stepper-item .stepper-title {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-light);
+}
+
+.stepper-item.completed .stepper-circle {
+    background-color: var(--success-color);
+}
+
+.stepper-item.active .stepper-circle {
+    background-color: var(--primary-color);
+}
+
+.stepper-item.active .stepper-title {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.stepper-item:first-child::before {
+    content: none;
+}
+
+.stepper-item:last-child::after {
+    content: none;
+}
+
+.stepper-item.completed::after {
+    width: 100%;
+}
+
+.accordion-item {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 16px !important;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+}
+
+.accordion-button {
+    border-radius: 16px !important;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--primary-light);
+    box-shadow: none;
+}
+
+.accordion-button .step-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: var(--border-color);
+    color: var(--text-light);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.accordion-button:not(.collapsed) .step-icon {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.accordion-button.completed .step-icon {
+    background-color: var(--success-color);
+    color: #fff;
+}
+
+.accordion-button.completed {
+    color: var(--text-light);
+}
+
+.upload-area {
+    border: 2px dashed var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    background-color: #fafbff;
+}
+
+.upload-area:hover,
+.upload-area.dragover {
+    background-color: var(--primary-light);
+    border-color: var(--primary-color);
+}
+
+.upload-area .upload-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.upload-area .upload-text {
+    margin-top: 1rem;
+    color: var(--text-light);
+}
+
+.upload-area .upload-text span {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+#file-list .file-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.profile-display-card .list-group-item {
+    background-color: transparent;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.profile-display-card .list-group-item strong {
+    color: var(--text-light);
+    display: block;
+    font-weight: 500;
+    width: 180px;
+}
+
+.profile-display-card .list-group-item span {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+@media (max-width: 991.98px) {
+    .main-header .header-left .pagetitle {
+        display: none;
+    }
+    .stepper-title {
+        display: none;
+    }
+}
+
+body.dark-mode .accordion-button {
+    background-color: #2a2a2a;
+    color: var(--text-color);
+}
+
+body.dark-mode .accordion-button:not(.collapsed) {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+}
+
+body.dark-mode .accordion-button::after {
+    filter: invert(1);
+}
+
+body.dark-mode .stepper-item.active .stepper-circle {
+    background-color: var(--primary-color);
+}
+
+body.dark-mode .stepper-item.completed .stepper-circle {
+    background-color: var(--success-color);
+}
+
+body.dark-mode .stepper-item .stepper-circle {
+    background-color: #333;
+}
+
+body.dark-mode .upload-area {
+    background-color: #2a2a2a;
+    border-color: #444;
+}

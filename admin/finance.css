@@ -1,0 +1,60 @@
+/* finance.css uchun maxsus stillar */
+
+.info-card {
+    border-radius: 12px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.info-card .card-icon {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 6em;
+    opacity: 0.2;
+    transform: rotate(-15deg);
+}
+
+.info-card.total-revenue {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+}
+
+.info-card.monthly-revenue {
+    background: linear-gradient(135deg, #12b76a 0%, #2fdb7f 100%);
+}
+
+.info-card.unpaid-invoices {
+    background: linear-gradient(135deg, #d92d20 0%, #f79009 100%);
+}
+
+.info-card.subscription {
+    background: linear-gradient(135deg, #012970 0%, #4154f1 100%);
+}
+
+.nav-pills .nav-link {
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.nav-pills .nav-link.active {
+    background-color: var(--primary-color);
+}
+
+.badge.status-paid {
+    background-color: var(--success-light);
+    color: var(--success-color);
+}
+
+.badge.status-pending {
+    background-color: var(--warning-light);
+    color: var(--warning-color);
+}
+
+.badge.status-overdue {
+    background-color: var(--danger-light);
+    color: var(--danger-color);
+}

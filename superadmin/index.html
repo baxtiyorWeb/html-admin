@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Super Admin - MedMapp.uz Boshqaruv Paneli</title>
+  <meta content="MedMapp.uz platformasini to'liq boshqarish uchun Super Admin paneli" name="description">
+  <meta content="medmap, superadmin, admin, dashboard, system management" name="keywords">
+
+  <!-- Favicons -->
+  <link href="https://placehold.co/32x32/012970/ffffff?text=S" rel="icon">
+  <link href="https://placehold.co/180x180/012970/ffffff?text=S" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- 1. Umumiy stillar (saytning hamma sahifasi uchun) -->
+  <link rel="stylesheet" href="style.css">
+  <!-- 2. Shu sahifaga xos bo'lgan maxsus stillar -->
+  <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+    <a href="index.html" class="logo d-flex align-items-center">
+      <img src="https://placehold.co/40x40/ffffff/012970?text=S" alt="SuperAdmin Icon" class="logo-icon">
+      <span class="logo-text">Super Admin</span>
+    </a>
+    <ul class="sidebar-nav nav flex-column mt-4">
+      <li class="nav-item">
+        <a class="nav-link active" href="index.html"><i class="bi bi-speedometer2"></i><span>Boshqaruv Paneli</span></a>
+      </li>
+      <li class="nav-heading">Boshqaruv</li>
+      <li class="nav-item">
+        <a class="nav-link" href="users.html"><i class="bi bi-people-fill"></i><span>Foydalanuvchilar</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="platform.html"><i class="bi bi-layout-text-window-reverse"></i><span>Platforma Kontenti</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="finance.html"><i class="bi bi-cash-coin"></i><span>Moliya</span></a>
+      </li>
+      <li class="nav-heading">Tizim</li>
+      <li class="nav-item">
+        <a class="nav-link" href="analytics.html"><i class="bi bi-bar-chart-line-fill"></i><span>Analitika</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="settings.html"><i class="bi bi-sliders"></i><span>Tizim Sozlamalari</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="logs.html"><i class="bi bi-journal-text"></i><span>Loglar</span></a>
+      </li>
+    </ul>
+    <div class="logout">
+        <a class="nav-link" href="login.html" style="padding: 8px!important;"><i class="bi bi-box-arrow-left"></i><span>Chiqish</span></a>
+    </div>
+  </aside><!-- End Sidebar-->
+
+  <div class="main-content">
+    <!-- ======= Header ======= -->
+    <header class="header d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center">
+            <i class="bi bi-list toggle-sidebar-btn me-3 fs-4"></i>
+        </div>
+      <nav class="header-nav d-flex align-items-center">
+          <a class="nav-link nav-icon" id="dark-mode-toggle" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tungi/Kunduzgi rejim">
+              <i class="bi bi-moon-stars"></i>
+          </a>
+          <div class="nav-item dropdown">
+            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown" aria-expanded="false" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Til">
+                <i class="bi bi-translate"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item active" href="#">O'zbekcha (UZ)</a></li>
+                <li><a class="dropdown-item" href="#">Русский (RU)</a></li>
+            </ul>
+          </div>
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Bildirishnomalar"><i class="bi bi-bell"></i></a>
+          <div class="vr h-50 d-none d-sm-block mx-2"></div>
+          <div class="nav-item dropdown">
+            <a class="nav-link nav-profile d-flex align-items-center ps-sm-2" href="#" data-bs-toggle="dropdown">
+              <img src="https://placehold.co/40x40/012970/ffffff?text=SA" alt="Profile" class="rounded-circle">
+              <div class="d-none d-md-flex flex-column align-items-start ms-2">
+                  <span class="fw-bold">Super Admin</span>
+                  <span class="text-muted small">superuser@MedMapp.uz</span>
+              </div>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+              <li> <a class="dropdown-item d-flex align-items-center" href="#"> <i class="bi bi-person"></i> <span>Profil</span> </a> </li>
+              <li> <hr class="dropdown-divider"> </li>
+              <li> <a class="dropdown-item d-flex align-items-center" href="login.html"> <i class="bi bi-box-arrow-right"></i> <span>Chiqish</span> </a> </li>
+            </ul>
+          </div>
+      </nav>
+    </header><!-- End Header -->
+
+    <main class="page-content">
+      <section class="section dashboard">
+        
+        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+            <div class="pagetitle">
+              <h1>Boshqaruv Paneli</h1>
+              <p class="text-muted mb-0">Platformaning umumiy holati va statistikasi.</p>
+            </div>
+            <div class="filter-nav btn-group" role="group">
+                <button type="button" class="btn active" data-period="today">Bugun</button>
+                <button type="button" class="btn" data-period="week">Hafta</button>
+                <button type="button" class="btn" data-period="month">Oy</button>
+                <button type="button" class="btn" data-period="year">Yil</button>
+            </div>
+        </div>
+          
+        <div class="row">
+          <!-- Info Cards -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="info-card d-flex align-items-center">
+              <div class="card-icon bg-primary"><i class="bi bi-people-fill"></i></div>
+              <div class="ms-3">
+                <h6 class="text-muted mb-1">Foydalanuvchilar</h6>
+                <h4 class="fw-bold mb-0" id="total-users"></h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="info-card d-flex align-items-center">
+              <div class="card-icon bg-success"><i class="bi bi-building"></i></div>
+              <div class="ms-3">
+                <h6 class="text-muted mb-1">Jami Klinikalar</h6>
+                <h4 class="fw-bold mb-0" id="total-clinics"></h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="info-card d-flex align-items-center">
+              <div class="card-icon bg-warning"><i class="bi bi-cash-coin"></i></div>
+              <div class="ms-3">
+                <h6 class="text-muted mb-1">Daromad</h6>
+                <h4 class="fw-bold mb-0" id="total-revenue"></h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="info-card d-flex align-items-center">
+              <div class="card-icon bg-info"><i class="bi bi-calendar2-check"></i></div>
+              <div class="ms-3">
+                <h6 class="text-muted mb-1">Uchrashuvlar</h6>
+                <h4 class="fw-bold mb-0" id="total-appointments"></h4>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+            <!-- Foydalanuvchilar Oqimi Charti -->
+            <div class="col-lg-8 mb-4">
+                <div class="card main-card h-100">
+                    <div class="card-header"><h5>Foydalanuvchilarning ro'yxatdan o'tish dinamikasi</h5></div>
+                    <div class="card-body d-flex align-items-center"><div id="usersChart" class="w-100" style="min-height: 365px;"></div></div>
+                </div>
+            </div>
+            <!-- So'nggi Amallar Tarixi -->
+            <div class="col-lg-4 mb-4">
+                <div class="card main-card h-100">
+                    <div class="card-header"><h5>So'nggi Amallar Tarixi</h5></div>
+                    <div class="card-body activity-log">
+                        <div class="activity-item">
+                            <div class="activity-icon bg-success"><i class="bi bi-building"></i></div>
+                            <div>
+                                <div>Yangi klinika qo'shildi: <strong>"Akfa Medline"</strong></div>
+                                <div class="activity-time">5 daqiqa oldin</div>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon bg-primary"><i class="bi bi-person-plus-fill"></i></div>
+                            <div>
+                                <div>Yangi foydalanuvchi ro'yxatdan o'tdi: <strong>Ali Valiyev</strong></div>
+                                <div class="activity-time">2 soat oldin</div>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon bg-warning"><i class="bi bi-cash-coin"></i></div>
+                            <div>
+                                <div><strong>"Shifo Nur Med"</strong> klinikasi obunani yangiladi.</div>
+                                <div class="activity-time">Kecha, 18:30</div>
+                            </div>
+                        </div>
+                         <div class="activity-item">
+                            <div class="activity-icon bg-info"><i class="bi bi-arrow-up-circle-fill"></i></div>
+                            <div>
+                                <div>Tizim <strong>v2.1.5</strong> versiyasiga yangilandi.</div>
+                                <div class="activity-time">2 kun oldin</div>
+                            </div>
+                        </div>
+                         <div class="activity-item">
+                            <div class="activity-icon bg-danger"><i class="bi bi-shield-slash-fill"></i></div>
+                            <div>
+                                <div><strong>admin@klinika.uz</strong> uchun kirishda xatolik.</div>
+                                <div class="activity-time">3 kun oldin</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      </section>
+    </main>
+  </div>
+  <div class="mobile-overlay"></div>
+</div>
+
+  <!-- Vendor JS Files -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  
+  <!-- Asosiy JS Fayli -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      "use strict";
+
+      const body = document.body;
+      const htmlEl = document.documentElement;
+      const toggleSidebarBtn = document.querySelector('.toggle-sidebar-btn');
+      const mobileOverlay = document.querySelector('.mobile-overlay');
+      const darkModeToggle = document.querySelector('#dark-mode-toggle');
+
+      // --- Sidebar Toggle Logic ---
+      if (toggleSidebarBtn) {
+        toggleSidebarBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (window.innerWidth < 1200) {
+            body.classList.toggle('sidebar-toggled');
+          } else {
+            body.classList.toggle('sidebar-collapsed');
+          }
+        });
+      }
+      
+      if (mobileOverlay) {
+          mobileOverlay.addEventListener('click', () => {
+              body.classList.remove('sidebar-toggled');
+          });
+      }
+      
+      // --- Dark Mode Logic ---
+      if(darkModeToggle) {
+          if (localStorage.getItem('theme') === 'dark') {
+              htmlEl.classList.add('dark-mode');
+              darkModeToggle.querySelector('i').classList.replace('bi-moon-stars', 'bi-sun');
+          }
+
+          darkModeToggle.addEventListener('click', (e) => {
+              e.preventDefault();
+              htmlEl.classList.toggle('dark-mode');
+              const isDark = htmlEl.classList.contains('dark-mode');
+              if (isDark) {
+                  localStorage.setItem('theme', 'dark');
+                  darkModeToggle.querySelector('i').classList.replace('bi-moon-stars', 'bi-sun');
+              } else {
+                  localStorage.setItem('theme', 'light');
+                  darkModeToggle.querySelector('i').classList.replace('bi-sun', 'bi-moon-stars');
+              }
+              updateChartTheme();
+          });
+      }
+
+      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+      });
+      
+      // --- Charts & Filter ---
+      let usersChart = null;
+      const isCurrentlyDark = () => htmlEl.classList.contains('dark-mode');
+
+      const dashboardData = {
+          today: {
+              users: '14,856',
+              clinics: '254',
+              revenue: '$1,230',
+              appointments: '182',
+              chart: {
+                  series: [{ name: 'Yangi foydalanuvchilar', data: [2, 5, 3, 6, 4, 8, 5, 10] }],
+                  categories: ['00:00', '03:00', '06:00', '09:00', '12:00', '15:00', '18:00', '21:00']
+              }
+          },
+          week: {
+              users: '14,950',
+              clinics: '256',
+              revenue: '$8,500',
+              appointments: '1,250',
+              chart: {
+                  series: [{ name: 'Yangi foydalanuvchilar', data: [50, 65, 70, 85, 90, 105, 110] }],
+                  categories: ['Dush', 'Sesh', 'Chor', 'Pay', 'Jum', 'Shan', 'Yak']
+              }
+          },
+          month: {
+              users: '15,500',
+              clinics: '260',
+              revenue: '$25,464',
+              appointments: '5,100',
+              chart: {
+                  series: [{ name: 'Yangi foydalanuvchilar', data: [400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380] }],
+                  categories: ['1-3 Kun', '4-6 Kun', '7-9 Kun', '10-12 Kun', '13-15 Kun', '16-18 Kun', '19-21 Kun', '22-24 Kun', '25-27 Kun', '28-30 Kun']
+              }
+          },
+          year: {
+              users: '25,000',
+              clinics: '300',
+              revenue: '$250,000',
+              appointments: '60,000',
+              chart: {
+                  series: [{ name: 'Yangi foydalanuvchilar', data: [1310, 1400, 1280, 1510, 1420, 1820, 1560, 1600, 1450, 1700, 1480, 1750] }],
+                  categories: ['Yan', 'Fev', 'Mar', 'Apr', 'May', 'Iyn', 'Iyl', 'Avg', 'Sen', 'Okt', 'Noy', 'Dek']
+              }
+          }
+      };
+      
+      const infoCards = {
+          users: document.querySelector('#total-users'),
+          clinics: document.querySelector('#total-clinics'),
+          revenue: document.querySelector('#total-revenue'),
+          appointments: document.querySelector('#total-appointments')
+      };
+
+      const getChartOptions = (period = 'today') => {
+          const gridColor = isCurrentlyDark() ? '#444444' : '#eaecf0';
+          const labelColor = isCurrentlyDark() ? '#a0a0a0' : '#667085';
+
+          return {
+              chart: { type: 'area', height: 350, toolbar: { show: false }, zoom: { enabled: false } },
+              series: dashboardData[period].chart.series,
+              xaxis: { 
+                categories: dashboardData[period].chart.categories,
+                labels: { style: { colors: labelColor } }, 
+                axisBorder: { show: false }, 
+                axisTicks: { show: false } 
+              },
+              yaxis: { labels: { style: { colors: labelColor } } },
+              colors: [ '#4154f1' ],
+              stroke: { curve: 'smooth', width: 2 },
+              dataLabels: { enabled: false },
+              fill: { type: "gradient", gradient: { shadeIntensity: 1, opacityFrom: 0.4, opacityTo: 0.1, stops: [0, 90, 100] } },
+              grid: { borderColor: gridColor, strokeDashArray: 5 },
+              tooltip: { theme: isCurrentlyDark() ? 'dark' : 'light' }
+          }
+      }
+
+      const usersChartEl = document.querySelector("#usersChart");
+      if (usersChartEl) {
+        usersChart = new ApexCharts(usersChartEl, getChartOptions('today'));
+        usersChart.render();
+      }
+      
+      function updateDashboard(period) {
+          if (!dashboardData[period]) return;
+          const data = dashboardData[period];
+          
+          infoCards.users.textContent = data.users;
+          infoCards.clinics.textContent = data.clinics;
+          infoCards.revenue.textContent = data.revenue;
+          infoCards.appointments.textContent = data.appointments;
+          
+          if (usersChart) {
+              usersChart.updateOptions(getChartOptions(period));
+          }
+      }
+      
+      function updateChartTheme() {
+          const activeFilter = document.querySelector('.filter-nav .btn.active').dataset.period;
+          if (usersChart) {
+              usersChart.updateOptions(getChartOptions(activeFilter));
+          }
+      }
+
+      document.querySelectorAll('.filter-nav .btn').forEach(button => {
+          button.addEventListener('click', function() {
+              document.querySelectorAll('.filter-nav .btn').forEach(btn => btn.classList.remove('active'));
+              this.classList.add('active');
+              const period = this.dataset.period;
+              updateDashboard(period);
+          });
+      });
+
+      // Initial load
+      updateDashboard('today');
+
+    });
+  </script>
+
+</body>
+</html>

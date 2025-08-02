@@ -1,0 +1,11 @@
+/* complete_applications.css uchun maxsus stillar */
+
+.badge.status-closed {
+    background-color: var(--success-light);
+    color: var(--success-color);
+}
+
+.badge.status-rejected {
+    background-color: var(--danger-light);
+    color: var(--danger-color);
+}

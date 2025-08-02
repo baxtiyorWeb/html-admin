@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Mening Yozuvlarim - MedMapp.uz</title>
+  <meta content="Bemorning shifokor qabuliga yozilgan vaqtlari va tashriflar tarixi" name="description">
+  <meta content="medmap, patient, appointments, booking, history, reviews" name="keywords">
+
+  <!-- Favicons -->
+  <link href="https://placehold.co/32x32/4154f1/ffffff?text=M" rel="icon">
+  <link href="https://placehold.co/180x180/4154f1/ffffff?text=M" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- 1. Umumiy stillar (saytning hamma sahifasi uchun) -->
+  <link rel="stylesheet" href="style.css">
+  <!-- 2. Shu sahifaga xos bo'lgan maxsus stillar -->
+  <link rel="stylesheet" href="patient_queue.css">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+    <a href="#" class="logo d-flex align-items-center text-decoration-none">
+        <img src="../images/MedMapp_Logo_shaffof.png" height="66" alt="Logo">
+    </a>
+    <ul class="sidebar-nav nav flex-column mt-4">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html"><i class="bi bi-grid-1x2-fill"></i><span data-lang-key="dashboard">Boshqaruv paneli</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="patient_profile.html"><i class="bi bi-person-fill"></i><span data-lang-key="my_profile">Mening profilim</span></a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link active" href="patient_queue.html"><i class="bi bi-calendar-check-fill"></i><span data-lang-key="my_appointments">Mening yozuvlarim</span></a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="analysis.html"><i class="bi bi-file-earmark-medical-fill"></i><span data-lang-key="lab_results">Tahlil natijalari</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="patient_consultation.html"><i class="bi bi-chat-dots-fill"></i><span data-lang-key="consultations">Konsultatsiyalar</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="payments.html"><i class="bi bi-credit-card-fill"></i><span data-lang-key="payments">To'lovlar</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="reviews.html"><i class="bi bi-star-fill"></i><span data-lang-key="my_reviews">Izohlarim</span></a>
+        </li>
+      </ul>
+  </aside><!-- End Sidebar-->
+
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+  <main class="main-content">
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="header-left d-flex align-items-center">
+            <button class="btn px-1 me-2" id="sidebarToggleBtn" type="button"><i class="bi bi-list fs-3"></i></button>
+            <div class="pagetitle d-none d-md-block">
+                <h1 data-lang-key="my_appointments_title">Mening Yozuvlarim</h1>
+            </div>
+        </div>
+        <div class="header-right d-flex align-items-center">
+             <!-- Language Dropdown -->
+            <div class="dropdown lang-dropdown me-2">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-translate fs-5"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item d-flex align-items-center" href="#" data-lang="uz"><i class="bi bi-flag-fill me-2"></i> O'zbekcha</a></li>
+                <li><a class="dropdown-item d-flex align-items-center" href="#" data-lang="ru"><i class="bi bi-flag-fill me-2"></i> Русский</a></li>
+                <li><a class="dropdown-item d-flex align-items-center" href="#" data-lang="en"><i class="bi bi-flag-fill me-2"></i> English</a></li>
+              </ul>
+            </div>
+
+            <button class="btn nav-link me-2" id="darkModeToggle"><i class="bi bi-moon-stars-fill fs-5"></i></button>
+            <a href="#" class="nav-link me-3"><i class="bi bi-bell fs-5"></i></a>
+            <!-- Profile Dropdown -->
+            <div class="dropdown profile-dropdown">
+                <a href="#" class="d-flex align-items-center text-decoration-none" data-bs-toggle="dropdown">
+                    <img src="https://placehold.co/40x40/EFEFEF/333333?text=A" alt="Profile" class="rounded-circle" id="profileImage">
+                    <div class="ms-2 d-none d-md-block">
+                        <div class="fw-bold" id="profileName">Ali Valiyev</div>
+                        <small class="text-muted" data-lang-key="patient">Bemor</small>
+                    </div>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item d-flex align-items-center" href="#" data-lang-key="settings"><i class="bi bi-gear-fill me-2 text-secondary"></i>Sozlamalar</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item d-flex align-items-center text-danger" href="#" data-lang-key="logout"><i class="bi bi-box-arrow-right me-2"></i>Chiqish</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-body">
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4">
+            <div class="pagetitle">
+                <h1 data-lang-key="my_appointments_title">Mening Yozuvlarim</h1>
+                <p class="text-muted mb-0" data-lang-key="my_appointments_subtitle">Kelgusi va o'tgan uchrashuvlaringizni kuzatib boring.</p>
+            </div>
+            <a href="#" class="btn btn-primary"><i class="bi bi-plus-circle-fill me-2"></i><span data-lang-key="new_appointment">Yangi yozuv</span></a>
+        </div>
+
+        <div class="info-card">
+            <div class="card-body">
+                <ul class="nav nav-tabs nav-pills-primary" id="appointmentTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="upcoming-tab" data-bs-toggle="tab" data-bs-target="#upcoming-pane" type="button" role="tab" data-lang-key="upcoming">Kelgusi</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="past-tab" data-bs-toggle="tab" data-bs-target="#past-pane" type="button" role="tab" data-lang-key="past">O'tgan</button>
+                    </li>
+                </ul>
+                <div class="tab-content pt-4">
+                    <div class="tab-pane fade show active" id="upcoming-pane" role="tabpanel">
+                        <!-- Upcoming Appointment 1 -->
+                        <div class="appointment-card">
+                            <div class="row align-items-center">
+                                <div class="col-md-6 d-flex align-items-center mb-3 mb-md-0">
+                                    <img src="https://placehold.co/100x100/eef2ff/4154f1?text=SN" class="rounded-circle doctor-avatar me-3" alt="Shifokor">
+                                    <div>
+                                        <div class="doctor-name">Dr. Salima Nosirova</div>
+                                        <div class="text-muted">Kardiolog, Akfa Medline</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3 mb-md-0">
+                                    <div><i class="bi bi-calendar-event me-2 text-primary"></i> <strong data-lang-key="today">Bugun</strong></div>
+                                    <div><i class="bi bi-clock me-2 text-primary"></i> <strong>14:30</strong></div>
+                                </div>
+                                <div class="col-md-3 text-md-end">
+                                    <button class="btn btn-outline-danger btn-sm" data-lang-key="cancel">Bekor qilish</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Upcoming Appointment 2 -->
+                        <div class="appointment-card">
+                            <div class="row align-items-center">
+                                <div class="col-md-6 d-flex align-items-center mb-3 mb-md-0">
+                                    <img src="https://placehold.co/100x100/eef2ff/4154f1?text=KA" class="rounded-circle doctor-avatar me-3" alt="Shifokor">
+                                    <div>
+                                        <div class="doctor-name">Dr. Karim Anvarov</div>
+                                        <div class="text-muted">Nevrolog, Shifo Nur Med</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3 mb-md-0">
+                                    <div><i class="bi bi-calendar-event me-2 text-primary"></i> <strong>05.08.2025</strong></div>
+                                    <div><i class="bi bi-clock me-2 text-primary"></i> <strong>11:00</strong></div>
+                                </div>
+                                <div class="col-md-3 text-md-end">
+                                    <button class="btn btn-outline-danger btn-sm" data-lang-key="cancel">Bekor qilish</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="past-pane" role="tabpanel">
+                        <!-- Past Appointment 1 -->
+                        <div class="appointment-card">
+                            <div class="row align-items-center">
+                                <div class="col-md-6 d-flex align-items-center mb-3 mb-md-0">
+                                    <img src="https://placehold.co/100x100/eef2ff/4154f1?text=OR" class="rounded-circle doctor-avatar me-3" alt="Shifokor">
+                                    <div>
+                                        <div class="doctor-name">Dr. Olim Rahmatov</div>
+                                        <div class="text-muted">Terapevt, City Med</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3 mb-md-0">
+                                    <div><i class="bi bi-calendar-check me-2 text-success"></i> <strong>15.07.2025</strong></div>
+                                    <div><i class="bi bi-patch-check-fill me-2 text-success"></i> <span data-lang-key="completed">Yakunlandi</span></div>
+                                </div>
+                                <div class="col-md-3 text-md-end">
+                                    <button class="btn btn-outline-primary btn-sm"><i class="bi bi-star-fill me-1"></i> <span data-lang-key="leave_review">Izoh qoldirish</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</div>
+
+  <!-- Vendor JS Files -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          // --- Translations ---
+          const translations = {
+              'uz': {
+                  dashboard: "Boshqaruv paneli", my_profile: "Mening profilim", my_appointments: "Mening yozuvlarim", lab_results: "Tahlil natijalari", consultations: "Konsultatsiyalar", extra_services: "Qo'shimcha xizmatlar", my_reviews: "Izohlarim", payments: "To'lovlar",
+                  my_appointments_title: "Mening Yozuvlarim", patient: "Bemor", settings: "Sozlamalar", logout: "Chiqish",
+                  my_appointments_subtitle: "Kelgusi va o'tgan uchrashuvlaringizni kuzatib boring.",
+                  new_appointment: "Yangi yozuv",
+                  upcoming: "Kelgusi", past: "O'tgan",
+                  today: "Bugun", cancel: "Bekor qilish",
+                  completed: "Yakunlandi", leave_review: "Izoh qoldirish"
+              },
+              'ru': {
+                  dashboard: "Панель управления", my_profile: "Мой профиль", my_appointments: "Мои записи", lab_results: "Результаты анализов", consultations: "Консультации", extra_services: "Доп. услуги", my_reviews: "Мои отзывы", payments: "Платежи",
+                  my_appointments_title: "Мои Записи", patient: "Пациент", settings: "Настройки", logout: "Выйти",
+                  my_appointments_subtitle: "Следите за вашими предстоящими и прошедшими встречами.",
+                  new_appointment: "Новая запись",
+                  upcoming: "Предстоящие", past: "Прошедшие",
+                  today: "Сегодня", cancel: "Отменить",
+                  completed: "Завершено", leave_review: "Оставить отзыв"
+              },
+              'en': {
+                  dashboard: "Dashboard", my_profile: "My Profile", my_appointments: "My Appointments", lab_results: "Lab Results", consultations: "Consultations", extra_services: "Extra Services", my_reviews: "My Reviews", payments: "Payments",
+                  my_appointments_title: "My Appointments", patient: "Patient", settings: "Settings", logout: "Logout",
+                  my_appointments_subtitle: "Keep track of your upcoming and past appointments.",
+                  new_appointment: "New Appointment",
+                  upcoming: "Upcoming", past: "Past",
+                  today: "Today", cancel: "Cancel",
+                  completed: "Completed", leave_review: "Leave a review"
+              }
+          };
+
+          const setLanguage = (lang) => {
+              document.documentElement.lang = lang;
+              localStorage.setItem('language', lang);
+              document.querySelectorAll('[data-lang-key]').forEach(element => {
+                  const key = element.getAttribute('data-lang-key');
+                  const icon = element.querySelector('i');
+                  if (translations[lang] && translations[lang][key]) {
+                      const translationText = translations[lang][key];
+                      if (icon) {
+                          element.innerHTML = icon.outerHTML + " " + translationText;
+                      } else {
+                          element.innerHTML = translationText;
+                      }
+                  }
+              });
+          };
+
+          // --- UI Elements ---
+          const sidebarToggleBtn = document.getElementById('sidebarToggleBtn');
+          const sidebarBackdrop = document.getElementById('sidebarBackdrop');
+          const darkModeToggle = document.getElementById('darkModeToggle');
+          const langLinks = document.querySelectorAll('.lang-dropdown .dropdown-item');
+
+          // --- Sidebar Logic ---
+          const toggleSidebar = () => {
+              const isDesktop = window.innerWidth >= 992;
+              if (isDesktop) {
+                  document.body.classList.toggle('sidebar-collapsed');
+              } else {
+                  document.body.classList.toggle('sidebar-open');
+              }
+          };
+
+          if (sidebarToggleBtn) {
+              sidebarToggleBtn.addEventListener('click', toggleSidebar);
+          }
+          if (sidebarBackdrop) {
+              sidebarBackdrop.addEventListener('click', toggleSidebar);
+          }
+          
+          // --- Dark Mode & Language Logic ---
+          if (darkModeToggle) {
+              darkModeToggle.addEventListener('click', () => {
+                  document.body.classList.toggle('dark-mode');
+                  const icon = darkModeToggle.querySelector('i');
+                  icon.classList.toggle('bi-moon-stars-fill');
+                  icon.classList.toggle('bi-sun-fill');
+              });
+          }
+          langLinks.forEach(link => {
+              link.addEventListener('click', (e) => {
+                  e.preventDefault();
+                  const selectedLang = e.currentTarget.getAttribute('data-lang');
+                  setLanguage(selectedLang);
+              });
+          });
+          
+          // --- Initial Load ---
+          const savedLang = localStorage.getItem('language') || 'uz';
+          setLanguage(savedLang);
+          
+          document.getElementById('profileName').textContent = "Ali Valiyev";
+          document.getElementById('profileImage').src = `https://placehold.co/40x40/EFEFEF/333333?text=A`;
+          
+          if (window.innerWidth < 992) {
+              document.body.classList.add('sidebar-collapsed');
+          }
+      });
+  </script>
+</body>
+</html>

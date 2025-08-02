@@ -1,0 +1,206 @@
+/* index.css uchun maxsus stillar */
+
+.filter-nav {
+    background-color: #F2F4F7;
+    padding: 4px;
+    border-radius: 8px;
+}
+
+html.dark-mode .filter-nav {
+    background-color: #2a2a2a;
+}
+
+.filter-nav .btn {
+    font-weight: 500;
+    color: var(--text-light);
+    border: none;
+    padding: 8px 16px;
+}
+
+.filter-nav .btn.active {
+    background-color: var(--card-background);
+    color: var(--text-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+html.dark-mode .filter-nav .btn.active {
+    background-color: #3a3a3a;
+}
+
+.info-card {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 25px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.info-card .card-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    opacity: 0.1;
+}
+
+.info-card .card-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-light);
+}
+
+.info-card .card-value {
+    font-size: 36px;
+    font-weight: 700;
+    color: #101828;
+}
+
+html.dark-mode .info-card .card-value {
+    color: #f1f1f1;
+}
+
+.info-card .card-change {
+    font-size: 14px;
+}
+
+.info-card .card-change .text-success {
+    color: #039855 !important;
+}
+
+.info-card .card-change .text-danger {
+    color: #D92D20 !important;
+}
+
+.info-card.doctors {
+    background: linear-gradient(135deg, #eef2ff 0%, var(--card-background) 100%);
+}
+
+.info-card.patients {
+    background: linear-gradient(135deg, #ECFDF3 0%, var(--card-background) 100%);
+}
+
+.info-card.appointments {
+    background: linear-gradient(135deg, #FFFAEB 0%, var(--card-background) 100%);
+}
+
+.info-card.revenue {
+    background: linear-gradient(135deg, #FEF3F2 0%, var(--card-background) 100%);
+}
+
+html.dark-mode .info-card {
+    background: var(--card-background);
+}
+
+.appointments-tabs .nav-link {
+    color: var(--text-light);
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    margin-right: 1rem;
+    padding: 0.5rem 0.2rem;
+}
+
+.appointments-tabs .nav-link.active {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    background: transparent;
+}
+
+.appointment-card {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.appointment-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.appointment-card .avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.appointment-card .info {
+    flex-grow: 1;
+    margin: 0 1rem;
+}
+
+.appointment-card .time-section {
+    text-align: right;
+    min-width: 100px;
+}
+
+.badge {
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 16px;
+}
+
+.badge-light-success {
+    color: #027A48;
+    background-color: #ECFDF3;
+}
+
+.badge-light-warning {
+    color: #B54708;
+    background-color: #FFFAEB;
+}
+
+.badge-light-danger {
+    color: #B42318;
+    background-color: #FEF3F2;
+}
+
+@media (max-width: 767.98px) {
+    .appointment-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .appointment-card .info {
+        margin: 1rem 0;
+        width: 100%;
+    }
+    .appointment-card .time-section,
+    .appointment-card .status,
+    .appointment-card .actions {
+        width: 100%;
+        text-align: left;
+        margin-top: 0.5rem;
+    }
+    .appointment-card .time-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .appointment-card .status {
+        display: inline-block;
+    }
+    .appointment-card .actions {
+        text-align: right;
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .filter-nav .btn {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+}

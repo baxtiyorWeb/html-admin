@@ -1,0 +1,95 @@
+/* plan.css (Ish rejasi/kalendar) uchun maxsus stillar */
+
+.timeline-container {
+    display: flex;
+    padding: 2rem;
+    overflow-x: auto;
+}
+
+.timeline-hours {
+    padding-right: 1.5rem;
+}
+
+.timeline-hour {
+    height: 80px;
+    /* 1 soat = 80px */
+    position: relative;
+    text-align: right;
+    color: var(--text-light);
+    font-size: 12px;
+}
+
+.timeline-hour::after {
+    content: '—';
+    position: absolute;
+    right: -12px;
+    top: -9px;
+}
+
+.timeline-body {
+    flex-grow: 1;
+    position: relative;
+    border-left: 2px solid var(--border-color);
+    padding-left: 1.5rem;
+}
+
+.timeline-now-indicator {
+    position: absolute;
+    left: -8px;
+    width: calc(100% + 8px);
+    height: 2px;
+    background-color: var(--danger-color);
+    z-index: 2;
+}
+
+.timeline-now-indicator::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: -5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--danger-color);
+}
+
+.appointment-card {
+    position: absolute;
+    left: 2.5rem;
+    right: 1rem;
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-left-width: 4px;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.appointment-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 3;
+}
+
+.appointment-card.status-completed {
+    border-left-color: var(--success-color);
+}
+
+.appointment-card.status-in-progress {
+    border-left-color: var(--primary-color);
+}
+
+.appointment-card.status-pending {
+    border-left-color: var(--warning-color);
+}
+
+.appointment-card .patient-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}

@@ -1,0 +1,35 @@
+/* clinics.css uchun maxsus stillar */
+
+.table .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px; /* Boshqa sahifalardan farqli border-radius */
+    margin-right: 12px;
+    object-fit: cover;
+}
+
+.badge {
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 16px;
+}
+
+.badge-light-success {
+    color: #027A48;
+    background-color: #ECFDF3;
+}
+
+.badge-light-secondary {
+    color: #344054;
+    background-color: #F2F4F7;
+}
+
+html.dark-mode .badge-light-success {
+    color: #6ce9a6;
+    background-color: #022c1a;
+}
+
+html.dark-mode .badge-light-secondary {
+    color: #c8cdd2;
+    background-color: #3e4551;
+}

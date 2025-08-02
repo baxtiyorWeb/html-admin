@@ -1,0 +1,410 @@
+/* =======================================================
+* Asosiy umumiy stillar
+* Barcha sahifalar uchun umumiy bo'lgan CSS qoidalari
+======================================================== */
+
+/*--------------------------------------------------------------
+# Asosiy o'zgaruvchilar (Variables)
+--------------------------------------------------------------*/
+:root {
+    --primary-color: #4154f1;
+    --primary-light: #eef2ff;
+    --secondary-color: #012970;
+    --background-color: #f9fafb;
+    --card-background: #ffffff;
+    --text-color: #344054;
+    --text-light: #667085;
+    --border-color: #eaecf0;
+    --danger-color: #d92d20;
+    --danger-light: #fef3f2;
+    --sidebar-width: 260px;
+    --sidebar-collapsed-width: 88px;
+}
+
+html.dark-mode {
+    --primary-light: #2a3a9a;
+    --secondary-color: #dbe2ff;
+    --background-color: #121212;
+    --card-background: #1e1e1e;
+    --text-color: #e0e0e0;
+    --text-light: #a0a0a0;
+    --border-color: #333333;
+    --danger-color: #f97066;
+    --danger-light: #4a2724;
+}
+
+/*--------------------------------------------------------------
+# Umumiy tana (Body) va layout
+--------------------------------------------------------------*/
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--background-color);
+    color: var(--text-color);
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.wrapper {
+    display: flex;
+}
+
+/*--------------------------------------------------------------
+# Yon panel (Sidebar)
+--------------------------------------------------------------*/
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--card-background);
+    border-right: 1px solid var(--border-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease-in-out;
+    z-index: 1000;
+    overflow-x: hidden;
+}
+
+.logo {
+    margin-bottom: 2rem;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.logo .logo-full {
+    max-height: 66px;
+    display: block;
+    transition: all 0.3s;
+}
+
+.logo .logo-icon {
+    display: none;
+    max-height: 40px;
+    transition: all 0.3s;
+}
+
+.logo .logo-text {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--secondary-color);
+    transition: opacity 0.3s;
+    margin-left: 8px;
+}
+
+html.dark-mode .logo .logo-text {
+    color: var(--secondary-color);
+}
+
+.sidebar-nav {
+    flex-grow: 1;
+}
+
+.sidebar-nav .nav-link {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-light);
+    padding: 10px 12px;
+    border-radius: 6px;
+    margin-bottom: 4px;
+    transition: all 0.2s ease-in-out;
+    white-space: nowrap;
+}
+
+.sidebar-nav .nav-link i {
+    font-size: 20px;
+    margin-right: 12px;
+    flex-shrink: 0;
+    width: 24px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.sidebar-nav .nav-link:hover {
+    background: var(--primary-light);
+    color: var(--primary-color);
+}
+
+.sidebar-nav .nav-link.active {
+    background: var(--primary-color);
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(65, 84, 241, 0.2);
+}
+
+.sidebar-nav .nav-link.active i {
+    color: #fff;
+}
+
+.sidebar .logout {
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+}
+
+.sidebar .logout .nav-link {
+    color: var(--danger-color);
+    margin-top: 5px;
+    padding: 15px;
+}
+
+.sidebar .logout .nav-link span {
+    margin-left: 8px;
+    font-size: 15px;
+}
+
+.sidebar .logout .nav-link:hover {
+    background-color: var(--danger-light);
+    color: var(--danger-color);
+    font-weight: 600;
+}
+
+/*--------------------------------------------------------------
+# Asosiy kontent va Bosh qism (Header)
+--------------------------------------------------------------*/
+.main-content {
+    margin-left: var(--sidebar-width);
+    width: calc(100% - var(--sidebar-width));
+    transition: all 0.3s ease-in-out;
+}
+
+.header {
+    height: 70px;
+    background-color: var(--card-background);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0 30px;
+    transition: background-color 0.3s;
+}
+
+.header-nav .nav-icon {
+    cursor: pointer;
+    font-size: 1.3rem;
+    padding: 0 10px;
+    color: var(--text-light);
+    transition: color 0.2s;
+}
+
+.header-nav .nav-icon:hover {
+    color: var(--primary-color);
+}
+
+.header-nav .nav-profile img {
+    height: 40px;
+    width: 40px;
+}
+
+.toggle-sidebar-btn {
+    cursor: pointer;
+}
+
+/*--------------------------------------------------------------
+# Sahifa kontenti
+--------------------------------------------------------------*/
+.page-content {
+    padding: 30px;
+}
+
+.pagetitle h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #101828;
+}
+
+html.dark-mode .pagetitle h1 {
+    color: #f1f1f1;
+}
+
+/*--------------------------------------------------------------
+# Karta va Jadval (Card & Table)
+--------------------------------------------------------------*/
+.card.main-card {
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+    background-color: var(--card-background);
+}
+
+.card-header {
+    background-color: transparent;
+    border-bottom: 1px solid var(--border-color);
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.card-header h5 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    color: var(--secondary-color);
+}
+
+html.dark-mode .card-header h5 {
+    color: var(--text-color);
+}
+
+.table-responsive {
+    padding: 0;
+}
+
+.table>:not(caption)>*>* {
+    padding: 1rem;
+    vertical-align: middle;
+    border-color: var(--border-color);
+}
+
+.table thead th {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--text-light);
+    border-bottom-width: 1px;
+}
+
+.table tbody td {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/*--------------------------------------------------------------
+# Modal oyna
+--------------------------------------------------------------*/
+.modal-content {
+    background-color: var(--card-background);
+    border: none;
+    border-radius: 12px;
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.5rem;
+}
+
+.modal-header .btn-close {
+    filter: var(--bs-btn-close-white-filter);
+}
+
+html.dark-mode .modal-header .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.modal-footer {
+    border-top: 1px solid var(--border-color);
+    padding: 1rem 1.5rem;
+}
+
+/*--------------------------------------------------------------
+# Boshqa komponentlar
+--------------------------------------------------------------*/
+html.dark-mode .dropdown-menu {
+    background-color: #2a2a2a;
+    border-color: #444;
+}
+
+html.dark-mode .dropdown-item {
+    color: #e0e0e0;
+}
+
+html.dark-mode .dropdown-item:hover {
+    background-color: #3a3a3a;
+}
+
+html.dark-mode .dropdown-divider {
+    border-top-color: #444;
+}
+
+.vr {
+    margin-top: 1rem !important;
+}
+
+/*--------------------------------------------------------------
+# Yig'ilgan Yon Panel va Moslashuvchanlik (Responsive)
+--------------------------------------------------------------*/
+body.sidebar-collapsed .sidebar {
+    width: var(--sidebar-collapsed-width);
+    padding: 20px 10px;
+}
+
+body.sidebar-collapsed .logo {
+    justify-content: center;
+}
+
+body.sidebar-collapsed .logo .logo-full,
+body.sidebar-collapsed .logo .logo-text {
+    display: none;
+}
+
+body.sidebar-collapsed .logo .logo-icon {
+    display: block;
+}
+
+body.sidebar-collapsed .sidebar-nav .nav-link span,
+body.sidebar-collapsed .logout .nav-link span {
+    display: none;
+}
+
+body.sidebar-collapsed .sidebar-nav .nav-link {
+    justify-content: center;
+}
+
+body.sidebar-collapsed .sidebar-nav .nav-link i {
+    margin-right: 0;
+}
+
+body.sidebar-collapsed .main-content {
+    margin-left: var(--sidebar-collapsed-width);
+    width: calc(100% - var(--sidebar-collapsed-width));
+}
+
+@media (max-width: 1199.98px) {
+    body:not(.sidebar-collapsed) .sidebar {
+        left: calc(-1 * var(--sidebar-width));
+    }
+    body.sidebar-toggled .sidebar {
+        left: 0;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    body:not(.sidebar-collapsed) .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+    .mobile-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 999;
+        display: none;
+    }
+    body.sidebar-toggled .mobile-overlay {
+        display: block;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .page-content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .header {
+        padding: 0 15px;
+    }
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

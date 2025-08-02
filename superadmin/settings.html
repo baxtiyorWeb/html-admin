@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Tizim Sozlamalari - Super Admin Paneli</title>
+  <meta content="MedMapp.uz platformasining global sozlamalarini boshqarish" name="description">
+  <meta content="medmap, superadmin, settings, configuration, system" name="keywords">
+
+  <!-- Favicons -->
+  <link href="https://placehold.co/32x32/012970/ffffff?text=S" rel="icon">
+  <link href="https://placehold.co/180x180/012970/ffffff?text=S" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- 1. Umumiy stillar (saytning hamma sahifasi uchun) -->
+  <link rel="stylesheet" href="style.css">
+  <!-- 2. Shu sahifaga xos bo'lgan maxsus stillar -->
+  <link rel="stylesheet" href="settings.css">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+    <a href="index.html" class="logo d-flex align-items-center">
+      <img src="https://placehold.co/40x40/ffffff/012970?text=S" alt="SuperAdmin Icon" class="logo-icon">
+      <span class="logo-text">Super Admin</span>
+    </a>
+    <ul class="sidebar-nav nav flex-column mt-4">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html"><i class="bi bi-speedometer2"></i><span>Boshqaruv Paneli</span></a>
+        </li>
+        <li class="nav-heading">Boshqaruv</li>
+        <li class="nav-item">
+          <a class="nav-link" href="users.html"><i class="bi bi-people-fill"></i><span>Foydalanuvchilar</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="platform.html"><i class="bi bi-layout-text-window-reverse"></i><span>Platforma Kontenti</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="finance.html"><i class="bi bi-cash-coin"></i><span>Moliya</span></a>
+        </li>
+        <li class="nav-heading">Tizim</li>
+        <li class="nav-item">
+          <a class="nav-link" href="analytics.html"><i class="bi bi-bar-chart-line-fill"></i><span>Analitika</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="settings.html"><i class="bi bi-sliders"></i><span>Tizim Sozlamalari</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="logs.html"><i class="bi bi-journal-text"></i><span>Loglar</span></a>
+        </li>
+      </ul>
+    <div class="logout">
+        <a class="nav-link" href="login.html"><i class="bi bi-box-arrow-left"></i><span>Chiqish</span></a>
+    </div>
+  </aside><!-- End Sidebar-->
+
+  <div class="main-content">
+    <!-- ======= Header ======= -->
+    <header class="header d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center">
+            <i class="bi bi-list toggle-sidebar-btn me-3 fs-4"></i>
+        </div>
+      <nav class="header-nav d-flex align-items-center">
+          <a class="nav-link nav-icon" id="dark-mode-toggle" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tungi/Kunduzgi rejim">
+              <i class="bi bi-moon-stars"></i>
+          </a>
+          <div class="nav-item dropdown">
+            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown" aria-expanded="false" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Til">
+                <i class="bi bi-translate"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item active" href="#">O'zbekcha (UZ)</a></li>
+                <li><a class="dropdown-item" href="#">Русский (RU)</a></li>
+            </ul>
+          </div>
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Bildirishnomalar"><i class="bi bi-bell"></i></a>
+          <div class="vr h-50 d-none d-sm-block mx-2"></div>
+          <div class="nav-item dropdown">
+            <a class="nav-link nav-profile d-flex align-items-center ps-sm-2" href="#" data-bs-toggle="dropdown">
+              <img src="https://placehold.co/40x40/012970/ffffff?text=SA" alt="Profile" class="rounded-circle">
+              <div class="d-none d-md-flex flex-column align-items-start ms-2">
+                  <span class="fw-bold">Super Admin</span>
+                  <span class="text-muted small">superuser@MedMapp.uz</span>
+              </div>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+              <li> <a class="dropdown-item d-flex align-items-center" href="#"> <i class="bi bi-person"></i> <span>Profil</span> </a> </li>
+              <li> <hr class="dropdown-divider"> </li>
+              <li> <a class="dropdown-item d-flex align-items-center" href="#"> <i class="bi bi-box-arrow-right"></i> <span>Chiqish</span> </a> </li>
+            </ul>
+          </div>
+      </nav>
+    </header><!-- End Header -->
+
+    <main class="page-content">
+      <section class="section settings">
+        
+        <div class="pagetitle mb-4">
+            <h1>Tizim Sozlamalari</h1>
+            <p class="text-muted mb-0">Platformaning global sozlamalarini boshqarish.</p>
+        </div>
+          
+        <div class="row">
+            <div class="col-lg-3">
+                <!-- Settings Navigation -->
+                <div class="list-group settings-nav">
+                    <a href="#general-settings" class="list-group-item list-group-item-action active" data-bs-toggle="list"><i class="bi bi-gear-wide-connected"></i>Umumiy</a>
+                    <a href="#payment-settings" class="list-group-item list-group-item-action" data-bs-toggle="list"><i class="bi bi-credit-card"></i>To'lov Tizimlari</a>
+                    <a href="#email-settings" class="list-group-item list-group-item-action" data-bs-toggle="list"><i class="bi bi-envelope"></i>Email</a>
+                    <a href="#security-settings" class="list-group-item list-group-item-action" data-bs-toggle="list"><i class="bi bi-shield-lock"></i>Xavfsizlik</a>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="tab-content">
+                    <!-- Umumiy Sozlamalar -->
+                    <div class="tab-pane fade show active" id="general-settings">
+                        <div class="settings-card">
+                            <div class="card-header"><h5 class="card-title mb-0">Umumiy Sozlamalar</h5></div>
+                            <div class="card-body">
+                                <form class="row g-3">
+                                    <div class="col-md-12"><label for="siteName" class="form-label">Platforma Nomi</label><input type="text" class="form-control" id="siteName" value="MedMapp.uz"></div>
+                                    <div class="col-md-6"><label for="siteLogo" class="form-label">Asosiy Logo</label><input type="file" class="form-control" id="siteLogo"></div>
+                                    <div class="col-md-6"><label for="siteFavicon" class="form-label">Favicon</label><input type="file" class="form-control" id="siteFavicon"></div>
+                                    <div class="col-12"><hr></div>
+                                    <div class="col-12"><div class="form-check form-switch"><input class="form-check-input" type="checkbox" role="switch" id="maintenanceMode"><label class="form-check-label" for="maintenanceMode">Texnik xizmat rejimi</label><div class="form-text">Yoqilsa, foydalanuvchilar uchun sayt vaqtincha o'chiriladi.</div></div></div>
+                                </form>
+                            </div>
+                            <div class="card-footer text-end"><button type="button" class="btn btn-primary">Saqlash</button></div>
+                        </div>
+                    </div>
+
+                    <!-- To'lov Tizimlari -->
+                    <div class="tab-pane fade" id="payment-settings">
+                        <div class="settings-card">
+                            <div class="card-header"><h5 class="card-title mb-0">To'lov Tizimlari Integratsiyasi</h5></div>
+                            <div class="card-body">
+                                <form class="row g-3">
+                                    <h6 class="mb-0">Payme</h6>
+                                    <div class="col-md-12"><label for="paymeId" class="form-label">Merchant ID</label><input type="text" class="form-control" id="paymeId"></div>
+                                    <div class="col-md-12"><label for="paymeKey" class="form-label">Secret Key</label><input type="password" class="form-control" id="paymeKey"></div>
+                                    <div class="col-12"><hr></div>
+                                    <h6 class="mb-0">Click</h6>
+                                    <div class="col-md-6"><label for="clickServiceId" class="form-label">Service ID</label><input type="text" class="form-control" id="clickServiceId"></div>
+                                    <div class="col-md-6"><label for="clickMerchantId" class="form-label">Merchant ID</label><input type="text" class="form-control" id="clickMerchantId"></div>
+                                    <div class="col-md-12"><label for="clickKey" class="form-label">Secret Key</label><input type="password" class="form-control" id="clickKey"></div>
+                                </form>
+                            </div>
+                             <div class="card-footer text-end"><button type="button" class="btn btn-primary">Saqlash</button></div>
+                        </div>
+                    </div>
+
+                    <!-- Email Sozlamalari -->
+                    <div class="tab-pane fade" id="email-settings">
+                         <div class="settings-card">
+                            <div class="card-header"><h5 class="card-title mb-0">Email Xabarnomalari (SMTP)</h5></div>
+                            <div class="card-body">
+                                <form class="row g-3">
+                                    <div class="col-md-6"><label for="smtpHost" class="form-label">Host</label><input type="text" class="form-control" id="smtpHost" placeholder="smtp.example.com"></div>
+                                    <div class="col-md-6"><label for="smtpPort" class="form-label">Port</label><input type="text" class="form-control" id="smtpPort" placeholder="587"></div>
+                                    <div class="col-md-6"><label for="smtpUser" class="form-label">Foydalanuvchi</label><input type="text" class="form-control" id="smtpUser" placeholder="user@example.com"></div>
+                                    <div class="col-md-6"><label for="smtpPass" class="form-label">Parol</label><input type="password" class="form-control" id="smtpPass"></div>
+                                </form>
+                            </div>
+                             <div class="card-footer text-end"><button type="button" class="btn btn-primary">Saqlash</button></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Xavfsizlik Sozlamalari -->
+                    <div class="tab-pane fade" id="security-settings">
+                        <div class="settings-card">
+                            <div class="card-header"><h5 class="card-title mb-0">Xavfsizlik</h5></div>
+                            <div class="card-body">
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="twoFactor">
+                                    <label class="form-check-label" for="twoFactor">Ikki faktorli autentifikatsiya (2FA)</label>
+                                    <div class="form-text">Barcha adminlar uchun tizimga kirishda qo'shimcha himoya qatlamini qo'shadi.</div>
+                                </div>
+                            </div>
+                             <div class="card-footer text-end"><button type="button" class="btn btn-primary">Saqlash</button></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <div class="mobile-overlay"></div>
+</div>
+
+  <!-- Vendor JS Files -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Asosiy JS Fayli -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      "use strict";
+
+      const body = document.body;
+      const htmlEl = document.documentElement;
+      const toggleSidebarBtn = document.querySelector('.toggle-sidebar-btn');
+      const mobileOverlay = document.querySelector('.mobile-overlay');
+      const darkModeToggle = document.querySelector('#dark-mode-toggle');
+
+      // --- Sidebar Toggle Logic ---
+      if (toggleSidebarBtn) {
+        toggleSidebarBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (window.innerWidth < 1200) {
+            body.classList.toggle('sidebar-toggled');
+          } else {
+            body.classList.toggle('sidebar-collapsed');
+          }
+        });
+      }
+      
+      if (mobileOverlay) {
+          mobileOverlay.addEventListener('click', () => {
+              body.classList.remove('sidebar-toggled');
+          });
+      }
+      
+      // --- Dark Mode Logic ---
+      if(darkModeToggle) {
+          if (localStorage.getItem('theme') === 'dark') {
+              htmlEl.classList.add('dark-mode');
+              darkModeToggle.querySelector('i').classList.replace('bi-moon-stars', 'bi-sun');
+          }
+
+          darkModeToggle.addEventListener('click', (e) => {
+              e.preventDefault();
+              htmlEl.classList.toggle('dark-mode');
+              const isDark = htmlEl.classList.contains('dark-mode');
+              if (isDark) {
+                  localStorage.setItem('theme', 'dark');
+                  darkModeToggle.querySelector('i').classList.replace('bi-moon-stars', 'bi-sun');
+              } else {
+                  localStorage.setItem('theme', 'light');
+                  darkModeToggle.querySelector('i').classList.replace('bi-sun', 'bi-moon-stars');
+              }
+          });
+      }
+
+      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+      });
+      
+    });
+  </script>
+
+</body>
+</html>

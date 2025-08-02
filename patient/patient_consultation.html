@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Onlayn Konsultatsiya - MedMapp.uz</title>
+  <meta content="Bemorlar uchun shifokor bilan video va chat orqali konsultatsiya" name="description">
+  <meta content="medmap, patient, consultation, chat, medical record, telemedicine, 3d, creative" name="keywords">
+
+  <!-- Favicons -->
+  <link href="https://placehold.co/32x32/4154f1/ffffff?text=M" rel="icon">
+  <link href="https://placehold.co/180x180/4154f1/ffffff?text=M" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- 1. Umumiy stillar (saytning hamma sahifasi uchun) -->
+  <link rel="stylesheet" href="style.css">
+  <!-- 2. Shu sahifaga xos bo'lgan maxsus stillar -->
+  <link rel="stylesheet" href="patient_consultation.css">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+    <a href="#" class="logo d-flex align-items-center text-decoration-none">
+        <img src="../images/MedMapp_Logo_shaffof.png" height="66" alt="Logo">
+    </a>
+    <ul class="sidebar-nav nav flex-column mt-4">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html"><i class="bi bi-grid-1x2-fill"></i><span data-lang-key="dashboard">Boshqaruv paneli</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="patient_profile.html"><i class="bi bi-person-fill"></i><span data-lang-key="my_profile">Mening profilim</span></a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="patient_queue.html"><i class="bi bi-calendar-check-fill"></i><span data-lang-key="my_appointments">Mening yozuvlarim</span></a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="analysis.html"><i class="bi bi-file-earmark-medical-fill"></i><span data-lang-key="lab_results">Tahlil natijalari</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="patient_consultation.html"><i class="bi bi-chat-dots-fill"></i><span data-lang-key="consultations">Konsultatsiyalar</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="payments.html"><i class="bi bi-credit-card-fill"></i><span data-lang-key="payments">To'lovlar</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="reviews.html"><i class="bi bi-star-fill"></i><span data-lang-key="my_reviews">Izohlarim</span></a>
+        </li>
+      </ul>
+  </aside><!-- End Sidebar-->
+
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+  <main class="main-content">
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="header-left d-flex align-items-center">
+            <button class="btn px-1 me-2" id="sidebarToggleBtn" type="button"><i class="bi bi-list fs-3"></i></button>
+            <div class="pagetitle d-none d-md-block">
+                <h1 data-lang-key="consultation_title">Onlayn Konsultatsiya</h1>
+            </div>
+        </div>
+        <div class="header-right d-flex align-items-center">
+             <!-- Language Dropdown -->
+            <div class="dropdown lang-dropdown me-2">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-translate fs-5"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item d-flex align-items-center" href="#" data-lang="uz"><i class="bi bi-flag-fill me-2"></i> O'zbekcha</a></li>
+                <li><a class="dropdown-item d-flex align-items-center" href="#" data-lang="ru"><i class="bi bi-flag-fill me-2"></i> Русский</a></li>
+                <li><a class="dropdown-item d-flex align-items-center" href="#" data-lang="en"><i class="bi bi-flag-fill me-2"></i> English</a></li>
+              </ul>
+            </div>
+
+            <button class="btn nav-link me-2" id="darkModeToggle"><i class="bi bi-moon-stars-fill fs-5"></i></button>
+            <a href="#" class="nav-link me-3"><i class="bi bi-bell fs-5"></i></a>
+            <!-- Profile Dropdown -->
+            <div class="dropdown profile-dropdown">
+                <a href="#" class="d-flex align-items-center text-decoration-none" data-bs-toggle="dropdown">
+                    <img src="https://placehold.co/40x40/EFEFEF/333333?text=A" alt="Profile" class="rounded-circle" id="profileImage">
+                    <div class="ms-2 d-none d-md-block">
+                        <div class="fw-bold" id="profileName">Ali Valiyev</div>
+                        <small class="text-muted" data-lang-key="patient">Bemor</small>
+                    </div>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item d-flex align-items-center" href="#" data-lang-key="settings"><i class="bi bi-gear-fill me-2 text-secondary"></i>Sozlamalar</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item d-flex align-items-center text-danger" href="#" data-lang-key="logout"><i class="bi bi-box-arrow-right me-2"></i>Chiqish</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-body">
+        <div class="pagetitle mb-4">
+            <h1 data-lang-key="consultation_title">Onlayn Konsultatsiya</h1>
+            <p class="text-muted mb-0" data-lang-key="consultation_subtitle">Bu yerda shifokor bilan muloqot qilishingiz va xulosalarni ko'rishingiz mumkin.</p>
+        </div>
+
+        <div class="row">
+            <!-- Left Column: Info & Files -->
+            <div class="col-lg-4">
+                <!-- Doctor Info -->
+                <div class="info-card doctor-info-card">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center pt-3">
+                            <img src="https://placehold.co/100x100/eef2ff/4154f1?text=SN" class="rounded-circle avatar" alt="Shifokor rasmi">
+                            <div class="ms-3">
+                                <h5 class="doctor-name mb-1">Dr. Salima Nosirova</h5>
+                                <p class="text-muted mb-1">Kardiolog</p>
+                                <p class="text-muted small mb-0"><i class="bi bi-hospital me-1"></i> Shifo Nur Med</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div>
+                            <h6 class="small text-uppercase text-muted" data-lang-key="consultation_status">Konsultatsiya holati</h6>
+                            <span class="badge bg-success bg-opacity-10 text-success fw-normal fs-6"><i class="bi bi-circle-fill me-1"></i> <span data-lang-key="status_active">Faol</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Attached Files -->
+                <div class="info-card">
+                    <div class="card-header">
+                        <h5><i class="bi bi-paperclip me-2"></i><span data-lang-key="attached_files">Biriktirilgan fayllar</span></h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a href="#" class="text-decoration-none text-dark file-item">
+                                    <i class="bi bi-file-earmark-pdf-fill file-icon"></i>
+                                    <div class="flex-grow-1">
+                                        <div class="file-name">qon_analizi.pdf</div>
+                                        <div class="file-size" data-lang-key="file_by_patient">1.2 MB - Bemor tomonidan</div>
+                                    </div>
+                                    <i class="bi bi-download"></i>
+                                </a>
+                            </li>
+                             <li>
+                                <a href="#" class="text-decoration-none text-dark file-item">
+                                    <i class="bi bi-file-earmark-image-fill file-icon"></i>
+                                    <div class="flex-grow-1">
+                                        <div class="file-name">rentgen_surat.jpg</div>
+                                        <div class="file-size" data-lang-key="file_by_patient">850 KB - Bemor tomonidan</div>
+                                    </div>
+                                    <i class="bi bi-download"></i>
+                                </a>
+                            </li>
+                             <li>
+                                <a href="#" class="text-decoration-none text-dark file-item">
+                                    <i class="bi bi-file-earmark-text-fill file-icon"></i>
+                                    <div class="flex-grow-1">
+                                        <div class="file-name">qo'shimcha_xulosa.txt</div>
+                                        <div class="file-size" data-lang-key="file_by_doctor">15 KB - Shifokor tomonidan</div>
+                                    </div>
+                                    <i class="bi bi-download"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Chat & Tabs -->
+            <div class="col-lg-8">
+                <div class="info-card p-0 chat-info-section">
+                    <ul class="nav nav-tabs" id="infoTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="chat-tab" data-bs-toggle="tab" data-bs-target="#chat-pane" type="button" role="tab">
+                                <span data-lang-key="chat">Chat</span>
+                                <span class="notification-badge"></span>
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="notes-tab" data-bs-toggle="tab" data-bs-target="#notes-pane" type="button" role="tab" data-lang-key="doctor_notes">Shifokor xulosasi</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="prescription-tab" data-bs-toggle="tab" data-bs-target="#prescription-pane" type="button" role="tab" data-lang-key="prescriptions">Retseptlar</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active h-100" id="chat-pane" role="tabpanel">
+                            <div class="d-flex flex-column h-100">
+                                <div class="chat-body">
+                                    <div class="message received">
+                                        <div class="message-content" data-lang-key="chat_msg_1">
+                                            Assalomu alaykum, Ali aka. Yaxshimisiz? Shikoyatlaringizni eshitishga tayyorman.
+                                        </div>
+                                        <div class="message-time text-start">10:32</div>
+                                    </div>
+                                    <div class="message sent">
+                                        <div class="message-content" data-lang-key="chat_msg_2">
+                                            Va alaykum assalom. Rahmat, yaxshi. Menda biroz bosh og'rig'i va holsizlik bor.
+                                        </div>
+                                         <div class="message-time text-end">10:33</div>
+                                    </div>
+                                    <div class="message received">
+                                        <div class="message-content" data-lang-key="chat_msg_3">
+                                            Tushunarli. Yuborgan analizlaringizni ko'rib chiqdim. Hammasi joyida. Keling, bir nechta savol beraman.
+                                        </div>
+                                        <div class="message-time text-start">10:35</div>
+                                    </div>
+                                </div>
+                                <div class="chat-footer">
+                                    <div class="input-group">
+                                        <button class="btn btn-light border" type="button"><i class="bi bi-paperclip"></i></button>
+                                        <input type="text" class="form-control" data-lang-key-placeholder="type_message" placeholder="Xabar yozing...">
+                                        <button class="btn btn-primary" type="button"><i class="bi bi-send-fill"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade notes-body" id="notes-pane" role="tabpanel">
+                            <div class="mb-4">
+                                <h6><i class="bi bi-clipboard2-pulse-fill me-2 text-primary"></i><span data-lang-key="diagnosis">Tashxis</span></h6>
+                                <p data-lang-key="diagnosis_text">O'tkir respirator virusli infeksiya (O'RVI), astenik sindrom.</p>
+                            </div>
+                            <div class="mb-4">
+                                <h6><i class="bi bi-list-check me-2 text-primary"></i><span data-lang-key="recommendations">Tavsiyalar</span></h6>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><span data-lang-key="rec_1">Ko'proq suyuqlik ichish (malinali choy, namatak damlamasi).</span></li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><span data-lang-key="rec_2">Yotoq rejimi (kamida 2-3 kun).</span></li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><span data-lang-key="rec_3">Xonani tez-tez shamollatib turish.</span></li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><span data-lang-key="rec_4">Quyidagi dori-darmonlarni qabul qilish.</span></li>
+                                </ul>
+                            </div>
+                            <button class="btn btn-outline-primary btn-sm"><i class="bi bi-download me-2"></i><span data-lang-key="download_pdf">PDF formatda yuklab olish</span></button>
+                        </div>
+                        <div class="tab-pane fade prescription-body" id="prescription-pane" role="tabpanel">
+                             <ul class="list-group list-group-flush">
+                              <li class="list-group-item d-flex justify-content-between align-items-center px-1 py-3">
+                                <div>
+                                    <div class="fw-bold"><i class="bi bi-capsule-pill me-2 text-primary"></i>Paratsetamol 500mg</div>
+                                    <small class="text-muted ms-4" data-lang-key="presc_1">1 tabletkadan kuniga 3 mahal, ovqatdan so'ng</small>
+                                </div>
+                                <span class="badge bg-light text-dark rounded-pill" data-lang-key="days_7">7 kun</span>
+                              </li>
+                              <li class="list-group-item d-flex justify-content-between align-items-center px-1 py-3">
+                                <div>
+                                    <div class="fw-bold"><i class="bi bi-capsule-pill me-2 text-primary"></i>Vitamin C 1000mg</div>
+                                    <small class="text-muted ms-4" data-lang-key="presc_2">Kuniga 1 mahal, ertalab</small>
+                                </div>
+                                <span class="badge bg-light text-dark rounded-pill" data-lang-key="days_10">10 kun</span>
+                              </li>
+                              <li class="list-group-item d-flex justify-content-between align-items-center px-1 py-3">
+                                <div>
+                                    <div class="fw-bold"><i class="bi bi-capsule-pill me-2 text-primary"></i>Ibuprofen 200mg</div>
+                                    <small class="text-muted ms-4" data-lang-key="presc_3">Faqat kuchli og'riq bo'lganda</small>
+                                </div>
+                                <span class="badge bg-light text-dark rounded-pill" data-lang-key="as_needed">Ehtiyojga qarab</span>
+                              </li>
+                            </ul>
+                            <button class="btn btn-outline-primary btn-sm mt-4"><i class="bi bi-printer me-2"></i><span data-lang-key="print">Chop etish</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</div>
+
+  <!-- Vendor JS Files -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          // --- Translations ---
+          const translations = {
+              'uz': {
+                  dashboard: "Boshqaruv paneli", my_profile: "Mening profilim", my_appointments: "Mening yozuvlarim", lab_results: "Tahlil natijalari", consultations: "Konsultatsiyalar", payments: "To'lovlar",
+                  consultation_title: "Onlayn Konsultatsiya", patient: "Bemor", settings: "Sozlamalar", logout: "Chiqish",
+                  consultation_subtitle: "Bu yerda shifokor bilan muloqot qilishingiz va xulosalarni ko'rishingiz mumkin.",
+                  consultation_status: "Konsultatsiya holati", status_active: "Faol", attached_files: "Biriktirilgan fayllar",
+                  file_by_patient: "Bemor tomonidan", file_by_doctor: "Shifokor tomonidan",
+                  chat: "Chat", doctor_notes: "Shifokor xulosasi", prescriptions: "Retseptlar",
+                  chat_msg_1: "Assalomu alaykum, Ali aka. Yaxshimisiz? Shikoyatlaringizni eshitishga tayyorman.",
+                  chat_msg_2: "Va alaykum assalom. Rahmat, yaxshi. Menda biroz bosh og'rig'i va holsizlik bor.",
+                  chat_msg_3: "Tushunarli. Yuborgan analizlaringizni ko'rib chiqdim. Hammasi joyida. Keling, bir nechta savol beraman.",
+                  type_message: "Xabar yozing...",
+                  diagnosis: "Tashxis", diagnosis_text: "O'tkir respirator virusli infeksiya (O'RVI), astenik sindrom.",
+                  recommendations: "Tavsiyalar",
+                  rec_1: "Ko'proq suyuqlik ichish (malinali choy, namatak damlamasi).",
+                  rec_2: "Yotoq rejimi (kamida 2-3 kun).",
+                  rec_3: "Xonani tez-tez shamollatib turish.",
+                  rec_4: "Quyidagi dori-darmonlarni qabul qilish.",
+                  download_pdf: "PDF formatda yuklab olish",
+                  presc_1: "1 tabletkadan kuniga 3 mahal, ovqatdan so'ng", days_7: "7 kun",
+                  presc_2: "Kuniga 1 mahal, ertalab", days_10: "10 kun",
+                  presc_3: "Faqat kuchli og'riq bo'lganda", as_needed: "Ehtiyojga qarab",
+                  print: "Chop etish"
+              },
+              'ru': {
+                  dashboard: "Панель управления", my_profile: "Мой профиль", my_appointments: "Мои записи", lab_results: "Результаты анализов", consultations: "Консультации", payments: "Платежи",
+                  consultation_title: "Онлайн Консультация", patient: "Пациент", settings: "Настройки", logout: "Выйти",
+                  consultation_subtitle: "Здесь вы можете общаться с врачом и просматривать заключения.",
+                  consultation_status: "Статус консультации", status_active: "Активна", attached_files: "Прикрепленные файлы",
+                  file_by_patient: "От пациента", file_by_doctor: "От врача",
+                  chat: "Чат", doctor_notes: "Заключение врача", prescriptions: "Рецепты",
+                  chat_msg_1: "Здравствуйте, Али. Как вы? Я готов выслушать ваши жалобы.",
+                  chat_msg_2: "Здравствуйте. Спасибо, хорошо. У меня небольшая головная боль и слабость.",
+                  chat_msg_3: "Понятно. Я посмотрел анализы, которые вы отправили. Все в норме. Позвольте задать несколько вопросов.",
+                  type_message: "Напишите сообщение...",
+                  diagnosis: "Диагноз", diagnosis_text: "Острая респираторная вирусная инфекция (ОРВИ), астенический синдром.",
+                  recommendations: "Рекомендации",
+                  rec_1: "Пить больше жидкости (малиновый чай, отвар шиповника).",
+                  rec_2: "Постельный режим (минимум 2-3 дня).",
+                  rec_3: "Часто проветривать помещение.",
+                  rec_4: "Принимать следующие лекарства.",
+                  download_pdf: "Скачать в формате PDF",
+                  presc_1: "По 1 таблетке 3 раза в день после еды", days_7: "7 дней",
+                  presc_2: "1 раз в день, утром", days_10: "10 дней",
+                  presc_3: "Только при сильной боли", as_needed: "По необходимости",
+                  print: "Распечатать"
+              },
+              'en': {
+                  dashboard: "Dashboard", my_profile: "My Profile", my_appointments: "My Appointments", lab_results: "Lab Results", consultations: "Consultations", payments: "Payments",
+                  consultation_title: "Online Consultation", patient: "Patient", settings: "Settings", logout: "Logout",
+                  consultation_subtitle: "Here you can communicate with the doctor and view conclusions.",
+                  consultation_status: "Consultation Status", status_active: "Active", attached_files: "Attached Files",
+                  file_by_patient: "From patient", file_by_doctor: "From doctor",
+                  chat: "Chat", doctor_notes: "Doctor's Notes", prescriptions: "Prescriptions",
+                  chat_msg_1: "Hello, Ali. How are you? I'm ready to hear your complaints.",
+                  chat_msg_2: "Hello. Thanks, I'm fine. I have a slight headache and weakness.",
+                  chat_msg_3: "Understood. I've reviewed the tests you sent. Everything is fine. Let me ask a few questions.",
+                  type_message: "Type a message...",
+                  diagnosis: "Diagnosis", diagnosis_text: "Acute respiratory viral infection (ARVI), asthenic syndrome.",
+                  recommendations: "Recommendations",
+                  rec_1: "Drink more fluids (raspberry tea, rosehip infusion).",
+                  rec_2: "Bed rest (at least 2-3 days).",
+                  rec_3: "Ventilate the room frequently.",
+                  rec_4: "Take the following medications.",
+                  download_pdf: "Download as PDF",
+                  presc_1: "1 tablet 3 times a day, after meals", days_7: "7 days",
+                  presc_2: "Once a day, in the morning", days_10: "10 days",
+                  presc_3: "Only for severe pain", as_needed: "As needed",
+                  print: "Print"
+              }
+          };
+
+          const setLanguage = (lang) => {
+              document.documentElement.lang = lang;
+              localStorage.setItem('language', lang);
+              document.querySelectorAll('[data-lang-key]').forEach(element => {
+                  const key = element.getAttribute('data-lang-key');
+                  const icon = element.querySelector('i');
+                  if (translations[lang] && translations[lang][key]) {
+                      const translationText = translations[lang][key];
+                      if (icon) {
+                          element.innerHTML = icon.outerHTML + " " + translationText;
+                      } else {
+                          element.innerHTML = translationText;
+                      }
+                  }
+              });
+               document.querySelectorAll('[data-lang-key-placeholder]').forEach(element => {
+                  const key = element.getAttribute('data-lang-key-placeholder');
+                  if (translations[lang] && translations[lang][key]) {
+                      element.placeholder = translations[lang][key];
+                  }
+              });
+          };
+
+          // --- UI Elements ---
+          const sidebarToggleBtn = document.getElementById('sidebarToggleBtn');
+          const sidebarBackdrop = document.getElementById('sidebarBackdrop');
+          const darkModeToggle = document.getElementById('darkModeToggle');
+          const langLinks = document.querySelectorAll('.lang-dropdown .dropdown-item');
+
+          // --- Sidebar Logic ---
+          const toggleSidebar = () => {
+              const isDesktop = window.innerWidth >= 992;
+              if (isDesktop) {
+                  document.body.classList.toggle('sidebar-collapsed');
+              } else {
+                  document.body.classList.toggle('sidebar-open');
+              }
+          };
+
+          if (sidebarToggleBtn) {
+              sidebarToggleBtn.addEventListener('click', toggleSidebar);
+          }
+          if (sidebarBackdrop) {
+              sidebarBackdrop.addEventListener('click', toggleSidebar);
+          }
+          
+          // --- Dark Mode & Language Logic ---
+          if (darkModeToggle) {
+              darkModeToggle.addEventListener('click', () => {
+                  document.body.classList.toggle('dark-mode');
+                  const icon = darkModeToggle.querySelector('i');
+                  icon.classList.toggle('bi-moon-stars-fill');
+                  icon.classList.toggle('bi-sun-fill');
+              });
+          }
+          langLinks.forEach(link => {
+              link.addEventListener('click', (e) => {
+                  e.preventDefault();
+                  const selectedLang = e.currentTarget.getAttribute('data-lang');
+                  setLanguage(selectedLang);
+              });
+          });
+          
+          // --- Initial Load ---
+          const savedLang = localStorage.getItem('language') || 'uz';
+          setLanguage(savedLang);
+          
+          document.getElementById('profileName').textContent = "Ali Valiyev";
+          document.getElementById('profileImage').src = `https://placehold.co/40x40/EFEFEF/333333?text=A`;
+          
+          if (window.innerWidth < 992) {
+              document.body.classList.add('sidebar-collapsed');
+          }
+      });
+  </script>
+</body>
+</html>

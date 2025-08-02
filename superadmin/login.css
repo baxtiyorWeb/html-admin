@@ -1,0 +1,15 @@
+/* logs.css uchun maxsus stillar */
+.badge.level-info {
+    background-color: var(--info-light);
+    color: var(--info-color);
+}
+
+.badge.level-warning {
+    background-color: var(--warning-light);
+    color: var(--warning-color);
+}
+
+.badge.level-error {
+    background-color: var(--danger-light);
+    color: var(--danger-color);
+}

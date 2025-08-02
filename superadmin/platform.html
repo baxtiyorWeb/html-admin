@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Platforma Kontenti - Super Admin Paneli</title>
+  <meta content="MedMapp.uz platformasi kontentini va kataloglarini boshqarish" name="description">
+  <meta content="medmap, superadmin, content, cms, catalog, management" name="keywords">
+
+  <!-- Favicons -->
+  <link href="https://placehold.co/32x32/012970/ffffff?text=S" rel="icon">
+  <link href="https://placehold.co/180x180/012970/ffffff?text=S" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- 1. Umumiy stillar (saytning hamma sahifasi uchun) -->
+  <link rel="stylesheet" href="style.css">
+  <!-- 2. Shu sahifaga xos bo'lgan maxsus stillar -->
+  <link rel="stylesheet" href="platform.css">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+    <a href="index.html" class="logo d-flex align-items-center">
+      <img src="https://placehold.co/40x40/ffffff/012970?text=S" alt="SuperAdmin Icon" class="logo-icon">
+      <span class="logo-text">Super Admin</span>
+    </a>
+    <ul class="sidebar-nav nav flex-column mt-4">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html"><i class="bi bi-speedometer2"></i><span>Boshqaruv Paneli</span></a>
+      </li>
+      <li class="nav-heading">Boshqaruv</li>
+      <li class="nav-item">
+        <a class="nav-link" href="users.html"><i class="bi bi-people-fill"></i><span>Foydalanuvchilar</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="platform.html"><i class="bi bi-layout-text-window-reverse"></i><span>Platforma Kontenti</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="finance.html"><i class="bi bi-cash-coin"></i><span>Moliya</span></a>
+      </li>
+      <li class="nav-heading">Tizim</li>
+      <li class="nav-item">
+        <a class="nav-link" href="analytics.html"><i class="bi bi-bar-chart-line-fill"></i><span>Analitika</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="settings.html"><i class="bi bi-sliders"></i><span>Tizim Sozlamalari</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="logs.html"><i class="bi bi-journal-text"></i><span>Loglar</span></a>
+      </li>
+    </ul>
+    <div class="logout">
+        <a class="nav-link" href="login.html"><i class="bi bi-box-arrow-left"></i><span>Chiqish</span></a>
+    </div>
+  </aside><!-- End Sidebar-->
+
+  <div class="main-content">
+    <!-- ======= Header ======= -->
+    <header class="header d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center">
+            <i class="bi bi-list toggle-sidebar-btn me-3 fs-4"></i>
+        </div>
+      <nav class="header-nav d-flex align-items-center">
+          <a class="nav-link nav-icon" id="dark-mode-toggle" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tungi/Kunduzgi rejim">
+              <i class="bi bi-moon-stars"></i>
+          </a>
+          <div class="nav-item dropdown">
+            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown" aria-expanded="false" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Til">
+                <i class="bi bi-translate"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item active" href="#">O'zbekcha (UZ)</a></li>
+                <li><a class="dropdown-item" href="#">Русский (RU)</a></li>
+            </ul>
+          </div>
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Bildirishnomalar"><i class="bi bi-bell"></i></a>
+          <div class="vr h-50 d-none d-sm-block mx-2"></div>
+          <div class="nav-item dropdown">
+            <a class="nav-link nav-profile d-flex align-items-center ps-sm-2" href="#" data-bs-toggle="dropdown">
+              <img src="https://placehold.co/40x40/012970/ffffff?text=SA" alt="Profile" class="rounded-circle">
+              <div class="d-none d-md-flex flex-column align-items-start ms-2">
+                  <span class="fw-bold">Super Admin</span>
+                  <span class="text-muted small">superuser@MedMapp.uz</span>
+              </div>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+              <li> <a class="dropdown-item d-flex align-items-center" href="#"> <i class="bi bi-person"></i> <span>Profil</span> </a> </li>
+              <li> <hr class="dropdown-divider"> </li>
+              <li> <a class="dropdown-item d-flex align-items-center" href="#"> <i class="bi bi-box-arrow-right"></i> <span>Chiqish</span> </a> </li>
+            </ul>
+          </div>
+      </nav>
+    </header><!-- End Header -->
+
+    <main class="page-content">
+      <section class="section content-management">
+        
+        <div class="pagetitle mb-4">
+            <h1>Platforma Kontenti</h1>
+            <p class="text-muted mb-0">Saytdagi barcha ma'lumotlar kataloglari va materiallarni boshqarish.</p>
+        </div>
+          
+        <div class="card main-card">
+            <div class="card-header border-0 pt-4">
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#catalogs-tab">Platforma Kataloglari</a></li>
+                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#marketing-tab">Marketing Kontenti</a></li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="tab-content pt-3">
+                    <!-- Platforma Kataloglari Tab -->
+                    <div class="tab-pane fade show active" id="catalogs-tab">
+                        <ul class="nav nav-pills flex-column flex-sm-row mb-3">
+                            <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#departments-tab">Bo'limlar</a></li>
+                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#services-tab">Xizmatlar va Narxlar</a></li>
+                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#treatments-tab">Davolash Usullari</a></li>
+                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#hospitals-tab">Shifoxonalar</a></li>
+                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#doctors-tab">Shifokorlar</a></li>
+                        </ul>
+                        <div class="tab-content pt-3 border-top">
+                            <!-- Bo'limlar -->
+                            <div class="tab-pane fade show active" id="departments-tab">
+                                <div class="d-flex justify-content-end mb-3"><button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addDepartmentModal"><i class="bi bi-plus-circle me-2"></i>Yangi bo'lim qo'shish</button></div>
+                                <div class="table-responsive"><table class="table table-hover"><thead><tr><th>Bo'lim Nomi</th><th>Xizmatlar Soni</th><th class="text-center">Holati</th><th class="text-end">Amallar</th></tr></thead><tbody><tr><td>Kardiologiya</td><td>15</td><td class="text-center"><span class="badge bg-success-light text-success">Faol</span></td><td class="text-end"><button class="btn btn-light btn-sm" data-bs-toggle="tooltip" title="Tahrirlash"><i class="bi bi-pencil-square"></i></button> <button class="btn btn-light btn-sm" data-bs-toggle="tooltip" title="O'chirish"><i class="bi bi-trash"></i></button></td></tr><tr><td>Nevrologiya</td><td>23</td><td class="text-center"><span class="badge bg-success-light text-success">Faol</span></td><td class="text-end"><button class="btn btn-light btn-sm"><i class="bi bi-pencil-square"></i></button> <button class="btn btn-light btn-sm"><i class="bi bi-trash"></i></button></td></tr></tbody></table></div>
+                            </div>
+                            <!-- Xizmatlar va Narxlar -->
+                            <div class="tab-pane fade" id="services-tab">
+                               <div class="d-flex justify-content-end mb-3"><button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addServiceModal"><i class="bi bi-plus-circle me-2"></i>Yangi xizmat qo'shish</button></div>
+                               <div class="table-responsive"><table class="table table-hover"><thead><tr><th>Xizmat Nomi</th><th>Bo'lim</th><th>Narxi</th><th class="text-center">Holati</th><th class="text-end">Amallar</th></tr></thead><tbody><tr><td>EKG (Elektrokardiogramma)</td><td>Kardiologiya</td><td>50,000 UZS</td><td class="text-center"><span class="badge bg-success-light text-success">Faol</span></td><td class="text-end"><button class="btn btn-light btn-sm"><i class="bi bi-pencil-square"></i></button> <button class="btn btn-light btn-sm"><i class="bi bi-trash"></i></button></td></tr><tr><td>EEG (Elektroensefalografiya)</td><td>Nevrologiya</td><td>120,000 UZS</td><td class="text-center"><span class="badge bg-danger-light text-danger">Nofaol</span></td><td class="text-end"><button class="btn btn-light btn-sm"><i class="bi bi-pencil-square"></i></button> <button class="btn btn-light btn-sm"><i class="bi bi-trash"></i></button></td></tr></tbody></table></div>
+                            </div>
+                            <!-- Davolash Usullari -->
+                            <div class="tab-pane fade" id="treatments-tab"><div class="empty-state"><i class="bi bi-journal-medical"></i><p class="mt-3">Hozircha davolash usullari mavjud emas.</p><button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addTreatmentModal"><i class="bi bi-plus-circle me-2"></i>Yangi usul qo'shish</button></div></div>
+                            <!-- Shifoxonalar -->
+                            <div class="tab-pane fade" id="hospitals-tab"><div class="empty-state"><i class="bi bi-hospital"></i><p class="mt-3">Hozircha shifoxonalar mavjud emas.</p><button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addHospitalModal"><i class="bi bi-plus-circle me-2"></i>Yangi shifoxona qo'shish</button></div></div>
+                            <!-- Shifokorlar -->
+                            <div class="tab-pane fade" id="doctors-tab"><div class="empty-state"><i class="bi bi-heart-pulse"></i><p class="mt-3">Hozircha shifokorlar mavjud emas.</p><button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addDoctorModal"><i class="bi bi-plus-circle me-2"></i>Yangi shifokor qo'shish</button></div></div>
+                        </div>
+                    </div>
+                    <!-- Marketing Kontenti Tab -->
+                    <div class="tab-pane fade" id="marketing-tab">
+                        <ul class="nav nav-pills flex-column flex-sm-row mb-3">
+                            <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#testimonials-tab">Bemorlar Fikri</a></li>
+                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#news-tab">Yangiliklar</a></li>
+                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#articles-tab">Maqolalar</a></li>
+                        </ul>
+                         <div class="tab-content pt-3 border-top">
+                            <div class="tab-pane fade show active" id="testimonials-tab"><div class="empty-state"><i class="bi bi-chat-quote"></i><p class="mt-3">Hozircha bemorlar fikri mavjud emas.</p><button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addTestimonialModal"><i class="bi bi-plus-circle me-2"></i>Yangi fikr qo'shish</button></div></div>
+                            <div class="tab-pane fade" id="news-tab"><div class="empty-state"><i class="bi bi-newspaper"></i><p class="mt-3">Hozircha yangiliklar mavjud emas.</p><button class="btn btn-primary btn-sm"><i class="bi bi-plus-circle me-2"></i>Yangi xabar qo'shish</button></div></div>
+                            <div class="tab-pane fade" id="articles-tab"><div class="empty-state"><i class="bi bi-file-text"></i><p class="mt-3">Hozircha maqolalar mavjud emas.</p><button class="btn btn-primary btn-sm"><i class="bi bi-plus-circle me-2"></i>Yangi maqola qo'shish</button></div></div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <div class="mobile-overlay"></div>
+
+  <!-- Modals -->
+  <div class="modal fade" id="addDepartmentModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Yangi Bo'lim</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="mb-3"><label class="form-label">Nomi</label><input type="text" class="form-control" placeholder="Masalan, Ginekologiya"></div><div class="mb-3"><label class="form-label">Ikonka</label><input type="text" class="form-control" placeholder="bi bi-heart-pulse"></div></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bekor</button><button type="button" class="btn btn-primary">Saqlash</button></div></div></div></div>
+  <div class="modal fade" id="addServiceModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Yangi Xizmat</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="mb-3"><label class="form-label">Nomi</label><input type="text" class="form-control" placeholder="Masalan, UZI"></div><div class="mb-3"><label class="form-label">Bo'lim</label><select class="form-select"><option selected>Tanlang...</option><option>Kardiologiya</option><option>Nevrologiya</option></select></div><div class="mb-3"><label class="form-label">Narxi (UZS)</label><input type="number" class="form-control" placeholder="80000"></div></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bekor</button><button type="button" class="btn btn-primary">Saqlash</button></div></div></div></div>
+  <div class="modal fade" id="addTreatmentModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Yangi Davolash Usuli</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="mb-3"><label class="form-label">Nomi</label><input type="text" class="form-control"></div><div class="mb-3"><label class="form-label">Tavsifi</label><textarea class="form-control" rows="3"></textarea></div></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bekor</button><button type="button" class="btn btn-primary">Saqlash</button></div></div></div></div>
+  <div class="modal fade" id="addHospitalModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Yangi Shifoxona</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="mb-3"><label class="form-label">Nomi</label><input type="text" class="form-control"></div><div class="mb-3"><label class="form-label">Manzili</label><input type="text" class="form-control"></div></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bekor</button><button type="button" class="btn btn-primary">Saqlash</button></div></div></div></div>
+  <div class="modal fade" id="addDoctorModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Yangi Shifokor</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="mb-3"><label class="form-label">F.I.Sh.</label><input type="text" class="form-control"></div><div class="mb-3"><label class="form-label">Mutaxassisligi</label><select class="form-select"><option selected>Tanlang...</option></select></div></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bekor</button><button type="button" class="btn btn-primary">Saqlash</button></div></div></div></div>
+  <div class="modal fade" id="addTestimonialModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Yangi Fikr</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="mb-3"><label class="form-label">Bemor Ismi</label><input type="text" class="form-control"></div><div class="mb-3"><label class="form-label">Fikr Matni</label><textarea class="form-control" rows="3"></textarea></div></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bekor</button><button type="button" class="btn btn-primary">Saqlash</button></div></div></div></div>
+
+</div>
+
+  <!-- Vendor JS Files -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Asosiy JS Fayli -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      "use strict";
+
+      const body = document.body;
+      const htmlEl = document.documentElement;
+      const toggleSidebarBtn = document.querySelector('.toggle-sidebar-btn');
+      const mobileOverlay = document.querySelector('.mobile-overlay');
+      const darkModeToggle = document.querySelector('#dark-mode-toggle');
+
+      // --- Sidebar Toggle Logic ---
+      if (toggleSidebarBtn) {
+        toggleSidebarBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (window.innerWidth < 1200) {
+            body.classList.toggle('sidebar-toggled');
+          } else {
+            body.classList.toggle('sidebar-collapsed');
+          }
+        });
+      }
+      
+      if (mobileOverlay) {
+          mobileOverlay.addEventListener('click', () => {
+              body.classList.remove('sidebar-toggled');
+          });
+      }
+      
+      // --- Dark Mode Logic ---
+      if(darkModeToggle) {
+          if (localStorage.getItem('theme') === 'dark') {
+              htmlEl.classList.add('dark-mode');
+              darkModeToggle.querySelector('i').classList.replace('bi-moon-stars', 'bi-sun');
+          }
+
+          darkModeToggle.addEventListener('click', (e) => {
+              e.preventDefault();
+              htmlEl.classList.toggle('dark-mode');
+              const isDark = htmlEl.classList.contains('dark-mode');
+              if (isDark) {
+                  localStorage.setItem('theme', 'dark');
+                  darkModeToggle.querySelector('i').classList.replace('bi-moon-stars', 'bi-sun');
+              } else {
+                  localStorage.setItem('theme', 'light');
+                  darkModeToggle.querySelector('i').classList.replace('bi-sun', 'bi-moon-stars');
+              }
+          });
+      }
+
+      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+      });
+      
+    });
+  </script>
+
+</body>
+</html>
